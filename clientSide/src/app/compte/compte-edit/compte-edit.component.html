@@ -1,0 +1,46 @@
+  <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)">
+
+      ><h2>{{compte.name ? 'Edit' : 'Add'}} Compte</h2>
+
+
+      <input type="hidden" name="href" [(ngModel)]="compte.href">
+
+        <input matInput placeholder="Compte Name" [(ngModel)]="compte.name"
+               required name="name" #name>
+    <input matInput placeholder="Lastname" [(ngModel)]="compte.lastname"
+               required name="lastname" #lasname>
+  <!--  <input matInput placeholder="typeCompteId" [(ngModel)]="compte.typeCompteId"
+               required name="typeCompteId" #typeCompteId>-->
+
+    <select  matInput placeholder="typeCompteId" [(ngModel)]="compte.typeCompteId"
+               required name="typeCompteId" #typeCompteId>
+      <option value="responsable">responsable</option>
+      <option value="candidat">candidat</option>
+      <option value="employe">employé</option>
+    </select>
+    <input matInput placeholder="Email" [(ngModel)]="compte.email"
+           required name="email" #email>
+    <input matInput placeholder="Tel.." [(ngModel)]="compte.tel"
+           required name="tel" #tel>
+    <input type="date" matInput placeholder="Date Birth" [(ngModel)]="compte.dateBirth"
+           required name="dateBirth" #dateBirth>
+    <input type="file" matInput placeholder="CV" [(ngModel)]="compte.cv"
+           required name="cv" #cv>
+    <input type="file" matInput placeholder="Contrat" [(ngModel)]="compte.contrat"
+           required name="contrat" #contrat>
+    <input matInput placeholder="Address.." [(ngModel)]="compte.address"
+           required name="address" #address>
+
+
+
+
+
+      <button mat-raised-button color="primary" type="submit"
+              [disabled]="!compteForm.form.valid">Save</button>
+      <button mat-raised-button color="secondary" (click)="remove(compte.href)"
+              *ngIf="compte.href" type="button">Delete</button>
+      <a mat-button routerLink="/all-comptes">Cancel</a>
+
+
+
+  </form>

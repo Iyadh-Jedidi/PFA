@@ -1,0 +1,28 @@
+
+Responsable :
+
+<div *ngFor="let compte of comptes">
+  <a *ngIf="compte.typeCompteId=='responsable'" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
+
+
+</div>
+    Candidat :
+
+<div *ngFor="let compte of comptes">
+    <a *ngIf="compte.typeCompteId=='candidat'" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
+
+
+
+</div>
+    Employé
+
+<div *ngFor="let compte of comptes">
+    <a *ngIf="compte.typeCompteId=='employe'" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
+
+
+</div>
+<button [routerLink]="['/compte-add']">Add</button>
+<a [routerLink]="['/all-offres']" >offre </a>
+
+
+
