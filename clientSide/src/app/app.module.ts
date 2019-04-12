@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { CompteEditComponent } from './compte/compte-edit/compte-edit.component';
 import { OffresComponent } from './offre/offres/offres.component';
 import { OffreEditComponent } from './offre/offre-edit/offre-edit.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 const appRoutes: Routes = [
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     ComptesComponent,
     CompteEditComponent,
     OffresComponent,
-    OffreEditComponent
+    OffreEditComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
