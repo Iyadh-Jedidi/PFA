@@ -1,4 +1,10 @@
-
+<div>
+  <button type="button"
+          [routerLink]="['/compte-add']"
+          class="btn btn-warning pull-right"
+          style="margin-left:12px;"><i class="fa fa-plus"></i> nouveau Compte
+  </button>
+</div>
 Responsable :
 
 <div *ngFor="let compte of comptes">
@@ -21,7 +27,7 @@ Responsable :
 
 
 </div>
-<button [routerLink]="['/compte-add']">Add</button>
+
 <a [routerLink]="['/all-offres']" >offre </a>
 
 
