@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="fd9c5b3d-c800-411e-894f-36bb37dd27a6" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="fd9c5b3d-c800-411e-894f-36bb37dd27a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/pfa.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/package-lock.json" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/../clientSide/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/compte/compte-edit/compte-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/compte/compte-edit/compte-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/compte/comptes/comptes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/compte/comptes/comptes.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/navigation/navigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/navigation/navigation.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/styles.css" afterDir="false" />
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
+    </list>
+>>>>>>> e07811a7231cf65c3405c41a5f3f943ba2e111d2
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +35,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Compte.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="225">
               <caret line="23" column="16" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -68,7 +85,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/controller/OffreController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="165">
+=======
             <state relative-caret-position="270">
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
               <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -80,7 +101,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/repository/OffreRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="105">
               <caret line="10" column="55" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -89,10 +110,22 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+=======
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/repository/CompteRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
+            <state relative-caret-position="90">
               <caret line="9" column="69" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -104,7 +137,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/controller/CompteController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state relative-caret-position="165">
+=======
             <state relative-caret-position="255">
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
               <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -167,11 +204,19 @@
       </MavenImportingSettings>
     </option>
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="284" />
+    <option name="y" value="41" />
+    <option name="width" value="940" />
+    <option name="height" value="1039" />
+=======
   <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="683" />
     <option name="y" value="27" />
     <option name="width" value="673" />
     <option name="height" value="741" />
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -183,6 +228,21 @@
         <subPane>
           <expand>
             <path>
+<<<<<<< HEAD
+              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Server" type="58d84e3e:PackageViewProjectNode" />
+              <item name="server" type="616d4139:PackageViewModuleNode" />
+=======
               <item name="Server" type="58d84e3e:PackageViewProjectNode" />
               <item name="server" type="616d4139:PackageViewModuleNode" />
             </path>
@@ -208,13 +268,17 @@
               <item name="server" type="616d4139:PackageViewModuleNode" />
               <item name="iyadh.pfa" type="1f31426a:PackageElementNode" />
               <item name="repository" type="1f31426a:PackageElementNode" />
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
       <pane id="ProjectPane" />
       <pane id="Scope" />
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -263,19 +327,41 @@
       <updated>1554928818608</updated>
       <workItem from="1554928822985" duration="6609000" />
       <workItem from="1554971967046" duration="7187000" />
+<<<<<<< HEAD
+      <workItem from="1555055703140" duration="1679000" />
+=======
       <workItem from="1555058684618" duration="669000" />
+<<<<<<< HEAD
       <workItem from="1555063747434" duration="609000" />
+=======
+      <workItem from="1555063747434" duration="347000" />
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
+>>>>>>> e07811a7231cf65c3405c41a5f3f943ba2e111d2
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="15074000" />
+=======
+<<<<<<< HEAD
+    <option name="totallyTimeSpent" value="15475000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="26" width="1920" height="1054" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18836713" />
+=======
+    <option name="totallyTimeSpent" value="14812000" />
+>>>>>>> e07811a7231cf65c3405c41a5f3f943ba2e111d2
   </component>
   <component name="ToolWindowManager">
     <frame x="683" y="27" width="673" height="741" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16427432" />
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -285,7 +371,11 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
+<<<<<<< HEAD
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34871244" />
+=======
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3489499" />
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39871383" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -314,16 +404,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="51" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Compte.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="225">
           <caret line="23" column="16" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -355,6 +439,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/controller/OffreController.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/repository/OffreRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="55" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/repository/CompteRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="69" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/controller/CompteController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/PfaApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Compte.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="16" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1197#1198#0" expanded="true" />
+            <element signature="e#1225#1226#0" expanded="true" />
+            <element signature="e#1267#1268#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+            <element signature="e#1329#1330#0" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <element signature="e#1391#1392#0" expanded="true" />
+            <element signature="e#1416#1417#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1530#1531#0" expanded="true" />
+            <element signature="e#1567#1568#0" expanded="true" />
+            <element signature="e#1601#1602#0" expanded="true" />
+            <element signature="e#1631#1632#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#1710#1711#0" expanded="true" />
+            <element signature="e#1737#1738#0" expanded="true" />
+            <element signature="e#1762#1763#0" expanded="true" />
+            <element signature="e#1796#1797#0" expanded="true" />
+            <element signature="e#1824#1825#0" expanded="true" />
+            <element signature="e#1856#1857#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1930#1931#0" expanded="true" />
+            <element signature="e#1963#1964#0" expanded="true" />
+          </folding>
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Offre.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -363,6 +538,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#958#959#0" expanded="true" />
             <element signature="e#993#994#0" expanded="true" />
+<<<<<<< HEAD
+=======
           </folding>
         </state>
       </provider>
@@ -417,7 +594,15 @@
           <caret line="10" column="55" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
+>>>>>>> b6b84dc078ee1d471b7495de0c715a33f7431363
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-end-line="6" />
         </state>
       </provider>
     </entry>
