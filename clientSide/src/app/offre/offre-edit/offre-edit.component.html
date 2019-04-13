@@ -1,32 +1,47 @@
-<form #offreForm="ngForm" (ngSubmit)="save(offreForm.value)">
+<div class="container">
+  <div class="card card-container">
+    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+    <p id="profile-name" class="profile-name-card"></p>
 
-  ><h2>{{offre.name ? 'Edit' : 'Add'}} Offres</h2>
+    <form #offreForm="ngForm" (ngSubmit)="save(offreForm.value)" >
+
+        <h2 style="text-align: center">{{offre.name ? 'Edit' : 'Add'}} Offres</h2>
+        <input class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
+        <div>
+          <label class="input-label-lg">L'offre proposé</label>
+          <input matInput placeholder="Offre..." class="input-label-lg pull-right" [(ngModel)]="offre.name" required name="name" #name>
+        </div>
+        <div>
+          <label class="input-label-lg">Salaire</label>
+          <input type="number" matInput placeholder="salaire..."  class="input-label-lg pull-right" [(ngModel)]="offre.salary" required name="salary" #salary>
+          <br/>
+          <br/>
+          <br/>
+          <label class="input-label-lg">Date de création</label>
+          <input type="date" matInput placeholder="Date de création" class="input-label-lg select-css" [(ngModel)]="offre.creationDate" required name="creationDate" #creationDate>
+          <br/>
+          <label class="input-label-lg">Disponibilité</label>
+          <select placeholder="typeCompteId" class="select-css optiont">
+            <option value="responsable">oui</option>
+            <option value="candidat">non</option>
+          </select>
+          <br/>
+          <label class="input-label-lg">Description</label>
+          <textarea matInput placeholder="description..." class="input-label-lg pull-right" [(ngModel)]="offre.description" required name="description" #description></textarea>
+
+        </div>
+      <br/>
+      <br/>
+      <br/>
+
+      <div>
+        <button mat-raised-button color="primary" class="btn btn-warning pull-left" type="submit" [disabled]="!offreForm.form.valid"><i class="fa fa-plus"></i>SAVE</button>
+        <button mat-raised-button color="secondary"  class="btn btn-warning pull-left"(click)="remove(offre.href)" *ngIf="offre.href" type="button">Delete</button>
+        <button [routerLink]="['/all-offres']" class="btn btn-warning pull-right" type="button">Cancel</button>
+      </div>
 
 
-  <input type="hidden" name="href" [(ngModel)]="offre.href">
 
-  <input matInput placeholder="Offre Name" [(ngModel)]="offre.name"
-         required name="name" #name>
-  <input matInput placeholder="description" [(ngModel)]="offre.description"
-         required name="description" #description>
-
-  <input type="date" matInput placeholder="creationDate" [(ngModel)]="offre.creationDate"
-         required name="creationDate" #creationDate>
-  <input matInput placeholder="Disponibility" [(ngModel)]="offre.disponible"
-         required name="disponible" #disponible>
-  <input type="number" matInput placeholder="salary.." [(ngModel)]="offre.salary"
-         required name="salary" #salary>
-
-
-
-
-
-  <button mat-raised-button color="primary" type="submit"
-          [disabled]="!offreForm.form.valid">Save</button>
-  <button mat-raised-button color="secondary" (click)="remove(offre.href)"
-          *ngIf="offre.href" type="button">Delete</button>
-  <a mat-button routerLink="/all-offres">Cancel</a>
-
-
-
-</form>
+    </form>
+  </div>
+</div>
