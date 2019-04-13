@@ -3,16 +3,15 @@
     <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
     <p id="profile-name" class="profile-name-card"></p>
 
-  <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)">
+  <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)" >
 
       <h2 style="text-align: center" >{{compte.name ? 'Edit' : 'Add'}} Compte </h2>
       <input class="form-control" type="hidden" name="href" [(ngModel)]="compte.href">
     <div>
       <div>
       </div>
-      <select placeholder="typeCompteId" class="select-css" [(ngModel)]="compte.typeCompteId"
+      <select placeholder="typeCompteId" class="select-css option" [(ngModel)]="compte.typeCompteId"
                required name="typeCompteId" #typeCompteId>
-        <option>Choisir type compte</option>
         <option value="responsable">responsable</option>
         <option value="candidat">candidat</option>
         <option value="employe">employé</option>
@@ -21,43 +20,27 @@
     <br/>
 
       <div>
-          <input matInput placeholder="Compte Name" class="input-label-lg" [(ngModel)]="compte.name" maxlength="18" style="width: 80%"
-               required name="name" #name>
-          <input matInput placeholder="Lastname" class="input-label-lg" [(ngModel)]="compte.lastname"
-               required name="lastname" #lasname>
+          <input matInput placeholder="Email..." class="input-label-lg pull-right" pattern="[^ @]*@[^ @]*" [(ngModel)]="compte.email" required name="email" #email>
+          <input matInput placeholder="Compte Name..." class="input-label-lg pull-right" [(ngModel)]="compte.name" required name="name" #name>
+          <input matInput placeholder="Lastname..." class="input-label-lg pull-right" [(ngModel)]="compte.lastname" required name="lastname" #lasname>
+          <input matInput placeholder="Date Birth" class="input-label-lg pull-right" type="date" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
+          <input matInput placeholder="Address.." class="input-label-lg pull-right" [(ngModel)]="compte.address" required name="address" #address>
+          <input matInput placeholder="Tel..." class="input-label-lg pull-right" [(ngModel)]="compte.tel" required name="tel" #tel>
+
       </div>
-    <br/>
+      <br/>
+      <br/>
 
 
     <div>
-        <label>Email Address</label>
-        <input matInput class="form-control" pattern="[^ @]*@[^ @]*" placeholder="Email" [(ngModel)]="compte.email"
-           required name="email" #email>
-          <br/>
-
-      <input matInput placeholder="Tel.." [(ngModel)]="compte.tel"
-           required name="tel" #tel>
-      <br/>
-
-      <input type="date" matInput placeholder="Date Birth" [(ngModel)]="compte.dateBirth"
-           required name="dateBirth" #dateBirth>
-      <br/>
-
-      <input type="file" matInput placeholder="CV" [(ngModel)]="compte.cv"
-           required name="cv" #cv>
-      <br/>
-
-      <input type="file" matInput placeholder="Contrat" [(ngModel)]="compte.contrat"
-           required name="contrat" #contrat>
-      <br/>
-
-      <input matInput placeholder="Address.." [(ngModel)]="compte.address"
-           required name="address" #address>
-    </div>
+        <input type="file" class="select-css" matInput placeholder="CV" [(ngModel)]="compte.cv" required name="cv" #cv>
+        <br/>
+        <input type="file" class="select-css" matInput placeholder="Contrat" [(ngModel)]="compte.contrat" required name="contrat" #contrat>
+      </div>
 
 
 
-
+    <br/>
   <div>
     <button type="submit"
             mat-raised-button color="primary"
@@ -65,8 +48,8 @@
             [disabled]="!compteForm.form.valid"
             style="margin-left:12px;"><i class="fa fa-plus"></i>SAVE
     </button>
-    <button [routerLink]="['/login']" class="btn btn-warning pull-left" type="button">Cancel</button>
-    <button mat-raised-button color="secondary" (click)="remove(compte.href)" *ngIf="compte.href" type="button">Delete</button>
+    <button [routerLink]="['/login']" class="btn btn-warning pull-right" type="button">Cancel</button>
+    <button mat-raised-button color="secondary" class="btn btn-warning pull-left" (click)="remove(compte.href)" *ngIf="compte.href" type="button">Delete</button>
   </div>
 
 
