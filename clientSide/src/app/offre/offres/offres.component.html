@@ -1,4 +1,10 @@
-
+<div>
+  <button type="button"
+          [routerLink]="['/compte-add']"
+          class="btn btn-warning pull-right"
+          style="margin-left:12px;"><i class="fa fa-plus"></i> nouveau Compte
+  </button>
+</div>
 
 
 
@@ -7,5 +13,5 @@
 <div *ngFor="let offre of offres">
   <a  [routerLink]="['/offre-edit', offre.id]" >{{offre.name}}</a>
 </div>
-<button [routerLink]="['/offre-add']">Add</button>
+
 
