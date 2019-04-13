@@ -5,30 +5,6 @@
           style="margin-left:12px;"><i class="fa fa-plus"></i>Ajouter Compte
   </button>
 </div>
-<!--Responsable :
-
-<div *ngFor="let compte of comptes">
-  <a *ngIf="compte.typeCompteId=='responsable'" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
-
-
-</div>
-    Candidat :
-
-<div *ngFor="let compte of comptes">
-    <a *ngIf="compte.typeCompteId=='candidat'" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
-
-
-
-</div>
-    Employé
-
-<div *ngFor="let compte of comptes">
-    <a *ngIf="compte.typeCompteId=='employe'" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
-
-
-</div>
-
-<a [routerLink]="['/all-offres']" >offre </a>-->
 
 <div class="row" style="margin-left: 20%; margin-top: 28px; width: 50%">
     <!-- TyoeCompte Menu -->
@@ -58,16 +34,20 @@
       <div class="row">
         <!-- Note list -->
         <div *ngFor="let compte of comptes">
-
-          <a *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
-
+          <ul>
+          <li>
+            <a *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
+          </li>
           <a *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
 
           <a *ngIf="compte.typeCompteId=='employe' && idTypeCompte==3" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
+          </ul>
 
         </div>
       </div>
     </div>
 </div>
+
+
 
 
