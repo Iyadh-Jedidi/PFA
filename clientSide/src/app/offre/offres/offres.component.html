@@ -7,7 +7,11 @@
 </div>
 
 <div *ngFor="let offre of offres">
-  <a  [routerLink]="['/offre-edit', offre.id]" >{{offre.name}}</a>
+  <ul>
+    <li>
+      <a  [routerLink]="['/offre-edit', offre.id]" >{{offre.name}}</a>
+    </li>
+  </ul>
 </div>
 
 
