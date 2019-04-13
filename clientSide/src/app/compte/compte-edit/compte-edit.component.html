@@ -59,8 +59,13 @@
                 [disabled]="!compteForm.form.valid"
                 style="margin-left:12px;"><i class="fa fa-plus"></i>SAVE
         </button>
+<<<<<<< HEAD
         <button [routerLink]="['/all-comptes']" class="btn btn-warning pull-right" type="button">Cancel</button>
         <button mat-raised-button color="secondary" class="btn btn-warning " (click)="remove(compte.href)" *ngIf="compte.href" type="button">Delete</button>
+=======
+        <button [routerLink]="['/all-comptes/']" class="btn btn-warning pull-right" type="button">Cancel</button>
+        <button mat-raised-button color="secondary" class="btn btn-warning pull-left" (click)="remove(compte.href)" *ngIf="compte.href" type="button">Delete</button>
+>>>>>>> bf2ca680969bd9e3ee245e83e4a218ca417474b4
       </div>
 
 
