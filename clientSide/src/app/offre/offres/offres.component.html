@@ -1,15 +1,13 @@
 <div>
-<div>
-  <a [routerLink]="['/offre-add']" class="btn btn-warning pull-right"><i class="fa fa-plus"></i>Ajouter Offre
-  </a>
+  <a [routerLink]="['/compte-add']" class="btn btn-warning pull-right"><i class="fa fa-plus"></i>Ajouter Offre</a>
 </div>
-
-<div *ngFor="let offre of offres">
+<div>
+<div *ngFor="let offre of offres" style="margin-left: 300px; margin-top: 28px; width: 70%">
   <ul>
     <li>
-      <a  [routerLink]="['/offre-edit', offre.id]" >{{offre.name}}</a>
+      <a [routerLink]="['/offre-edit', offre.id]" >{{offre.name}}</a>
     </li>
   </ul>
 </div>
 
-
+</div>
