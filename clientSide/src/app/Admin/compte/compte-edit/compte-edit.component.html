@@ -22,10 +22,10 @@
 
       <div>
         <label class="input-label-lg">Nom </label>
-        <input matInput placeholder="Nom..." class="input-label-lg pull-right" [(ngModel)]="compte.name" required name="name" #name>
+        <input matInput type="text" placeholder="Entrer votre nom..." [(ngModel)]="compte.name" required name="name" #name>
         <br/>
         <label class="input-label-lg">Prénom</label>
-        <input matInput placeholder="Prénom..." class="input-label-lg pull-right" [(ngModel)]="compte.lastname" required name="lastname" #lasname>
+        <input matInput type="text" placeholder="Entrer votre prénom..."  [(ngModel)]="compte.lastname" required name="lastname" #lasname>
         <br/>
         <label class="input-label-lg">Date de naissance</label>
         <input matInput class="input-label-lg select-css" type="date" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
@@ -34,13 +34,13 @@
       <div>
 
         <label class="input-label-lg">Email</label>
-        <input matInput placeholder="Email..." class="input-label-lg pull-right" pattern="[^ @]*@[^ @]*" [(ngModel)]="compte.email" required name="email" #email>
+        <input matInput placeholder="Entrer votre Email..." type="text" pattern="[^ @]*@[^ @]*" [(ngModel)]="compte.email" required name="email" #email>
         <br/>
         <label class="input-label-lg">Adresse</label>
-        <input matInput placeholder="Address.." class="input-label-lg pull-right" [(ngModel)]="compte.address" required name="address" #address>
+        <input matInput placeholder="Entrer votre Address.." type="text" [(ngModel)]="compte.address" required name="address" #address>
         <br/>
         <label class="input-label-lg">Numéro tel</label>
-        <input matInput placeholder="Tel..." class="input-label-lg pull-right" [(ngModel)]="compte.tel" required name="tel" #tel>
+        <input matInput placeholder="Entrer votre num Tel..." type="text" [(ngModel)]="compte.tel" required name="tel" #tel>
       </div>
       <br/>
       <div>
