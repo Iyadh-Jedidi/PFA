@@ -26,10 +26,10 @@ const appRoutes: Routes = [
   {
     path: 'logout',
     component: LogoutComponent,
-    canActivate:[AuthGaurdService]
+    canActivate: [AuthGaurdService]
   },
   {
-    path: 'all-comptes',
+    path: 'admin/comptes',
     component: ComptesComponent,
     canActivate: [AuthGaurdService]
   },
@@ -39,22 +39,22 @@ const appRoutes: Routes = [
     canActivate: [AuthGaurdService]
   },
   {
-    path: 'compte-edit/:id',
+    path: 'admin/comptes/:id',
     component: CompteEditComponent,
     canActivate: [AuthGaurdService]
   },
   {
-    path: 'all-offres',
+    path: 'admin/offres',
     component: OffresComponent,
     canActivate:[AuthGaurdService]
   },
   {
     path: 'offre-add',
     component: OffreEditComponent,
-    canActivate:[AuthGaurdService]
+    canActivate: [AuthGaurdService]
   },
   {
-    path: 'offre-edit/:id',
+    path: 'admin/offres/:id',
     component: OffreEditComponent,
     canActivate: [AuthGaurdService]
   }

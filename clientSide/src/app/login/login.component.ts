@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     let n = this.loginservice.authenticate(this.username, this.password);
     if (n !== -2 ) {
       if (n === -1) {
-        this.router.navigate(['/all-comptes']);
+        this.router.navigate(['/admin/comptes']);
       } else {
         this.router.navigate(['/compte-edit', n]);
       }

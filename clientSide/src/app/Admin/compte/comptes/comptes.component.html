@@ -32,14 +32,14 @@
 
           <ul>
             <li>
-              <a *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
+              <a *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}}</a>
             </li>
             <li>
-              <a *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}}</a>
+              <a *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}}</a>
             </li>
 
             <li>
-              <a *ngIf="compte.typeCompteId=='employe' && idTypeCompte==3" [routerLink]="['/compte-edit', compte.id]" >{{compte.name}} {{compte.lastname}}</a>
+              <a *ngIf="compte.typeCompteId=='employe' && idTypeCompte==3" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}} {{compte.lastname}}</a>
             </li>
           </ul>
 
