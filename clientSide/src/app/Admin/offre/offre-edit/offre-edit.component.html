@@ -39,7 +39,7 @@
       <div>
         <button mat-raised-button color="primary" class="btn btn-warning pull-left" type="submit" [disabled]="!offreForm.form.valid"><i class="fa fa-plus"></i>SAVE</button>
         <button mat-raised-button color="secondary"  class="btn btn-warning pull-left"(click)="remove(offre.href)" *ngIf="offre.href" type="button">Delete</button>
-        <button [routerLink]="['/all-offres']" class="btn btn-warning pull-right" type="button">Cancel</button>
+        <button [routerLink]="['/admin/offres']" class="btn btn-warning pull-right" type="button">Cancel</button>
       </div>
 
 
