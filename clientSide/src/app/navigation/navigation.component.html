@@ -16,7 +16,7 @@
         <a class="nav-link" routerLink="/all-offres">Offres</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link pull-right" routerLink="/login">Déconnecter</a>
+        <a *ngIf="loginService.isUserLoggedIn()" class="nav-link pull-right" routerLink="/logout">Déconnecter</a>
       </li>
     </ul>
   </div>

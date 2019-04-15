@@ -11,13 +11,20 @@ import { CompteEditComponent } from './compte/compte-edit/compte-edit.component'
 import { OffresComponent } from './offre/offres/offres.component';
 import { OffreEditComponent } from './offre/offre-edit/offre-edit.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import {AuthGaurdService} from './shared/auth-gaurd.service';
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/all-comptes', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+
+  {path: 'login', component: LoginComponent},
+  {path: 'logout', component: LogoutComponent},
   {
     path: 'all-comptes',
-    component: ComptesComponent
+    component: ComptesComponent,
+    canActivate:[AuthGaurdService]
   },
   {
     path: 'compte-add',
@@ -48,7 +55,9 @@ const appRoutes: Routes = [
     CompteEditComponent,
     OffresComponent,
     OffreEditComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
