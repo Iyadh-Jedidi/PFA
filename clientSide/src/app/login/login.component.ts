@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
       if (n === -1) {
         this.router.navigate(['/admin/comptes']);
       } else {
-        this.router.navigate(['/compte-edit', n]);
+        this.router.navigate(['/admin/comptes', n]);
       }
     } else {
       this.invalidLogin = true;
