@@ -2,15 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ComptesComponent } from './compte/comptes/comptes.component';
+import { ComptesComponent } from './Admin/compte/comptes/comptes.component';
 import {HttpClientModule} from '@angular/common/http';
 import {ApiCompteService} from './shared/compte/apiCompte.service';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CompteEditComponent } from './compte/compte-edit/compte-edit.component';
-import { OffresComponent } from './offre/offres/offres.component';
-import { OffreEditComponent } from './offre/offre-edit/offre-edit.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { CompteEditComponent } from './Admin/compte/compte-edit/compte-edit.component';
+import { OffresComponent } from './Admin/offre/offres/offres.component';
+import { OffreEditComponent } from './Admin/offre/offre-edit/offre-edit.component';
+import { NavigationComponent } from './Admin/navigation/navigation.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import {AuthGaurdService} from './shared/auth-gaurd.service';
@@ -19,32 +19,44 @@ import {AuthGaurdService} from './shared/auth-gaurd.service';
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
-  {path: 'login', component: LoginComponent},
-  {path: 'logout', component: LogoutComponent},
   {
-    path: 'all-comptes',
-    component: ComptesComponent,
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent,
     canActivate:[AuthGaurdService]
   },
   {
+    path: 'all-comptes',
+    component: ComptesComponent,
+    canActivate: [AuthGaurdService]
+  },
+  {
     path: 'compte-add',
-    component: CompteEditComponent
+    component: CompteEditComponent,
+    canActivate: [AuthGaurdService]
   },
   {
     path: 'compte-edit/:id',
-    component: CompteEditComponent
+    component: CompteEditComponent,
+    canActivate: [AuthGaurdService]
   },
   {
     path: 'all-offres',
-    component: OffresComponent
+    component: OffresComponent,
+    canActivate:[AuthGaurdService]
   },
   {
     path: 'offre-add',
-    component: OffreEditComponent
+    component: OffreEditComponent,
+    canActivate:[AuthGaurdService]
   },
   {
     path: 'offre-edit/:id',
-    component: OffreEditComponent
+    component: OffreEditComponent,
+    canActivate: [AuthGaurdService]
   }
 
 ];

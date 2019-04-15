@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiCompteService} from '../../shared/compte/apiCompte.service';
+import {ApiCompteService} from '../../../shared/compte/apiCompte.service';
 
 @Component({
   selector: 'app-comptes',

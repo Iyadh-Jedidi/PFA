@@ -18,16 +18,15 @@ export class AuthentificationService {
   authenticate(username, password) {
     if (username === 'admin' && password === 'admin') {
       sessionStorage.setItem('username', username)
-      return true;
+      return -1;
     } else {
-      for (let compte of this.comptes){
+      for (let compte of this.comptes) {
         if (username === compte.name && password === 'admin')  {
-          this.router.navigate(['/compte-edit', compte.id]);
           sessionStorage.setItem('username', username);
-          return true;
+          return compte.id;
         }
       }
-      return false;
+      return -2;
 
     }
   }

@@ -12,18 +12,20 @@ export class LoginComponent implements OnInit {
   username = ''
   password = ''
   invalidLogin = false
-
+  comptes: Array <any>;
   constructor(private router: Router,
               private loginservice: AuthentificationService) { }
 
   ngOnInit() {
   }
-
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.router.navigate(['/all-comptes'])
-      this.invalidLogin = false;
+    let n = this.loginservice.authenticate(this.username, this.password);
+    if (n !== -2 ) {
+      if (n === -1) {
+        this.router.navigate(['/all-comptes']);
+      } else {
+        this.router.navigate(['/compte-edit', n]);
+      }
     } else {
       this.invalidLogin = true;
     }

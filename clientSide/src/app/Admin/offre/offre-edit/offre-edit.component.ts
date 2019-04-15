@@ -1,35 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ApiCompteService} from '../../shared/compte/apiCompte.service';
+import {ApiOffreService} from '../../../shared/offre/apiOffre.service';
 import {NgForm} from '@angular/forms';
 
 @Component({
-  selector: 'app-compte-edit',
-  templateUrl: './compte-edit.component.html',
-  styleUrls: ['./compte-edit.component.css']
+  selector: 'app-offre-edit',
+  templateUrl: './offre-edit.component.html',
+  styleUrls: ['./offre-edit.component.css']
 })
-export class CompteEditComponent implements OnInit {
+export class OffreEditComponent implements OnInit {
 
-  compte: any = {};
+  offre: any = {};
 
   sub: Subscription;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private apiService: ApiCompteService) {
+              private apiService: ApiOffreService) {
   }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
       if (id) {
-        this.apiService.get(id).subscribe((compte: any) => {
-          if (compte) {
-            this.compte = compte;
-            this.compte.href = compte._links.self.href;
+        this.apiService.get(id).subscribe((offre: any) => {
+          if (offre) {
+            this.offre = offre;
+            this.offre.href = offre._links.self.href;
           } else {
-            console.log(`Car with id '${id}' not found, returning to list`);
+            console.log(`Offre with id '${id}' not found, returning to list`);
             this.gotoList();
           }
         });
@@ -42,7 +42,7 @@ export class CompteEditComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/all-comptes']);
+    this.router.navigate(['/all-offres']);
   }
 
   save(form: NgForm) {

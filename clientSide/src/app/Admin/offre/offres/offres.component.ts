@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiCompteService} from '../../shared/compte/apiCompte.service';
-import {ApiOffreService} from '../../shared/offre/apiOffre.service';
+import {ApiOffreService} from '../../../shared/offre/apiOffre.service';
 
 @Component({
   selector: 'app-offres',
