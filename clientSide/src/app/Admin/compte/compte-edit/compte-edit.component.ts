@@ -29,7 +29,7 @@ export class CompteEditComponent implements OnInit {
             this.compte = compte;
             this.compte.href = compte._links.self.href;
           } else {
-            console.log(`Car with id '${id}' not found, returning to list`);
+            console.log(`Compte with id '${id}' not found, returning to list`);
             this.gotoList();
           }
         });

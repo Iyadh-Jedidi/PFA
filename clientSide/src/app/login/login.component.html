@@ -36,21 +36,38 @@
 				</div>
 			</div>
 			<div class="sign-up-htm">
+				<input class="form-control" type="hidden" name="href" [(ngModel)]="compte.href">
 				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input">
+						<input value="candidat" class="form-control" disabled [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input name="pass" type="password" class="input" data-type="password">
+					<label for="user" class="label">Nom</label>
+					<input id="user" type="text" class="input" [(ngModel)]="compte.name" required name="name" #name>
+				</div>
+				
+				<div class="group">
+						<label for="user" class="label">Prenom</label>
+						<input id="user" type="text" class="input" [(ngModel)]="compte.lastname" required name="lastname" #lasname>
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Repeat Password</label>
-					<input name="pass" type="password" class="input" data-type="password">
+						<label for="user" class="label">Date Naissance</label>
+						<input id="user" type="date" class="input" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
 				</div>
 				<div class="group">
-					<label for="pass" class="label">Email Address</label>
-					<input name="pass" type="text" class="input">
+						<label for="user" class="label">Email</label>
+						<input id="user" type="email" class="input" pattern="[^ @]*@[^ @]*" [(ngModel)]="compte.email" required name="email" #email>
+				</div>
+				<div class="group">
+						<label for="user" class="label">Adresse</label>
+						<input id="user" type="text" class="input" [(ngModel)]="compte.address" required name="address" #address>
+				</div>
+				<div class="group">
+						<label for="user" class="label">Numéro Tel</label>
+						<input id="user" type="text" class="input" [(ngModel)]="compte.tel" required name="tel" #tel>
+				</div>
+				<div class="group">
+						<label for="user" class="label">CV</label>
+						<input id="user" type="file" class="input" [(ngModel)]="compte.cv" required name="cv" #cv>
 				</div>
 				<div class="group">
 					<input type="submit" class="button" value="Sign Up">
