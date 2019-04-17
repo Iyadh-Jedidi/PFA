@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormationComponent } from './formation/formation.component';
 import {ProfilenavigationComponent} from './profile/profilenavigation/profilenavigation.component';
+import { HomeNavigationComponent } from './home/home-navigation/home-navigation.component';
 
 
 const appRoutes: Routes = [
@@ -91,7 +92,8 @@ const appRoutes: Routes = [
     HomeComponent,
     ProfileComponent,
     FormationComponent,
-    ProfilenavigationComponent
+    ProfilenavigationComponent,
+    HomeNavigationComponent
   ],
   imports: [
     BrowserModule,
