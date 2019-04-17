@@ -14,6 +14,7 @@ import { NavigationComponent } from './Admin/navigation/navigation.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import {AuthGaurdService} from './shared/auth-gaurd.service';
+import { HomeComponent } from './home/home.component';
 
 
 const appRoutes: Routes = [
@@ -69,7 +70,8 @@ const appRoutes: Routes = [
     OffreEditComponent,
     NavigationComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthentificationService } from '../shared/authentification.service';
+import { ApiCompteService } from '../shared/compte/apiCompte.service';
+import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +15,22 @@ export class LoginComponent implements OnInit {
   username = ''
   password = ''
   invalidLogin = false
-  comptes: Array <any>;
-  constructor(private router: Router,
-              private loginservice: AuthentificationService) { }
+  compte: any = {typeCompteId:'candidat'};
+  sub: Subscription;
+  constructor(private router: Router,private route: ActivatedRoute,
+              private loginservice: AuthentificationService,
+              private apiService: ApiCompteService) { }
 
   ngOnInit() {
+    
+  }
+  gotoLogin() {
+    this.router.navigate(['/login']);
+  }
+  save(form: NgForm) {
+    this.apiService.save(form).subscribe(result => {
+      this.gotoLogin();
+    }, error => console.error(error));
   }
   checkLogin() {
     let n = this.loginservice.authenticate(this.username, this.password);

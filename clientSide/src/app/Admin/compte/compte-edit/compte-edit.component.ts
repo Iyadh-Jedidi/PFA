@@ -42,7 +42,7 @@ export class CompteEditComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/all-comptes']);
+    this.router.navigate(['/admin/comptes']);
   }
 
   save(form: NgForm) {
