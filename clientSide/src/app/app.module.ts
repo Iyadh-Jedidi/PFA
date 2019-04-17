@@ -21,7 +21,7 @@ import {ProfilenavigationComponent} from './profile/profilenavigation/profilenav
 
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
 
   {
     path: 'login',
@@ -36,6 +36,10 @@ const appRoutes: Routes = [
     path: 'admin/comptes',
     component: ComptesComponent,
     canActivate: [AuthGaurdService]
+  },
+  {
+    path:'home',
+    component:HomeComponent
   },
   {
     path: 'profile/:id',
