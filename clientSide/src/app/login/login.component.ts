@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   gotoLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
   save(form: NgForm) {
     this.apiService.save(form).subscribe(result => {
