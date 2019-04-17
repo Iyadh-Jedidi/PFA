@@ -15,6 +15,8 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import {AuthGaurdService} from './shared/auth-gaurd.service';
 import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { FormationComponent } from './formation/formation.component';
 
 
 const appRoutes: Routes = [
@@ -35,6 +37,16 @@ const appRoutes: Routes = [
     canActivate: [AuthGaurdService]
   },
   {
+    path: 'profile/:id',
+    component: ProfileComponent,
+    canActivate: [AuthGaurdService]
+  },
+  {
+  path: 'profile/formation',
+  component: FormationComponent,
+  canActivate: [AuthGaurdService]
+},
+  {
     path: 'compte-add',
     component: CompteEditComponent,
     canActivate: [AuthGaurdService]
@@ -47,7 +59,7 @@ const appRoutes: Routes = [
   {
     path: 'admin/offres',
     component: OffresComponent,
-    canActivate:[AuthGaurdService]
+    canActivate: [AuthGaurdService]
   },
   {
     path: 'offre-add',
@@ -71,7 +83,9 @@ const appRoutes: Routes = [
     NavigationComponent,
     LoginComponent,
     LogoutComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent,
+    FormationComponent
   ],
   imports: [
     BrowserModule,
