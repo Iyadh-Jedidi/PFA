@@ -24,6 +24,7 @@ export class CompteEditComponent implements OnInit {
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
       if (id) {
+        console.log(id);
         this.apiService.get(id).subscribe((compte: any) => {
           if (compte) {
             this.compte = compte;
