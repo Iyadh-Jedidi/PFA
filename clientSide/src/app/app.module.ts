@@ -19,6 +19,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormationComponent } from './formation/formation.component';
 import {ProfilenavigationComponent} from './profile/profilenavigation/profilenavigation.component';
 import { HomeNavigationComponent } from './home/home-navigation/home-navigation.component';
+import { NoAuthGaurdService } from './shared/no-auth-gaurd.service';
 
 
 const appRoutes: Routes = [
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
   },
   {
     path:'home',
-    component:HomeComponent
+    component:HomeComponent,
   },
   {
     path: 'profile/:id',
