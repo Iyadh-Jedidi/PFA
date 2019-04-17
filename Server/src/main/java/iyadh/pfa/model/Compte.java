@@ -20,6 +20,7 @@ public class Compte {
     private String lastname;
     private String TypeCompteId;
     private String email;
+    private String password;
     private Long Tel;
     private Date DateBirth;
     private String Address;
@@ -106,5 +107,13 @@ public class Compte {
 
     public void setContrat(File contrat) {
         Contrat = contrat;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
