@@ -21,7 +21,7 @@ export class AuthentificationService {
       return -1;
     } else {
       for (let compte of this.comptes) {
-        if (username === compte.name && password === 'admin')  {
+        if (username === compte.name && password ===compte.password)  {
           sessionStorage.setItem('username', username);
           return compte.id;
         }
