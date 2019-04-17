@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {AuthentificationService} from '../../shared/authentification.service';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  selector: 'app-profilenavigation',
+  templateUrl: './profilenavigation.component.html',
+  styleUrls: ['./profilenavigation.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class ProfilenavigationComponent implements OnInit {
 
 
 

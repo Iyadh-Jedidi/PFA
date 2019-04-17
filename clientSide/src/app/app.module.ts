@@ -17,6 +17,7 @@ import {AuthGaurdService} from './shared/auth-gaurd.service';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormationComponent } from './formation/formation.component';
+import {ProfilenavigationComponent} from './profile/profilenavigation/profilenavigation.component';
 
 
 const appRoutes: Routes = [
@@ -85,7 +86,8 @@ const appRoutes: Routes = [
     LogoutComponent,
     HomeComponent,
     ProfileComponent,
-    FormationComponent
+    FormationComponent,
+    ProfilenavigationComponent
   ],
   imports: [
     BrowserModule,
