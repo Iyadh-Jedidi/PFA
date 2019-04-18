@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
               private apiService: ApiCompteService) { }
 
   ngOnInit() {
+    
   }
 
   gotoHome() {
@@ -30,11 +31,11 @@ export class LoginComponent implements OnInit {
   gotoSignup(){
     this.router.navigate(['/signup']);
   }
-  // save(form: NgForm) {
-  //   this.apiService.save(form).subscribe(result => {
-  //     this.gotoHome();
-  //   }, error => console.error(error));
-  // }
+  save(form: NgForm) {
+    this.apiService.save(form).subscribe(result => {
+      this.gotoHome();
+    }, error => console.error(error));
+  }
   checkLogin() {
     let n = this.loginservice.authenticate(this.username, this.password);
     if (n !== -2 ) {
@@ -47,5 +48,7 @@ export class LoginComponent implements OnInit {
       this.invalidLogin = true;
     }
   }
+  
 
 }
+
