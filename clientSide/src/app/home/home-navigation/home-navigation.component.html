@@ -10,7 +10,11 @@
           <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item">
-          <a href="/home#" class="w3-bar-item w3-button w3-amber w3-hover-amber"><i class="fa fa-home w3-margin-right"></i>Logo</a>        </li>
+          <a href="/home#" class="w3-bar-item w3-button w3-amber w3-hover-amber"><i class="fa fa-home w3-margin-right"></i>Home</a>
+      </li>
+       <li class="nav-item">
+        <a *ngIf="loginService.isUserLoggedIn()" class="nav-link w3-bar-item w3-button w3-hide-small w3-hover-white" [routerLink]="['/profile',id]">Profile</a>
+      </li>
       <li class="nav-item">
           <a href="/home#team" class="nav-link w3-bar-item w3-button w3-hide-small w3-hover-white">Notre équipe</a>
       </li>

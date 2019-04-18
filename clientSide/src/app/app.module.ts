@@ -19,8 +19,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { FormationComponent } from './formation/formation.component';
 import {ProfilenavigationComponent} from './profile/profilenavigation/profilenavigation.component';
 import { HomeNavigationComponent } from './home/home-navigation/home-navigation.component';
-import { NoAuthGaurdService } from './shared/no-auth-gaurd.service';
 import { SignupComponent } from './signup/signup.component';
+import {CookieService} from 'ngx-cookie-service';
 
 
 const appRoutes: Routes = [
@@ -45,8 +45,8 @@ const appRoutes: Routes = [
     canActivate: [AuthGaurdService]
   },
   {
-    path:'home',
-    component:HomeComponent,
+    path: 'home',
+    component: HomeComponent
   },
   {
     path: 'profile/:id',
@@ -107,9 +107,9 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
-  providers: [ApiCompteService],
+  providers: [ApiCompteService, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

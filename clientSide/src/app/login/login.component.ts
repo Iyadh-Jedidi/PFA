@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
               private apiService: ApiCompteService) { }
 
   ngOnInit() {
-    
   }
 
   gotoHome() {
@@ -37,18 +36,8 @@ export class LoginComponent implements OnInit {
     }, error => console.error(error));
   }
   checkLogin() {
-    let n = this.loginservice.authenticate(this.username, this.password);
-    if (n !== -2 ) {
-      if (n === -1) {
-        this.router.navigate(['/admin/comptes']);
-      } else {
-        this.router.navigate(['/profile', n]);
-      }
-    } else {
-      this.invalidLogin = true;
-    }
+    this.loginservice.authenticate(this.username, this.password);
   }
-  
 
 }
 

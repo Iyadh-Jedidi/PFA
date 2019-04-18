@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthentificationService } from 'src/app/shared/authentification.service';
+import {CookieService} from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-home-navigation',
@@ -8,8 +9,8 @@ import { AuthentificationService } from 'src/app/shared/authentification.service
 })
 export class HomeNavigationComponent implements OnInit {
 
-  constructor(private loginService: AuthentificationService) { }
-
+  constructor(private loginService: AuthentificationService, private cookieService: CookieService) { }
+   id = this.cookieService.get('id');
   ngOnInit() {
   }
 
