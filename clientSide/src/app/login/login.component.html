@@ -1,4 +1,4 @@
-<!--<div class="container">
+<!-- <div class="container">
   <div>
     User Name : <input type="text" name="username" [(ngModel)]="username">
     Password : <input type="password" name="password" [(ngModel)]="password">
@@ -11,7 +11,7 @@
 
 
 
-<div class="login-wrap">
+<!-- <div class="login-wrap">
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
 		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
@@ -83,4 +83,30 @@
 			</form>
 		</div>
 	</div>
-</div>
+</div> -->
+
+<form>
+  <div class="imgcontainer">
+    <img src="http://pngimages.net/sites/default/files/user-png-image-16233.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required name="username" [(ngModel)]="username">
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required name="password" [(ngModel)]="password">
+        
+    <button (click)=checkLogin() type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+		<button (click)="gotoHome()" type="button" class="cancelbtn">Cancel</button>
+		<button (click)="gotoSignup()" type="button" class="signupbtn">sign up</button>
+		
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>

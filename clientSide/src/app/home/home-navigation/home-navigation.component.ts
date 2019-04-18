@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthentificationService } from 'src/app/shared/authentification.service';
 
 @Component({
   selector: 'app-home-navigation',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeNavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService: AuthentificationService) { }
 
   ngOnInit() {
   }

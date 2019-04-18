@@ -17,20 +17,24 @@ export class LoginComponent implements OnInit {
   invalidLogin = false
   compte: any = {typeCompteId:'candidat'};
   sub: Subscription;
-  constructor(private router: Router,private route: ActivatedRoute,
+  constructor(private router: Router,
               private loginservice: AuthentificationService,
               private apiService: ApiCompteService) { }
 
   ngOnInit() {
   }
-  gotoLogin() {
+
+  gotoHome() {
     this.router.navigate(['/home']);
   }
-  save(form: NgForm) {
-    this.apiService.save(form).subscribe(result => {
-      this.gotoLogin();
-    }, error => console.error(error));
+  gotoSignup(){
+    this.router.navigate(['/signup']);
   }
+  // save(form: NgForm) {
+  //   this.apiService.save(form).subscribe(result => {
+  //     this.gotoHome();
+  //   }, error => console.error(error));
+  // }
   checkLogin() {
     let n = this.loginservice.authenticate(this.username, this.password);
     if (n !== -2 ) {

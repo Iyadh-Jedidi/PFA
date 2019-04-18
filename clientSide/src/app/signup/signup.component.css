@@ -192,14 +192,14 @@ input[type=text], select {
 	width:25%;
   }*/
 
-form {
+  form {
 	/* border: 3px solid #f1f1f1; */
 	width: 25%;
 	margin-left: 35%;
-	margin-top: 10%
+	margin-top: 5%
 }
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password],input[type=email] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -208,17 +208,16 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button {
+.submit {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
-  cursor: pointer;
   width: 100%;
 }
 
-button:hover {
+.submit:hover {
   opacity: 0.8;
 }
 
@@ -262,4 +261,13 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+
+.input{
+    border:none;
+	padding:15px 20px;
+	border-radius:25px;
+    background:rgba(170, 167, 167, 0.1);
+    width:100%;
+	display:block;
 }

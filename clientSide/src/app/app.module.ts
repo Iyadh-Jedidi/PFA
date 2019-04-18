@@ -20,6 +20,7 @@ import { FormationComponent } from './formation/formation.component';
 import {ProfilenavigationComponent} from './profile/profilenavigation/profilenavigation.component';
 import { HomeNavigationComponent } from './home/home-navigation/home-navigation.component';
 import { NoAuthGaurdService } from './shared/no-auth-gaurd.service';
+import { SignupComponent } from './signup/signup.component';
 
 
 const appRoutes: Routes = [
@@ -33,6 +34,10 @@ const appRoutes: Routes = [
     path: 'logout',
     component: LogoutComponent,
     canActivate: [AuthGaurdService]
+  },
+  {
+    path : 'signup',
+    component: SignupComponent
   },
   {
     path: 'admin/comptes',
@@ -94,7 +99,8 @@ const appRoutes: Routes = [
     ProfileComponent,
     FormationComponent,
     ProfilenavigationComponent,
-    HomeNavigationComponent
+    HomeNavigationComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
