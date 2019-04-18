@@ -21,6 +21,9 @@
       <br/>
 
       <div>
+        <label class="input-label-lg">Poste </label>
+        <input matInput type="text" placeholder="Entrer le poste de votre employé" [(ngModel)]="compte.poste" required name="poste" #poste>
+
         <label class="input-label-lg">Nom </label>
         <input matInput type="text" placeholder="Entrer votre nom..." [(ngModel)]="compte.name" required name="name" #name>
         <br/>
@@ -37,7 +40,7 @@
         <input matInput placeholder="Entrer votre Email..." type="email" [(ngModel)]="compte.email" required name="email" #email>
         <br/>
         <label class="input-label-lg">Mot de passe</label>
-        <input *ngIf="compte.id" matInput placeholder="Entrer votre Mot de passe..." type="password" [(ngModel)]="compte.password" required name="password" #password>
+        <input matInput placeholder="Entrer votre Mot de passe..." type="password" [(ngModel)]="compte.password" required name="password" #password>
         <br/>
         <label class="input-label-lg">Adresse</label>
         <input matInput placeholder="Entrer votre Address.." type="text" [(ngModel)]="compte.address" required name="address" #address>
