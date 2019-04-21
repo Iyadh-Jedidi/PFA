@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="527d0948-395f-4b4d-a77b-d561b5c7aedb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Compte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/iyadh/pfa/model/Compte.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/iyadh/pfa/model/Compte.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/formation/formation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/formation/formation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/formation/formation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/formation/formation.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/profile/profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/profile/profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/profile/profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/profile/profilenavigation/profilenavigation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/profile/profilenavigation/profilenavigation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/signup/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/signup/signup.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,29 +35,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Offre.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/controller/CompteController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="135">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Compte.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="e#867#868#0" expanded="true" />
                 <element signature="e#893#894#0" expanded="true" />
@@ -214,18 +199,18 @@
       <workItem from="1555745995379" duration="176000" />
       <workItem from="1555747225383" duration="903000" />
       <workItem from="1555784708223" duration="599000" />
-      <workItem from="1555837312037" duration="921000" />
+      <workItem from="1555837312037" duration="1166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15983000" />
+    <option name="totallyTimeSpent" value="16228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20151515" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20151515" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -235,7 +220,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32903227" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32903227" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -278,10 +263,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/controller/OffreController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Compte.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="135">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="e#867#868#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#1384#1385#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#2204#2205#0" expanded="true" />
+            <element signature="e#2232#2233#0" expanded="true" />
+            <element signature="e#2274#2275#0" expanded="true" />
+            <element signature="e#2308#2309#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -292,26 +287,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/controller/CompteController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/controller/OffreController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="105">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Compte.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/iyadh/pfa/controller/CompteController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
-            <element signature="e#867#868#0" expanded="true" />
-            <element signature="e#893#894#0" expanded="true" />
-            <element signature="e#1384#1385#0" expanded="true" />
-            <element signature="e#1410#1411#0" expanded="true" />
-            <element signature="e#2204#2205#0" expanded="true" />
-            <element signature="e#2232#2233#0" expanded="true" />
-            <element signature="e#2274#2275#0" expanded="true" />
-            <element signature="e#2308#2309#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
