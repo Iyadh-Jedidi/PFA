@@ -12,10 +12,10 @@ import { Subscription } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
-  username = ''
-  password = ''
-  invalidLogin = false
-  compte: any = {typeCompteId:'candidat'};
+  email = '' ;
+  password = '';
+  invalidLogin = false;
+  compte: any = {typeCompteId: 'candidat'};
   sub: Subscription;
   constructor(private router: Router,
               private loginservice: AuthentificationService,
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   gotoHome() {
     this.router.navigate(['/home']);
   }
-  gotoSignup(){
+  gotoSignup() {
     this.router.navigate(['/signup']);
   }
   save(form: NgForm) {
@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     }, error => console.error(error));
   }
   checkLogin() {
-    this.loginservice.authenticate(this.username, this.password);
+    this.loginservice.authenticate(this.email , this.password);
   }
 
 }

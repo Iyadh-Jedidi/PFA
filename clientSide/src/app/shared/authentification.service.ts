@@ -24,7 +24,7 @@ export class AuthentificationService {
       this.router.navigate(['/admin/comptes']);
     } else {
       for (let compte of this.comptes) {
-        if (username === compte.name && password === compte.password)  {
+        if (username === compte.email && password === compte.password)  {
           //sessionStorage.setItem('username', username);
           const id = compte.id;
           this.cookieService.set('id', compte.id);

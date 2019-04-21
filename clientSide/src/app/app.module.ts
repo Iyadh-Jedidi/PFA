@@ -10,15 +10,13 @@ import { FormsModule } from '@angular/forms';
 import { CompteEditComponent } from './Admin/compte/compte-edit/compte-edit.component';
 import { OffresComponent } from './Admin/offre/offres/offres.component';
 import { OffreEditComponent } from './Admin/offre/offre-edit/offre-edit.component';
-import { NavigationComponent } from './Admin/navigation/navigation.component';
+import { NavigationComponent } from './navigation/navigation.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import {AuthGaurdService} from './shared/auth-gaurd.service';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormationComponent } from './formation/formation.component';
-import {ProfilenavigationComponent} from './profile/profilenavigation/profilenavigation.component';
-import { HomeNavigationComponent } from './home/home-navigation/home-navigation.component';
 import { SignupComponent } from './signup/signup.component';
 import {CookieService} from 'ngx-cookie-service';
 import { DemandeComponent } from './formation/demande-formation/demande.component';
@@ -104,8 +102,6 @@ const appRoutes: Routes = [
     HomeComponent,
     ProfileComponent,
     FormationComponent,
-    ProfilenavigationComponent,
-    HomeNavigationComponent,
     SignupComponent,
     DemandeComponent
   ],
