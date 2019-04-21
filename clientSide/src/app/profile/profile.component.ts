@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
   private cookieService: CookieService;
   compte: any = {};
   sub: Subscription;
-  id = this.cookieService.get( 'id' );
+
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
