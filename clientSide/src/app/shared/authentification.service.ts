@@ -10,7 +10,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AuthentificationService {
   comptes: Array <any>;
-  constructor(private apiService: ApiCompteService , private router: Router,private cookieService:CookieService  ) {
+  constructor(private apiService: ApiCompteService , private router: Router, private cookieService: CookieService  ) {
     this.apiService.getAll().subscribe(data => {
       this.comptes = data;
     });
