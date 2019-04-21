@@ -3,6 +3,7 @@ import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ApiCompteService} from '../shared/compte/apiCompte.service';
 import {NgForm} from '@angular/forms';
+import {CookieService} from 'ngx-cookie-service';
 
 
 @Component({
@@ -11,13 +12,18 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  compte: any = {};
-  sub: Subscription;
-
+  comptes: Array <any>;
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private apiService: ApiCompteService) { }
+              private apiService: ApiCompteService) {
+    this.apiService.getAll().subscribe(data => {
+      this.comptes = data;
+    });
+  }
+
+  private cookieService: CookieService;
+  compte: any = {};
+  sub: Subscription;
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {

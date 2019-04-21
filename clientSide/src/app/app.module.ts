@@ -21,6 +21,7 @@ import {ProfilenavigationComponent} from './profile/profilenavigation/profilenav
 import { HomeNavigationComponent } from './home/home-navigation/home-navigation.component';
 import { SignupComponent } from './signup/signup.component';
 import {CookieService} from 'ngx-cookie-service';
+import { DemandeComponent } from './formation/demande-formation/demande.component';
 
 
 const appRoutes: Routes = [
@@ -55,6 +56,11 @@ const appRoutes: Routes = [
   },
   {
   path: 'profile/formation',
+  component: FormationComponent,
+  canActivate: [AuthGaurdService]
+},
+  {
+  path: 'formation',
   component: FormationComponent,
   canActivate: [AuthGaurdService]
 },
@@ -100,7 +106,8 @@ const appRoutes: Routes = [
     FormationComponent,
     ProfilenavigationComponent,
     HomeNavigationComponent,
-    SignupComponent
+    SignupComponent,
+    DemandeComponent
   ],
   imports: [
     BrowserModule,

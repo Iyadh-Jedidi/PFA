@@ -16,7 +16,17 @@
         <a class="nav-link" routerLink="/profile/:id">Informations Personelles </a>
       </li>
       <li class="nav-item">
+<<<<<<< HEAD
         <a *ngIf="compte.typeCompteId=='employee'" class="nav-link" routerLink="/profile/formation">Demande Formation</a>
+=======
+        <a class="nav-link" *ngIf="compte.typeCompteId == 'employe'" routerLink="/profile/formation">Demande Formation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="compte.typeCompteId == 'candidat'" routerLink="/profile/formation">Demande Formation</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" *ngIf="(compte.typeCompteId == 'responsable') && (compte.poste == 'formation')" routerLink="/profile/ajouter-formation">Ajouter Formation</a>
+>>>>>>> c4705ddbf5945318a565ada599a6e6d7340d5e23
       </li>
       <li class="nav-item">
         <a *ngIf="loginService.isUserLoggedIn()" class="nav-link pull-right" routerLink="/logout">Déconnecter</a>

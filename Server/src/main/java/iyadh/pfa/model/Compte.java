@@ -26,6 +26,7 @@ public class Compte {
     private String Address;
     private File CV;
     private File Contrat;
+    private String poste;
 
 
 
@@ -115,5 +116,13 @@ public class Compte {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPoste() {
+        return poste;
+    }
+
+    public void setPoste(String poste) {
+        this.poste = poste;
     }
 }
