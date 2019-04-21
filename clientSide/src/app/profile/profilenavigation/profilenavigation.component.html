@@ -10,13 +10,13 @@
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" routerLink="/home">home </a>
+            <a class="nav-link" routerLink="/home">Home </a>
           </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/profile/:id">Informations Personelles </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/profile/formation">Demande Formation</a>
+        <a *ngIf="compte.typeCompteId=='employee'" class="nav-link" routerLink="/profile/formation">Demande Formation</a>
       </li>
       <li class="nav-item">
         <a *ngIf="loginService.isUserLoggedIn()" class="nav-link pull-right" routerLink="/logout">Déconnecter</a>

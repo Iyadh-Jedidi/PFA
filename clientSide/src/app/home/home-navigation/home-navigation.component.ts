@@ -12,6 +12,7 @@ export class HomeNavigationComponent implements OnInit {
   constructor(private loginService: AuthentificationService, private cookieService: CookieService) { }
    id = this.cookieService.get('id');
   ngOnInit() {
+    
   }
 
 }
