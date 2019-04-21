@@ -20,6 +20,9 @@ import { FormationComponent } from './formation/formation.component';
 import { SignupComponent } from './signup/signup.component';
 import {CookieService} from 'ngx-cookie-service';
 import { DemandeComponent } from './formation/demande-formation/demande.component';
+import { EntretientsComponent } from './entretients/entretients.component';
+import { RecrutementsComponent } from './recrutements/recrutements.component';
+import { EditFormationComponent } from './formation/edit-formation/edit-formation.component';
 
 
 const appRoutes: Routes = [
@@ -53,7 +56,7 @@ const appRoutes: Routes = [
     canActivate: [AuthGaurdService]
   },
   {
-  path: 'profile/formation',
+  path: 'responsable/formation',
   component: FormationComponent,
   canActivate: [AuthGaurdService]
 },
@@ -83,6 +86,11 @@ const appRoutes: Routes = [
     canActivate: [AuthGaurdService]
   },
   {
+    path: 'ajouter-formation',
+    component: EditFormationComponent,
+    canActivate: [AuthGaurdService]
+  },
+  {
     path: 'admin/offres/:id',
     component: OffreEditComponent,
     canActivate: [AuthGaurdService]
@@ -103,7 +111,10 @@ const appRoutes: Routes = [
     ProfileComponent,
     FormationComponent,
     SignupComponent,
-    DemandeComponent
+    DemandeComponent,
+    EntretientsComponent,
+    RecrutementsComponent,
+    EditFormationComponent
   ],
   imports: [
     BrowserModule,

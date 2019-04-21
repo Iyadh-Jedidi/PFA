@@ -32,21 +32,17 @@
         <a *ngIf="loginService.isUserLoggedIn()" class="nav-link w3-bar-item w3-button w3-hide-small w3-hover-white" [routerLink]="['/profile',id]">Profile</a>
       </li>
       <!--admin-->
-      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" *ngIf="compte.id=='admin'" routerLink="/admin/comptes">Comptes </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" *ngIf="compte.id=='admin'" routerLink="/admin/offres">Offres</a>
         </li>
-      </ul>
       <!--fin admin-->
       <!--employee-->
-      <ul>
       <li class="nav-item">
         <a *ngIf="compte.typeCompteId=='employee'" class="nav-link w3-bar-item w3-button w3-hide-small w3-hover-white" routerLink="/employee/formation">Demander Formation</a>
       </li>
-      </ul>
       <!--end employee-->
 
       <!--reponsable formation-->
