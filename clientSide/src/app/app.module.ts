@@ -61,8 +61,13 @@ const appRoutes: Routes = [
   canActivate: [AuthGaurdService]
 },
   {
+  path: 'responsable/formation/:id',
+  component: EditFormationComponent,
+  canActivate: [AuthGaurdService]
+},
+  {
   path: 'formation',
-  component: FormationComponent,
+  component: EditFormationComponent,
   canActivate: [AuthGaurdService]
 },
   {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
-import {ApiOffreService} from '../../shared/offre/apiOffre.service';
 import {NgForm} from '@angular/forms';
+import {ApiformationService} from '../../shared/formation/apiformation.service';
 
 @Component({
   selector: 'app-edit-formation',
@@ -14,7 +14,7 @@ export class EditFormationComponent implements OnInit {
   sub: Subscription;
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private apiService: ApiOffreService) { }
+              private apiService: ApiformationService) { }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -37,7 +37,7 @@ export class EditFormationComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/all-formations']);
+    this.router.navigate(['/responsable/formation']);
   }
   save(form: NgForm) {
     this.apiService.save(form).subscribe(result => {
@@ -50,5 +50,6 @@ export class EditFormationComponent implements OnInit {
       this.gotoList();
     }, error => console.error(error));
   }
+
 
 }

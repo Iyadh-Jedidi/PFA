@@ -18,7 +18,7 @@
 
     <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
       <div class="wrap-input100 validate-input">
-        <input [(ngModel)]="formation.name" class="input100" type="text" name="name" placeholder="Sujet Formation">
+        <input [(ngModel)]="formation.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
         <span class="focus-input100"></span>
         <label class="label-input100">
           <span class="lnr lnr-user m-b-2"></span>
@@ -28,7 +28,7 @@
 
 
       <div class="wrap-input100 validate-input">
-        <input [(ngModel)]="formation.duree" class="input100" type="durée" name="durée" placeholder="Durée">
+        <input [(ngModel)]="formation.duree" class="input100" name="durée" placeholder="Durée">
         <span class="focus-input100"></span>
         <label class="label-input100" >
           <span class="lnr lnr-smartphone m-b-2"></span>
@@ -37,7 +37,7 @@
 
 
       <div class="wrap-input100 validate-input">
-        <textarea [(ngModel)]="formation.description" class="input100" name="message" placeholder="Description Formation"></textarea>
+        <textarea [(ngModel)]="formation.description" class="input100" name="description" placeholder="Description Formation" #description></textarea>
         <span class="focus-input100"></span>
         <label class="label-input100 rs1">
           <span class="lnr lnr-bubble"></span>
@@ -55,9 +55,11 @@
         </button>
       </div>
       <div class="container-contact100-form-btn">
-        <button type="button" (click)="remove(formation.href)" *ngIf="formation.href" [routerLink]="['/responsable/formation']" class="contact100-form-btn">
+        <button class="contact100-form-btn" (click)="remove(formation.href)" *ngIf="formation.href" type="button">
           Supprimer
         </button>
+
+
       </div>
     </form>
   </div>

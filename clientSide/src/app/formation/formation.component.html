@@ -5,14 +5,14 @@
   </option>
 </select>-->
 <app-navigation></app-navigation>
-<div>
+<div class="col-md-9">
   <a [routerLink]="['/ajouter-formation']" class="btn btn-warning pull-right"><i class="fa fa-plus"></i>Ajouter Formation</a>
 </div>
 
 <div *ngFor="let formations of formation" style="margin-left: 300px; margin-top: 28px; width: 70%">
   <ul>
     <li>
-      <a [routerLink]="['formation/info-formation', formations.id]" >{{formations.name}}</a>
+      <a [routerLink]="['/responsable/formation', formations.id]" >{{formations.name}}</a>
     </li>
   </ul>
 </div>
