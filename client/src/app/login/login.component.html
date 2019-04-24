@@ -37,7 +37,7 @@
               <div class="text-center text-muted mb-4">
                 <small>Or sign in with credentials</small>
               </div>
-              <form role="form" >
+              <form #formationForm="ngForm" (ngSubmit)="checkLogin(formationForm.value)" class="contact100-form validate-form" >
                 <div class="form-group mb-3" [ngClass]="{'focused':focus===true}">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
@@ -61,7 +61,7 @@
                   </label>
                 </div>
                 <div class="text-center">
-                  <button (click)="checkLogin()" type="submit" class="btn btn-primary my-4">Sign in</button>
+                  <button type="submit" class="btn btn-primary my-4">Sign in</button>
                 </div>
               </form>
             </div>

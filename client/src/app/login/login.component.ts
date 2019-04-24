@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 import {AuthentificationService} from '../services/authentification.service';
+import {NgForm} from '@angular/forms';
 
 
 @Component({
@@ -29,8 +30,8 @@ export class LoginComponent implements OnInit {
   gotoSignup() {
     this.router.navigate(['/signup']);
   }
-  checkLogin() {
-    this.loginservice.authenticate(this.email , this.password);
+  checkLogin(form: NgForm) {
+    this.loginservice.authenticate(form);
   }
 
 }

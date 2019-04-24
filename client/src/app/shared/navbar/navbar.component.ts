@@ -38,12 +38,10 @@ export class NavbarComponent implements OnInit {
      this.location.subscribe((ev: PopStateEvent) => {
          this.lastPoppedUrl = ev.url;
      });
-       this.apiCompte.get(this.id).subscribe((compte: any) => {
-            this.compte = compte;
-        });
+
 
     }
-    load(newLocation){
+    load(newLocation) {
 
         window.location = newLocation;
 
@@ -61,9 +59,7 @@ export class NavbarComponent implements OnInit {
             return false;
         }
     }
-    reload() {
-        window.location.reload();
-    }
+
     isDocumentation() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
         if( titlee === '/documentation' ) {
