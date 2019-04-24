@@ -22,6 +22,4 @@ public class OffreController {
                 .collect(Collectors.toList());
     }
 
-
-
 }
