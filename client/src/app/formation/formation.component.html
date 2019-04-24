@@ -1,0 +1,22 @@
+<!--<label class="input-label-lg">Choisir une formaion </label>
+<select placeholder="typeCompteId" class="select-css option" [(ngModel)]="formation.name" required name="name" #name>
+  <option *ngFor="let formations of formation" [ngValue]="formations">
+    {{formations?.name}}
+  </option>
+</select>-->
+<div class="col-md-9">
+  <a [routerLink]="['/ajouter-formation']" class="btn btn-warning pull-right"><i class="fa fa-plus"></i>Ajouter Formation</a>
+</div>
+
+<div *ngFor="let formations of formation" style="margin-left: 300px; margin-top: 28px; width: 70%">
+  <ul>
+    <li>
+      <a [routerLink]="['/responsable/formation', formations.id]" >{{formations.name}}</a>
+    </li>
+  </ul>
+</div>
+
+
+
+
+
