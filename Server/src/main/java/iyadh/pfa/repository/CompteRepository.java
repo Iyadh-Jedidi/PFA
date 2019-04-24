@@ -10,5 +10,5 @@ import java.awt.print.Pageable;
 @RepositoryRestResource
 @CrossOrigin(origins = "http://localhost:4200")
 public interface CompteRepository extends JpaRepository<Compte, Long> {
-    Compte findByEmail(String Email);
+    Compte findUserByEmail(String Email);
 }

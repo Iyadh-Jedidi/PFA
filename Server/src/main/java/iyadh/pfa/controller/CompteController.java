@@ -2,6 +2,8 @@ package iyadh.pfa.controller;
 
 import iyadh.pfa.model.Compte;
 import iyadh.pfa.repository.CompteRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.view.RedirectView;
@@ -22,40 +24,25 @@ public class CompteController {
     return repository.findAll().stream()
             .collect(Collectors.toList());
     }
-    @GetMapping("/login/{email}")
-    public RedirectView login (@RequestBody String mtp, @PathVariable String email){
-         return repository.findByEmail(email)
-                 .map( compte -> {
-			    if (compte.
 
-
-                })
-                .orElseGet(() -> {
-                    return new RedirectView("http://localhost:4200/profile/"+ compte.getId());
-                });
-
-            }
-
-    }
-
-
-
-
-
-
-    public String registration(@ModelAttribute("userForm") Compte compteForm, BindingResult bindingResult) {
-        CompteValidator.validate(compteForm, bindingResult);
-
-        if (bindingResult.hasErrors()) {
-            return "registration";
+    @GetMapping(value ="/email/{email}/password/{password}")
+    @ResponseBody
+    public ResponseEntity<Object> getUser(@PathVariable String email, @PathVariable String password) {
+        Compte compte =repository.findUserByEmail(email);
+        if(compte!= null)
+        {
+        return ResponseEntity.ok()
+                .body(new Compte(compte.getId(),compte.getName(),compte.getLastname(),
+                        compte.getTypeCompteId(),compte.getEmail(),compte.getPassword(),compte.getTel(),compte.getDateBirth(),
+                        compte.getAddress(),compte.getCV(),compte.getContrat(),compte.getPoste()));}
+        else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("File was not fount");
         }
 
-        userService.save(compteForm);
 
-        securityService.autoLogin(compteForm.getEmail(), compteForm.getPassword());
-
-        return "redirect:/welcome";
     }
+
+
 
 
 

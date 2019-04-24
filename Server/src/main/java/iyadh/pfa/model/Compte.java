@@ -14,6 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 public class Compte {
+
     @Id @GeneratedValue
     private Long id;
     private String name;
@@ -27,7 +28,21 @@ public class Compte {
     private File CV;
     private File Contrat;
     private String poste;
-
+    public Compte (Long id,String name, String lastname, String TypeCompteId, String email,String password, Long tel, Date dateBirth,String addres,
+                  File cv, File contrat, String poste ){
+        this.id=id;
+        this.name=name;
+        this.lastname=lastname;
+        this.TypeCompteId=TypeCompteId;
+        this.email=email;
+        this.password=password;
+        this.Tel=tel;
+        this.DateBirth=dateBirth;
+        this.Address=addres;
+        this.CV=cv;
+        this.Contrat=contrat;
+        this.poste=poste;
+    }
 
 
   public Long getId() {
