@@ -78,6 +78,7 @@ const routes: Routes = [
     {
         path: 'offres/:id',
         component: OffreEditComponent,
+        canActivate: [AuthGaurdService]
     },
     {
         path: 'compte-add',
