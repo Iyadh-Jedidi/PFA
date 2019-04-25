@@ -24,6 +24,7 @@ import { FormationComponent } from './formation/formation.component';
 import { EditFormationComponent } from './formation/edit-formation/edit-formation.component';
 import { DemandeFormationComponent } from './formation/demande-formation/demande-formation.component';
 import { ComptesComponent } from './Admin/comptes/comptes.component';
+import { OffreEditComponent } from './offres/offre-edit/offre-edit.component';
 
 const routes: Routes = [
     {
@@ -42,7 +43,12 @@ const routes: Routes = [
     },
     {
         path: 'offers',
-        component: OffresComponent },
+        component: OffresComponent
+    },
+    {
+        path: 'offres/:id',
+        component: OffreEditComponent,
+    },
     {
          path: 'login',
         component: LoginComponent
@@ -94,6 +100,7 @@ const routes: Routes = [
     EditFormationComponent,
     DemandeFormationComponent,
       ComptesComponent,
+      OffreEditComponent,
   ],
   imports: [
       BrowserModule,
