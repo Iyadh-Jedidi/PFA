@@ -1,72 +1,5 @@
-<!--
-<main>
 
-
-  <li class="nav-item d-none d-lg-block ml-lg-4">
-                   <a [routerLink]="['/compte-add']" class="btn btn-neutral btn-icon">
-           <span class="btn-inner&#45;&#45;icon">
-             <i class="fa fa-cloud-download mr-2"></i>
-           </span>
-                       <span class="nav-link-inner&#45;&#45;text">Ajouter Compte</span>
-                   </a>
-               </li>
-
-<div class="row" style="margin-left: 0px; margin-top: 28px; width: 70%">
-  &lt;!&ndash; TyoeCompte Menu &ndash;&gt;
-  <div class="col-md-3">
-    <br>
-    <div class="list-group list-group-flush">
-
-      &lt;!&ndash; TyoeCompte List &ndash;&gt;
-      <a class="list-group-item list-group-item-action">
-        <i class="fa fa-book"></i>&nbsp;
-        <button (click)="changerToResponsbale()"  type="text" class="input-label" style="width: 80%">{{typeComptes[0].name}}</button>
-      </a>
-      <a class="list-group-item list-group-item-action">
-        <i class="fa fa-book"></i>&nbsp;
-        <button (click)="changerToCandidat()" [(ngModel)]="typeComptes[1].name"  type="text" class="input-label" style="width: 80%">{{typeComptes[1].name  }}</button>
-      </a>
-      <a class="list-group-item list-group-item-action">
-        <i class="fa fa-book"></i>&nbsp;
-        <button (click)="changerToEmploye()"  type="text" class="input-label" style="width: 80%">{{typeComptes[2].name}}</button>
-      </a>
-    </div>
-  </div>
-
-  <div class="col-md-9">
-    <div >
-      &lt;!&ndash; Note list &ndash;&gt;
-      <div *ngFor="let compte of comptes">
-
-
-
-
-        <ul>
-          <li>
-            <a *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}}</a>
-          </li>
-          <li>
-            <a *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}}</a>
-          </li>
-
-          <li>
-            <a *ngIf="compte.typeCompteId=='employe' && idTypeCompte==3" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}} {{compte.lastname}}</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </div>
-</div>
-</main>
-
-
-
-
--->
-
-
-<div class="wrapper">
+<!--<div class="wrapper">
   <div class="page-header page-header-xs" data-parallax="true">
     <div class="filter"></div>
   </div>
@@ -78,12 +11,12 @@
         </div>
 
       </div>
-      <!-- TyoeCompte Menu -->
+      &lt;!&ndash; TyoeCompte Menu &ndash;&gt;
       <div  class="row">
         <div class="col-md-3">
           <div class="list-group list-group-flush">
 
-            <!-- TyoeCompte List -->
+            &lt;!&ndash; TyoeCompte List &ndash;&gt;
             <a class="list-group-item list-group-item-action">
               <i class="fa fa-book"></i>&nbsp;
 
@@ -101,7 +34,7 @@
         </div>
         <div class="col-md-9">
           <div >
-            <!-- Note list -->
+            &lt;!&ndash; Note list &ndash;&gt;
             <div *ngFor="let compte of comptes">
               <ul>
                 <li *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1">
@@ -133,8 +66,6 @@
                   </div>
                 </div>
 
-                <li *ngIf="compte.typeCompteId=='employee' && idTypeCompte==3">
-                  <a  [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}} {{compte.lastname}}</a>
                 </li>
               </ul>
             </div>
@@ -149,4 +80,73 @@
 
     </div>
   </div>
-</div>
+</div>-->
+
+
+
+<main>
+  <section class="section section-lg section-shaped pb-250">
+    <div class="shape shape-style-1 shape-default">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+
+    <button _ngcontent-c5="" class="btn btn-1 btn-neutral" type="button">Ajouter Compte</button>
+  </section>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="pills">
+
+          <ngb-tab title="Responsables">
+            <ng-template ngbTabContent *ngFor="let compte of comptes">
+              <a *ngIf="compte.typeCompteId=='responsable'" [routerLink]="['/admin/comptes', compte.id]" ><div _ngcontent-c4="">
+                <i _ngcontent-c4="" class="ni ni-circle-08"></i>
+                <span _ngcontent-c4=""> {{compte.name}} {{compte.lastname}}</span>
+              </div></a>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Employés">
+            <ng-template ngbTabContent *ngFor="let compte of comptes">
+              <a *ngIf="compte.typeCompteId=='employee'" [routerLink]="['/admin/comptes', compte.id]" >
+                <div _ngcontent-c4="">
+                  <i _ngcontent-c4="" class="ni ni-circle-08"></i>
+                  <span _ngcontent-c4=""> {{compte.name}} {{compte.lastname}}</span>
+                </div></a>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab title="Candidats">
+            <ng-template ngbTabContent *ngFor="let compte of comptes">
+              <a *ngIf="compte.typeCompteId=='candidat'" [routerLink]="['/admin/comptes', compte.id]" >
+                <div _ngcontent-c4="">
+                  <i _ngcontent-c4="" class="ni ni-circle-08"></i>
+                  <span _ngcontent-c4=""> {{compte.name}} {{compte.lastname}}</span>
+                </div>
+
+              </a>
+
+            </ng-template>
+          </ngb-tab>
+
+        </ngb-tabset>
+      </div>
+    </div>
+
+
+  </div>
+
+
+</main>

@@ -24,16 +24,16 @@ import { FormationComponent } from './formation/formation.component';
 import { EditFormationComponent } from './formation/edit-formation/edit-formation.component';
 import { DemandeFormationComponent } from './formation/demande-formation/demande-formation.component';
 import { ComptesComponent } from './Admin/comptes/comptes.component';
+import {CompteEditComponent} from './Admin/comptes/compte-edit/compte-edit.component';
 
 const routes: Routes = [
+    {   path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+    },
     {
         path: 'home',
         component: HomeComponent
-    },
-    {
-        path: 'profile/:id',
-        component: ProfileComponent,
-        canActivate: [AuthGaurdService]
     },
     {
         path: 'signup',
@@ -41,15 +41,8 @@ const routes: Routes = [
 
     },
     {
-        path: 'offers',
-        component: OffresComponent },
-    {
          path: 'login',
         component: LoginComponent
-    },
-    {   path: '',
-        redirectTo: '/home',
-        pathMatch: 'full'
     },
     {
         path: 'logout',
@@ -57,14 +50,32 @@ const routes: Routes = [
         canActivate: [AuthGaurdService]
     },
     {
+        path: 'profile/:id',
+        component: ProfileComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
         path: 'offres',
         component: OffresComponent,
-
-
     },
     {
         path: 'admin/comptes',
         component: ComptesComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'admin/offres',
+        component: OffresComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'compte-add',
+        component: CompteEditComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'offre-add',
+        component: OffreEditComponent,
         canActivate: [AuthGaurdService]
     },
     {
@@ -77,6 +88,25 @@ const routes: Routes = [
       component: EditFormationComponent,
       canActivate: [AuthGaurdService]
     },
+
+    {
+        path: 'admin/comptes/:id',
+        component: CompteEditComponent,
+        canActivate: [AuthGaurdService]
+    },
+
+
+    {
+        path: 'ajouter-formation',
+        component: EditFormationComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'admin/offres/:id',
+        component: OffreEditComponent,
+        canActivate: [AuthGaurdService]
+    }
+
 ];
 
 @NgModule({
