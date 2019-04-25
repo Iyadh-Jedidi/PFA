@@ -35,9 +35,8 @@ const routes: Routes = [
         canActivate: [AuthGaurdService]
     },
     {
-        path: 'register',
+        path: 'signup',
         component: SignupComponent,
-        canActivate: [!AuthGaurdService]
 
     },
     {

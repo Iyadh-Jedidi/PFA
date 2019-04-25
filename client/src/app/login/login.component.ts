@@ -39,9 +39,14 @@ export class LoginComponent implements OnInit {
     this.loginservice.authenticate(form)
         .subscribe(data => {
           this.compte = data ;
-          localStorage.setItem('id', this.compte.id) ;
-          this.load(['/profile/' + this.compte.id]);
-        });
+          if (this.compte == null){
+              alert('Email ou Password sont incorrectes')
+              this.load(['/login']) ;
+          } else {
+            localStorage.setItem('id', this.compte.id) ;
+            this.load(['/profile/' + this.compte.id]);
+          }
+           });
 
 
   }
