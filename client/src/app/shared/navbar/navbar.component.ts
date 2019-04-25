@@ -16,11 +16,16 @@ export class NavbarComponent implements OnInit {
     private yScrollStack: number[] = [];
     compte: any = {};
     id = localStorage.getItem('id');
+
+
     constructor(public location: Location, private router: Router, private loginService: AuthentificationService,
                 private cookieService: CookieService, private apiCompte: ApiCompteService) {
     }
 
     ngOnInit() {
+        this.apiCompte.get(this.id).subscribe((compte: any) => {
+            this.compte = compte;
+        });
         this.router.events.subscribe((event) => {
         this.isCollapsed = true;
         if (event instanceof NavigationStart) {
