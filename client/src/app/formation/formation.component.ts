@@ -9,6 +9,7 @@ import {ApiformationService} from '../services/formation/apiformation.service';
   styleUrls: ['./formation.component.css']
 })
 export class FormationComponent implements OnInit {
+
   formation: Array <any> ;
   constructor(private apiService: ApiformationService) { }
 

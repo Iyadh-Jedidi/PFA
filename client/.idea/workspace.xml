@@ -3,10 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="c694fca1-c783-45f9-8d03-0eb8e8a38fa7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.ts" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/formation/formation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/formation/formation.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/signup/signup.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/signup/signup.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/signup/signup.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/signup/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/signup/signup.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/Admin/compte/compte-edit/compte-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/Admin/compte/compte-edit/compte-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/Admin/compte/comptes/comptes.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/Admin/compte/comptes/comptes.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/Admin/offre/offres/offres.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/Admin/offre/offres/offres.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/formation/edit-formation/edit-formation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/formation/edit-formation/edit-formation.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/formation/formation.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/formation/formation.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/shared/formation/apiformation.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/shared/formation/apiformation.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientSide/src/app/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../clientSide/src/app/signup/signup.component.html" afterDir="false" />
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -22,21 +40,87 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/app/shared/navbar/navbar.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-60">
               <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/signup/signup.component.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/signup/signup.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="38" column="75" lean-forward="true" selection-start-line="38" selection-end-line="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+        <entry file="file://$PROJECT_DIR$/src/app/signup/signup.component.ts">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/navbar/navbar.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/shared/navbar/navbar.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="36" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/formation/formation.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="311">
               <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
+=======
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
               <folding>
-                <element signature="e#0#58#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,8 +158,11 @@
       <find>profi</find>
       <find>console</find>
       <find>compte</find>
+<<<<<<< HEAD
       <find>admin/comptes</find>
       <find>argon</find>
+=======
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -97,7 +184,6 @@
         <option value="$PROJECT_DIR$/src/test.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/docs/argon.css" />
-        <option value="$PROJECT_DIR$/src/app/profile/profile.component.html" />
         <option value="$PROJECT_DIR$/src/assets/scss/custom/_variables.scss" />
         <option value="$PROJECT_DIR$/src/assets/scss/bootstrap/_variables.scss" />
         <option value="$PROJECT_DIR$/src/assets/scss/custom/_navbar.scss" />
@@ -108,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/app/services/formation/apiformation.service.ts" />
         <option value="$PROJECT_DIR$/src/app/formation/edit-formation/edit-formation.component.html" />
         <option value="$PROJECT_DIR$/src/app/formation/edit-formation/edit-formation.component.css" />
-        <option value="$PROJECT_DIR$/src/app/formation/formation.component.ts" />
         <option value="$PROJECT_DIR$/src/app/formation/formation.component.html" />
         <option value="$PROJECT_DIR$/src/app/formation/edit-formation/edit-formation.component.ts" />
         <option value="$PROJECT_DIR$/src/app/logout/logout.component.ts" />
@@ -120,12 +205,17 @@
         <option value="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/profile/profile.component.html" />
+        <option value="$PROJECT_DIR$/src/app/signup/signup.component.scss" />
+        <option value="$PROJECT_DIR$/src/app/signup/signup.component.html" />
+        <option value="$PROJECT_DIR$/src/app/shared/navbar/navbar.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/formation/formation.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/signup/signup.component.ts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="141" />
-    <option name="y" value="115" />
+    <option name="y" value="27" />
     <option name="width" value="1697" />
     <option name="height" value="927" />
   </component>
@@ -159,6 +249,7 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="Admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -175,13 +266,9 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="login" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="client" type="b2602c69:ProjectViewProjectNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="formation" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
             </path>
             <path>
               <item name="client" type="b2602c69:ProjectViewProjectNode" />
@@ -203,6 +290,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
+              <item name="navbar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
               <item name="footer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -212,6 +308,9 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="shared" type="462c0819:PsiDirectoryNode" />
               <item name="navbar" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="signup" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
             </path>
           </expand>
           <select />
@@ -235,7 +334,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -303,12 +402,16 @@
       <workItem from="1556052504767" duration="470000" />
       <workItem from="1556087590484" duration="18670000" />
       <workItem from="1556135099246" duration="2951000" />
-      <workItem from="1556180953478" duration="11550000" />
+      <workItem from="1556180953478" duration="16293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="75918000" />
+=======
+    <option name="totallyTimeSpent" value="76774000" />
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="6" />
@@ -350,6 +453,16 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/assets/scss/bootstrap/_navbar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="107" column="1" selection-start-line="107" selection-start-column="1" selection-end-line="107" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
     <entry file="file://$PROJECT_DIR$/node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -464,9 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/signup/signup.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/signup/signup.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -516,16 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/formation/formation.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/formation/formation.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -571,9 +671,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/signup/signup.component.ts">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/formation/edit-formation/edit-formation.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -656,6 +753,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/app/shared/navbar/navbar.component.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -666,6 +764,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="37" column="42" lean-forward="true" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/services/no-auth-guard.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="64" column="26" selection-start-line="64" selection-start-column="26" selection-end-line="64" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
         </state>
       </provider>
     </entry>
@@ -679,16 +803,24 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/app/services/formation/apiformation.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="68" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="68" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/login/login.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="14" />
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/app/login/login.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="445">
@@ -710,25 +842,84 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-120">
           <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="72" column="18" lean-forward="true" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/profile/profile.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="69" column="36" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/signup/signup.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/signup/signup.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="38" column="75" lean-forward="true" selection-start-line="38" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/shared/navbar/navbar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="36" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="17" selection-end-column="36" />
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/app/shared/navbar/navbar.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-60">
           <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/app/formation/formation.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/signup/signup.component.ts">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="311">
           <caret line="77" column="6" selection-start-line="77" selection-start-column="6" selection-end-line="77" selection-end-column="6" />
+=======
+        <state relative-caret-position="180">
+          <caret line="12" column="59" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
+>>>>>>> 92049ec58de3ec5bf951a28f9c9bc720e6631839
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>

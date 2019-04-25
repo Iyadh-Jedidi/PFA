@@ -34,55 +34,47 @@
               </div>
             </div>
             <div class="card-body px-lg-5 py-lg-5">
-              <div class="text-center text-muted mb-4">
-                <small>Or sign up with credentials</small>
-              </div>
-              <form role="form">
-                <div class="form-group" [ngClass]="{'focused':focus===true}">
-                  <div class="input-group input-group-alternative mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)">
+                    <input hidden value="candidat" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
+                    <input hidden value="candidat" [(ngModel)]="compte.poste" required name="poste" #poste>
+
+                    <div class="container mb-5">
+                      <div class="row">
+                        <div class="col-lg-4 col-sm-6">
+                          <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" class="form-control" placeholder="name" [(ngModel)]="compte.name" required name="name" #name>
+                            <label>Date de naissance</label>
+                            <input type="date" class="form-control" placeholder="lastname" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
+                            <label for="">CV</label>
+                            <input type="file" class="form-control" [(ngModel)]="compte.cv" required name="cv" #cv>
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" [(ngModel)]="compte.email" required name="email" #email>
+
+
+                          </div>
+
+                        </div>
+                        <div class="col-lg-4 col-sm-6">
+                          <div class="form-group">
+                            <label>Prénom</label>
+                            <input type="text" class="form-control" placeholder="lastname" [(ngModel)]="compte.lastname" required name="lastname" #lasname>
+                            <label for="">Adresse</label>
+                            <input type="text" class="form-control" [(ngModel)]="compte.address" required name="address" #address>
+                            <label for="">Numéro Téléphone</label>
+                            <input type="text" class="form-control" [(ngModel)]="compte.tel" required name="tel" #tel>
+                            <label for=""><b>Password</b></label>
+                            <input type="password" class="form-control" placeholder="Enter Password"required name="password" [(ngModel)]="password">
+
+                          </div>
+                        </div>
+
+                      </div>
                     </div>
-                    <input class="form-control" placeholder="Name" type="text" (focus)="focus=true" (blur)="focus=false">
-                  </div>
-                </div>
-                <div class="form-group" [ngClass]="{'focused':focus1===true}">
-                  <div class="input-group input-group-alternative mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Email" type="email" (focus)="focus1=true" (blur)="focus1=false">
-                  </div>
-                </div>
-                <div class="form-group" [ngClass]="{'focused':focus2===true}">
-                  <div class="input-group input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Password" type="password" (focus)="focus2=true" (blur)="focus2=false">
-                  </div>
-                </div>
-                <div class="text-muted font-italic">
-                  <small>password strength:
-                    <span class="text-success font-weight-700">strong</span>
-                  </small>
-                </div>
-                <div class="row my-4">
-                  <div class="col-12">
-                    <div class="custom-control custom-control-alternative custom-checkbox">
-                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
-                      <label class="custom-control-label" for="customCheckRegister">
-                        <span>I agree with the
-                          <a href="javascript:void(0)">Privacy Policy</a>
-                        </span>
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="button" class="btn btn-primary mt-4">Create account</button>
-                </div>
-              </form>
+                  <button  [disabled]="!compteForm.form.valid" (click)="checkLogin()" type="submit" class="btn btn-danger btn-block btn-round">Enregistrer</button>
+
+
+                </form>
             </div>
           </div>
         </div>
