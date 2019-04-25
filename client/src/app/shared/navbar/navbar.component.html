@@ -41,11 +41,7 @@
                       Comptes
                     </a>
                 </li>
-                <li  *ngIf="(loginService.isUserLoggedIn())&& (compte.typeCompteId=='admin')" [routerLink]="['/admin/offres']" class="nav-item dropdown">
-                    <a  class="nav-link no-caret" data-toggle="dropdown" role="button">
-                        <span class="nav-link-inner--text">Offres</span>
-                    </a>
-                </li>
+
 
                 <li  [hidden]="compte.typeCompteId=='employee'" [routerLink]="['/offres']" class="nav-item dropdown">
                     <a  class="nav-link no-caret" data-toggle="dropdown" role="button">

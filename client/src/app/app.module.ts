@@ -6,7 +6,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './signup/signup.component';
-import { OffresComponent } from './Admin/offres/offres.component';
+import { OffresComponent } from './offres/offres.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiOffreService} from '../../services/offre/api-offre.service';
-import {AuthentificationService} from '../../services/authentification.service';
+import {ApiOffreService} from '../services/offre/api-offre.service';
+import {AuthentificationService} from '../services/authentification.service';
 
 @Component({
     selector: 'app-landing',
