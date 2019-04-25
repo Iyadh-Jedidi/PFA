@@ -25,6 +25,7 @@ import { EditFormationComponent } from './formation/edit-formation/edit-formatio
 import { DemandeFormationComponent } from './formation/demande-formation/demande-formation.component';
 import { ComptesComponent } from './Admin/comptes/comptes.component';
 import {CompteEditComponent} from './Admin/comptes/compte-edit/compte-edit.component';
+import { OffreEditComponent } from './offres/offre-edit/offre-edit.component';
 
 const routes: Routes = [
     {   path: '',
@@ -55,10 +56,6 @@ const routes: Routes = [
         canActivate: [AuthGaurdService]
     },
     {
-        path: 'offres',
-        component: OffresComponent,
-    },
-    {
         path: 'admin/comptes',
         component: ComptesComponent,
         canActivate: [AuthGaurdService]
@@ -67,6 +64,20 @@ const routes: Routes = [
         path: 'admin/offres',
         component: OffresComponent,
         canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'admin/offres/:id',
+        component: OffreEditComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'offres',
+        component: OffresComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'offres/:id',
+        component: OffreEditComponent,
     },
     {
         path: 'compte-add',
@@ -101,11 +112,6 @@ const routes: Routes = [
         component: EditFormationComponent,
         canActivate: [AuthGaurdService]
     },
-    {
-        path: 'admin/offres/:id',
-        component: OffreEditComponent,
-        canActivate: [AuthGaurdService]
-    }
 
 ];
 
@@ -124,6 +130,8 @@ const routes: Routes = [
     EditFormationComponent,
     DemandeFormationComponent,
       ComptesComponent,
+      OffreEditComponent,
+      CompteEditComponent,
   ],
   imports: [
       BrowserModule,
