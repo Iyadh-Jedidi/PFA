@@ -23,6 +23,7 @@ import {AuthentificationService} from './services/authentification.service';
 import { FormationComponent } from './formation/formation.component';
 import { EditFormationComponent } from './formation/edit-formation/edit-formation.component';
 import { DemandeFormationComponent } from './formation/demande-formation/demande-formation.component';
+import { ComptesComponent } from './Admin/comptes/comptes.component';
 
 const routes: Routes = [
     {
@@ -62,6 +63,11 @@ const routes: Routes = [
 
     },
     {
+        path: 'admin/comptes',
+        component: ComptesComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
       path: 'responsable/formation',
       component: FormationComponent,
       canActivate: [AuthGaurdService]
@@ -87,6 +93,7 @@ const routes: Routes = [
     FormationComponent,
     EditFormationComponent,
     DemandeFormationComponent,
+      ComptesComponent,
   ],
   imports: [
       BrowserModule,

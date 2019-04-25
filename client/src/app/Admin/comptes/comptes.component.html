@@ -1,0 +1,64 @@
+<main>
+
+
+  <li class="nav-item d-none d-lg-block ml-lg-4">
+                   <a [routerLink]="['/compte-add']" class="btn btn-neutral btn-icon">
+           <span class="btn-inner--icon">
+             <i class="fa fa-cloud-download mr-2"></i>
+           </span>
+                       <span class="nav-link-inner--text">Ajouter Compte</span>
+                   </a>
+               </li>
+
+<div class="row" style="margin-left: 0px; margin-top: 28px; width: 70%">
+  <!-- TyoeCompte Menu -->
+  <div class="col-md-3">
+    <br>
+    <div class="list-group list-group-flush">
+
+      <!-- TyoeCompte List -->
+      <a class="list-group-item list-group-item-action">
+        <i class="fa fa-book"></i>&nbsp;
+        <button (click)="changerToResponsbale()"  type="text" class="input-label" style="width: 80%">{{typeComptes[0].name}}</button>
+      </a>
+      <a class="list-group-item list-group-item-action">
+        <i class="fa fa-book"></i>&nbsp;
+        <button (click)="changerToCandidat()" [(ngModel)]="typeComptes[1].name"  type="text" class="input-label" style="width: 80%">{{typeComptes[1].name  }}</button>
+      </a>
+      <a class="list-group-item list-group-item-action">
+        <i class="fa fa-book"></i>&nbsp;
+        <button (click)="changerToEmploye()"  type="text" class="input-label" style="width: 80%">{{typeComptes[2].name}}</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="col-md-9">
+    <div >
+      <!-- Note list -->
+      <div *ngFor="let compte of comptes">
+
+
+
+
+        <ul>
+          <li>
+            <a *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}}</a>
+          </li>
+          <li>
+            <a *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}}</a>
+          </li>
+
+          <li>
+            <a *ngIf="compte.typeCompteId=='employe' && idTypeCompte==3" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}} {{compte.lastname}}</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+
+
+

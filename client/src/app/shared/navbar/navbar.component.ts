@@ -21,6 +21,9 @@ export class NavbarComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.apiCompte.get(this.id).subscribe((compte: any) => {
+            this.compte = compte;
+        });
         this.router.events.subscribe((event) => {
         this.isCollapsed = true;
         if (event instanceof NavigationStart) {
