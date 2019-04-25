@@ -4,6 +4,7 @@ import { CookieService } from 'ngx-cookie-service';
 import {ApiCompteService} from './compte/api-compte.service';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import 'rxjs-compat/add/operator/map';
 
 
 @Injectable({
@@ -25,29 +26,13 @@ export class AuthentificationService {
             window.location = newLocation;
          } else {
             setTimeout(one, 50);
-         }
+         }return this.http.get('//localhost:8080/all-comptes');
     })();
 }*/
 
 
   authenticate(compte: any): Observable<any> {
-
-      console.log(compte.email);
-      console.log(compte.password);
-      return this.http.get( '//localhost:8080/email/' + compte.email + '/' + 'password/' + compte.password);
-
-     /*if (username === 'admin' && password === 'admin') {
-      localStorage.setItem('id', "1");
-
-      this.router.navigate(['/admin/comptes']);
-    } else {
-      for (let compte of this.comptes) {
-        if (username === compte.email && password === compte.password)  {
-          const id = compte.id;
-          this.setLocalStorageAndLeave('id', id, [ '/profile/' + id])
-        }
-      }
-    }*/
+    return this.http.get('//localhost:8080/email/' + compte.email + '/password/' + compte.password);
   }
 
   isUserLoggedIn() {

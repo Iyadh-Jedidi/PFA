@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   email = '' ;
   password = '';
   invalidLogin = false;
-  compte: any = {typeCompteId: 'candidat'};
+  compte: {id: '' }
   sub: Subscription;
   constructor(private router: Router,
               private loginservice: AuthentificationService) { }
@@ -30,8 +30,20 @@ export class LoginComponent implements OnInit {
   gotoSignup() {
     this.router.navigate(['/signup']);
   }
+  load(newLocation) {
+
+        window.location = newLocation;
+
+    }
   checkLogin(form: NgForm) {
-    this.loginservice.authenticate(form);
+    this.loginservice.authenticate(form)
+        .subscribe(data => {
+          this.compte = data ;
+          localStorage.setItem('id', this.compte.id) ;
+          this.load(['/profile/' + this.compte.id]);
+        });
+
+
   }
 
 }

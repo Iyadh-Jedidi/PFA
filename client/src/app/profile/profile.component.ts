@@ -38,7 +38,6 @@ export class ProfileComponent implements OnInit {
       const id = params.id;
       this.testid = id;
       if (id) {
-        console.log(id);
         this.apiService.get(id).subscribe((compte: any) => {
           if (compte) {
             this.compte = compte;
@@ -54,10 +53,16 @@ export class ProfileComponent implements OnInit {
   gotoList() {
     this.router.navigate(['/home']);
   }
+  load(newLocation) {
+
+        window.location = newLocation;
+
+    }
   save(form: NgForm) {
     this.apiService.save(form).subscribe(result => {
-      this.gotoList();
+
     }, error => console.error(error));
+    this.load(['profile/' + this.testid]);
   }
   alert() {
   window.alert('mise à jour avec succès');
