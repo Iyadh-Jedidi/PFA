@@ -1,22 +1,23 @@
+<!--
 <main>
 
 
   <li class="nav-item d-none d-lg-block ml-lg-4">
                    <a [routerLink]="['/compte-add']" class="btn btn-neutral btn-icon">
-           <span class="btn-inner--icon">
+           <span class="btn-inner&#45;&#45;icon">
              <i class="fa fa-cloud-download mr-2"></i>
            </span>
-                       <span class="nav-link-inner--text">Ajouter Compte</span>
+                       <span class="nav-link-inner&#45;&#45;text">Ajouter Compte</span>
                    </a>
                </li>
 
 <div class="row" style="margin-left: 0px; margin-top: 28px; width: 70%">
-  <!-- TyoeCompte Menu -->
+  &lt;!&ndash; TyoeCompte Menu &ndash;&gt;
   <div class="col-md-3">
     <br>
     <div class="list-group list-group-flush">
 
-      <!-- TyoeCompte List -->
+      &lt;!&ndash; TyoeCompte List &ndash;&gt;
       <a class="list-group-item list-group-item-action">
         <i class="fa fa-book"></i>&nbsp;
         <button (click)="changerToResponsbale()"  type="text" class="input-label" style="width: 80%">{{typeComptes[0].name}}</button>
@@ -34,7 +35,7 @@
 
   <div class="col-md-9">
     <div >
-      <!-- Note list -->
+      &lt;!&ndash; Note list &ndash;&gt;
       <div *ngFor="let compte of comptes">
 
 
@@ -62,3 +63,90 @@
 
 
 
+-->
+
+
+<div class="wrapper">
+  <div class="page-header page-header-xs" data-parallax="true">
+    <div class="filter"></div>
+  </div>
+  <div class="section profile-content">
+    <div class="container">
+      <div class="owner">
+        <div class="avatar">
+          <img src="./assets/img/admin.png" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+        </div>
+
+      </div>
+      <!-- TyoeCompte Menu -->
+      <div  class="row">
+        <div class="col-md-3">
+          <div class="list-group list-group-flush">
+
+            <!-- TyoeCompte List -->
+            <a class="list-group-item list-group-item-action">
+              <i class="fa fa-book"></i>&nbsp;
+
+              <button (click)="changerToResponsbale()" _ngcontent-c5="" class="btn btn-outline-default btn-round" type="button">{{typeComptes[0].name}}</button>
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <i class="fa fa-book"></i>&nbsp;
+              <button (click)="changerToCandidat()" _ngcontent-c5="" class="btn btn-outline-default btn-round" type="button">{{typeComptes[1].name}}</button>
+            </a>
+            <a class="list-group-item list-group-item-action">
+              <i class="fa fa-book"></i>&nbsp;
+              <button (click)="changerToEmploye()" _ngcontent-c5="" class="btn btn-outline-default btn-round" type="button">{{typeComptes[2].name}}</button>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div >
+            <!-- Note list -->
+            <div *ngFor="let compte of comptes">
+              <ul>
+                <li *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1">
+                  <a  [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}}</a>
+                </li>
+
+
+                <div class="row">
+                  <div class="card column" *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2">
+                    <img src="../../../../assets/img/faces/profile.png" alt="Avatar" style="width:100%">
+                    <div class="container">
+                      <h4><b><a  [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}} {{compte.lastname}}</a></b></h4>
+                      <p>{{compte.poste}}</p>
+                    </div>
+                  </div>
+                  <div class="card column" *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2">
+                    <img src="../../../../assets/img/faces/profile.png" alt="Avatar" style="width:100%">
+                    <div class="container">
+                      <h4><b><a  [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}} {{compte.lastname}}</a></b></h4>
+                      <p>{{compte.poste}}</p>
+                    </div>
+                  </div>
+                  <div class="card column" *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2">
+                    <img src="../../../../assets/img/faces/profile.png" alt="Avatar" style="width:100%">
+                    <div class="container">
+                      <h4><b><a  [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}} {{compte.lastname}}</a></b></h4>
+                      <p>{{compte.poste}}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <li *ngIf="compte.typeCompteId=='employee' && idTypeCompte==3">
+                  <a  [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}} {{compte.lastname}}</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <br/>
+
+    </div>
+  </div>
+</div>
