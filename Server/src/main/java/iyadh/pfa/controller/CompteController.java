@@ -2,13 +2,12 @@ package iyadh.pfa.controller;
 
 import iyadh.pfa.model.Compte;
 import iyadh.pfa.repository.CompteRepository;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
@@ -24,23 +23,21 @@ public class CompteController {
     return repository.findAll().stream()
             .collect(Collectors.toList());
     }
-
-    @GetMapping(value ="/email/{email}/password/{password}")
-    @ResponseBody
-    public ResponseEntity<Object> getUser(@PathVariable String email, @PathVariable String password) {
-        Compte compte =repository.findUserByEmail(email);
-        if(compte!= null)
-        {
-        return ResponseEntity.ok()
-                .body(new Compte(compte.getId(),compte.getName(),compte.getLastname(),
-                        compte.getTypeCompteId(),compte.getEmail(),compte.getPassword(),compte.getTel(),compte.getDateBirth(),
-                        compte.getAddress(),compte.getCV(),compte.getContrat(),compte.getPoste()));}
-        else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("File was not fount");
+    @GetMapping("/email/{email}/password/{password}")
+    public Compte login (@PathVariable String email, @PathVariable String password){
+        System.out.println(password);
+        Compte compte = repository.findUserByEmail(email);
+        System.out.println((compte.getPassword()));
+        if (compte.getPassword().equals(password)){
+            System.out.println(compte);
+            return compte;
         }
-
+        return null;
 
     }
+
+
+
 
 
 
