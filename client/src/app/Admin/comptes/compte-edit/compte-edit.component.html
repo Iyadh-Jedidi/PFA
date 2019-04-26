@@ -1,54 +1,46 @@
+<!--
+<section class="section section-lg section-shaped pb-250">
+  <div class="shape shape-style-1 shape-default">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="container py-lg-md d-flex">
+    <div class="col px-0">
+      <div class="row">
+      </div>
+    </div>
+  </div>
+  &lt;!&ndash; SVG separator &ndash;&gt;
+  <div class="separator separator-bottom separator-skew">
+    <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+    </svg>
+  </div>
+</section>
+
+
+
 <main>
 <div class="container">
   <div class="card card-container">
     <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
     <p id="profile-name" class="profile-name-card"></p>
 
-    <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)" >
 
-      <h2 style="text-align: center" >{{compte.name ? 'Modifier' : 'Ajouter'}} Compte </h2>
       <input class="form-control" type="hidden" name="href" [(ngModel)]="compte.href">
       <div>
         <div>
         </div>
-        <label class="input-label-lg">Type compte </label>
-        <select placeholder="typeCompteId" class="select-css option" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
-          <option value="responsable">Responsable</option>
-          <option value="employe">Employé</option>
-        </select>
-      </div>
-      <br/>
 
-      <div>
-        <label class="input-label-lg">Poste </label>
-        <input matInput type="text" placeholder="Entrer le poste de votre employé" [(ngModel)]="compte.poste" required name="poste" #poste>
-
-        <label class="input-label-lg">Nom </label>
-        <input matInput type="text" placeholder="Entrer votre nom..." [(ngModel)]="compte.name" required name="name" #name>
-        <br/>
-        <label class="input-label-lg">Prénom</label>
-        <input matInput type="text" placeholder="Entrer votre prénom..."  [(ngModel)]="compte.lastname" required name="lastname" #lasname>
-        <br/>
-        <label class="input-label-lg">Date de naissance</label>
-        <input matInput class="input-label-lg select-css" type="date" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
       </div>
-      <br/>
-      <div>
 
-        <label class="input-label-lg">Email</label>
-        <input matInput placeholder="Entrer votre Email..." type="email" [(ngModel)]="compte.email" required name="email" #email>
-        <br/>
-        <label class="input-label-lg">Mot de passe</label>
-        <input matInput placeholder="Entrer votre Mot de passe..." type="password" [(ngModel)]="compte.password" required name="password" #password>
-        <br/>
-        <label class="input-label-lg">Adresse</label>
-        <input matInput placeholder="Entrer votre Address.." type="text" [(ngModel)]="compte.address" required name="address" #address>
-        <br/>
-        <label class="input-label-lg">Numéro tel</label>
-        <input matInput placeholder="Entrer votre num Tel..." type="text" [(ngModel)]="compte.tel" required name="tel" #tel>
-      </div>
-      <br/>
-      <div>
         <label class="input-label-lg">CV</label>
         <input type="file" class="select-css" matInput placeholder="CV" [(ngModel)]="compte.cv" required name="cv" #cv>
         <br/>
@@ -61,20 +53,204 @@
 
 
       <br/>
-      <div>
-        <button type="submit"
-                mat-raised-button color="primary"
-                class="btn btn-warning pull-left"
-                [disabled]="!compteForm.form.valid"
-                style="margin-left:12px;"><i class="fa fa-plus"></i>SAVE
-        </button>
-        <button [routerLink]="['/admin/comptes']" class="btn btn-warning pull-right" type="button">Cancel</button>
-        <button mat-raised-button color="secondary" class="btn btn-warning " (click)="remove(compte.href)" *ngIf="compte.href" type="button">Delete</button>
 
-      </div>
 
 
     </form>
   </div>
 </div>
 </main>
+-->
+
+
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-primary alpha-4">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="card card-profile shadow mt--300">
+        <div class="px-4">
+          <div class="row justify-content-center">
+            <div class="col-lg-3 order-lg-2">
+              <div class="card-profile-image">
+                <a href="javascript:void(0)">
+                  <img src="./assets/img/theme/profile.png" class="rounded-circle">
+                </a>
+              </div>
+
+            </div>
+            <div class="col-lg-4 order-lg-1">
+              <div class="card-profile-stats d-flex justify-content-center">
+                <div>
+                  <h2 style="text-align: center" >{{compte.name ? 'Modifier' : 'Ajouter'}} Compte </h2>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="mt-5 py-5 border-top text-center">
+            <div class="row justify-content-center">
+              <div class="col-lg-9">
+                <!-- Inputs -->
+                <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)" >
+                  <div class="container mb-5">
+                    <div class="row">
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group " style="position:relative; left:200px;">
+                          <label>Type compte </label>
+                          <select placeholder="typeCompteId" class="select-css option" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
+                            <option value="responsable">Responsable</option>
+                            <option value="employe">Employé</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container mb-5">
+                    <div class="row">
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+                          <label>Poste</label>
+                          <input value="{{compte.poste}}" type="email" placeholder="Poste..." class="form-control" [(ngModel)]="compte.poste" required name="poste" #poste/>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+                          <label>Email</label>
+                          <input value="{{compte.email}}" type="email" placeholder="Email..." class="form-control" [(ngModel)]="compte.email" required name="email" #email/>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+                          <label>Mot de passe</label>
+                          <input value="{{compte.password}}" type="password" placeholder="Tél.." class="form-control" [(ngModel)]="compte.password" required name="password" #password/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="container mb-5">
+                    <div class="row">
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+                          <label>Nom</label>
+                          <input value="{{compte.name}}" type="text" placeholder="Nom..." class="form-control" [(ngModel)]="compte.name" required name="name" #name>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+                          <label>Prénom</label>
+                          <input value="{{compte.lastname}}" type="password" placeholder="Prénom..." class="form-control" [(ngModel)]="compte.lastname" required name="lastname" #lastname/>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+
+                          <label>Date de naissance</label>
+                          <input value="{{compte.dateBirth }}" _ngcontent-c12="" autocomplete="off" required name="email" #email [(ngModel)]="compte.dateBirth" class="form-control datepicker ng-pristine ng-valid ng-touched"  ngbdatepicker="" placeholder="Select date" type="date">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="container mb-5">
+                    <div class="row">
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+                          <label>Téléphone</label>
+                          <input value="{{compte.tel}}" type="text" placeholder="Tél.." class="form-control" [(ngModel)]="compte.tel" required name="tel" #tel>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+                          <label>Adresse</label>
+                          <input value="{{compte.address}}" type="text" placeholder="Tél.." class="form-control" [(ngModel)]="compte.address" required name="address" #address />
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+                          <label>Cv</label>
+                          <input value="{{compte.cv}}" type="file" class="form-control" [(ngModel)]="compte.cv" required name="cv" #cv />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                      <div class="container mb-5">
+                        <div class="row">
+                      <div class="col-lg-4 col-sm-6">
+                        <div class="form-group" style="position:relative; left:200px;">
+                          <label>Contrat</label>
+                          <input value="{{compte.contrat}}"  type="file" class="form-control" [(ngModel)]="compte.contrat" required name="contrat" #contrat />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                 <!-- <input hidden type="hidden" matInput placeholder="Entrer votre Email..." type="email" [(ngModel)]="compte.email" required name="email" #email>
+                  <input hidden type="hidden" matInput class="input-label-lg select-css" type="date" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
+                  <input hidden type="hidden" matInput type="text" placeholder="Entrer votre prénom..."  [(ngModel)]="compte.lastname" required name="lastname" #lasname>
+                  <input hidden type="hidden" matInput type="text" placeholder="Entrer votre nom..." [(ngModel)]="compte.name" required name="name" #name>
+                  <input hidden type="hidden" matInput type="text" placeholder="Entrer le poste de votre employé" [(ngModel)]="compte.poste" required name="poste" #poste>
+                  <input hidden type="hidden" placeholder="typeCompteId" class="select-css option" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
+                  <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="compte.href">
+-->
+                  <div>
+                    <button type="submit"
+                            mat-raised-button color="primary"
+                            class="btn btn-warning pull-left"
+                            [disabled]="!compteForm.form.valid"
+                            style="margin-left:12px;"><i class="fa fa-plus"></i>SAVE
+                    </button>
+                    <button [routerLink]="['/admin/comptes']" class="btn btn-warning pull-right" type="button">Cancel</button>
+                    <button mat-raised-button color="secondary" class="btn btn-warning " (click)="remove(compte.href)" *ngIf="compte.href" type="button">Delete</button>
+
+                  </div>
+
+
+                  <!--<button type="submit"
+                          mat-raised-button color="primary"
+                          class="btn btn-warning pull-left"
+                          [disabled]="!compteForm.form.valid"
+                          style="margin-left:12px;" (click)="alert()"><i class="fa fa-plus"></i>SAVE</button>-->
+
+
+
+
+
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+</main>
+
+
