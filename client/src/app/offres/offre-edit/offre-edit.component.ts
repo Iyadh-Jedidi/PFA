@@ -42,7 +42,7 @@ export class OffreEditComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/admin/offres']);
+    this.router.navigate(['/offres']);
   }
 
   save(form: NgForm) {

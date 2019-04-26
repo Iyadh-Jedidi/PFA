@@ -1,4 +1,24 @@
-<div class="bg-container-contact100 all">
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-primary alpha-4">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section section-lg pt-lg-0 mt--200">
+<div class="bg-container-contact100">
   <div class="contact100-header flex-sb-m">
 
 
@@ -10,7 +30,7 @@
       <i class="zmdi zmdi-close"></i>
     </button>
 
-    <div class="contact100-form-title arriere-plan contact100-header flex-sb-m">
+    <div class="contact100-form-title  contact100-header flex-sb-m">
         <span>{{offre.name ? 'Modifier' : 'Ajouter'}} Offres</span>
       <input class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
     </div>
@@ -18,15 +38,21 @@
 
     <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
       <div class="wrap-input100 validate-input">
-        <input [(ngModel)]="offre.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
+        <input [(ngModel)]="offre.name" class="input100" type="text" name="name" placeholder="Offre proposé" #name>
         <span class="focus-input100"></span>
         <label class="label-input100">
           <span class="lnr lnr-user m-b-2"></span>
         </label>
       </div>
-
       <div class="wrap-input100 validate-input">
-        <input [(ngModel)]="offre.duree" class="input100" name="durée" placeholder="Durée">
+      <input [(ngModel)]="offre.salary"  class="input100"  name="salaire" placeholder="Sujet Formation" #salaire placeholder="Salaire" type="text">
+        <span class="focus-input100"></span>
+        <label class="label-input100" >
+          <span class="lnr lnr-smartphone m-b-2"></span>
+        </label>
+      </div>
+      <div class="wrap-input100 validate-input">
+        <input type="date" [(ngModel)]="offre.CreationDate" class="input100" name="datecreation" placeholder="datecreation">
         <span class="focus-input100"></span>
         <label class="label-input100" >
           <span class="lnr lnr-smartphone m-b-2"></span>
@@ -35,7 +61,14 @@
 
 
       <div class="wrap-input100 validate-input">
-        <textarea [(ngModel)]="offre.description" class="input100" name="description" placeholder="Description Formation" #description></textarea>
+        <textarea [(ngModel)]="offre.description" class="input100" name="description" placeholder="Description Offre" #description></textarea>
+        <span class="focus-input100"></span>
+        <label class="label-input100 rs1">
+          <span class="lnr lnr-bubble"></span>
+        </label>
+      </div>
+      <div class="wrap-input100 validate-input">
+        <input [(ngModel)]="offre.disponible" class="input100" name="disponible" placeholder="Disponobilité de l'Offre" #disponible>
         <span class="focus-input100"></span>
         <label class="label-input100 rs1">
           <span class="lnr lnr-bubble"></span>
@@ -62,4 +95,5 @@
     </form>
   </div>
 </div>
-
+  </section>
+</main>
