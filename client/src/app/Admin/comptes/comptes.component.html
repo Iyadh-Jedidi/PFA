@@ -34,7 +34,7 @@
           </ngb-tab>
           <ngb-tab title="Employés">
             <ng-template ngbTabContent *ngFor="let compte of comptes">
-              <a *ngIf="compte.typeCompteId=='employe'" [routerLink]="['/admin/comptes', compte.id]" >
+              <a *ngIf="compte.typeCompteId=='employee'" [routerLink]="['/admin/comptes', compte.id]" >
                 <div _ngcontent-c4="">
                   <i _ngcontent-c4="" class="ni ni-circle-08"></i>
                   <span _ngcontent-c4=""> {{compte.name}} {{compte.lastname}}</span>
