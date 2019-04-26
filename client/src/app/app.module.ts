@@ -13,7 +13,6 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SectionsModule } from './sections/sections.module';
 
-import { LoginComponent } from './login/login.component';
 import {ApiCompteService} from './services/compte/api-compte.service';
 import {CookieService} from 'ngx-cookie-service';
 import {HttpClientModule} from '@angular/common/http';
@@ -26,6 +25,7 @@ import { DemandeFormationComponent } from './formation/demande-formation/demande
 import { ComptesComponent } from './Admin/comptes/comptes.component';
 import {CompteEditComponent} from './Admin/comptes/compte-edit/compte-edit.component';
 import { OffreEditComponent } from './offres/offre-edit/offre-edit.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
     {   path: '',

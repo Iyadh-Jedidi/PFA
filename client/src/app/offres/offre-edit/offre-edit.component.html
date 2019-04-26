@@ -17,6 +17,26 @@
 
 
     <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
+      <!-- creation date  -->
+      <div class="wrap-input100 validate-input">
+        <input [(ngModel)]="offre.creationDate" class="input100" name="durée" placeholder="Durée">
+        <span class="focus-input100"></span>
+        <label class="label-input100" >
+          <span class="lnr lnr-smartphone m-b-2"></span>
+        </label>
+      </div>
+      <!-- disponibility -->
+      <div class="wrap-input100 validate-input">
+          <select  class="input100" name="disponible" id="" [(ngModel)]="offre.disponible" #disponible>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+          <span class="focus-input100"></span>
+          <label class="label-input100" >
+            <span class="lnr lnr-smartphone m-b-2"></span>
+          </label>
+        </div>
+      <!-- name -->
       <div class="wrap-input100 validate-input">
         <input [(ngModel)]="offre.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
         <span class="focus-input100"></span>
@@ -25,13 +45,7 @@
         </label>
       </div>
 
-      <div class="wrap-input100 validate-input">
-        <input [(ngModel)]="offre.duree" class="input100" name="durée" placeholder="Durée">
-        <span class="focus-input100"></span>
-        <label class="label-input100" >
-          <span class="lnr lnr-smartphone m-b-2"></span>
-        </label>
-      </div>
+      
 
 
       <div class="wrap-input100 validate-input">

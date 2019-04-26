@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
-import {AuthentificationService} from '../services/authentification.service';
 import {NgForm} from '@angular/forms';
+import { AuthentificationService } from '../services/authentification.service';
 
 
 @Component({

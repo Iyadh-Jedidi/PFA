@@ -159,7 +159,7 @@
                       <div class="col-lg-4 col-sm-6">
                         <div class="form-group">
                           <label>Prénom</label>
-                          <input value="{{compte.lastname}}" type="password" placeholder="Prénom..." class="form-control" [(ngModel)]="compte.lastname" required name="lastname" #lastname/>
+                          <input value="{{compte.lastname}}" type="text" placeholder="Prénom..." class="form-control" [(ngModel)]="compte.lastname" required name="lastname" #lastname/>
                         </div>
                       </div>
                       <div class="col-lg-4 col-sm-6">
@@ -233,9 +233,6 @@
                           class="btn btn-warning pull-left"
                           [disabled]="!compteForm.form.valid"
                           style="margin-left:12px;" (click)="alert()"><i class="fa fa-plus"></i>SAVE</button>-->
-
-
-
 
 
 
