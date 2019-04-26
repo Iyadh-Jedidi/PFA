@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="527d0948-395f-4b4d-a77b-d561b5c7aedb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Formation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/iyadh/pfa/model/Formation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/Admin/comptes/compte-edit/compte-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/Admin/comptes/compte-edit/compte-edit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/formation/edit-formation/edit-formation.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/formation/edit-formation/edit-formation.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/offres/offre-edit/offre-edit.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/offres/offre-edit/offre-edit.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/offres/offre-edit/offre-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/offres/offre-edit/offre-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/app/offres/offre-edit/offre-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/offres/offre-edit/offre-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/app/Admin/comptes/compte-edit/compte-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/app/Admin/comptes/compte-edit/compte-edit.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/target/" />
