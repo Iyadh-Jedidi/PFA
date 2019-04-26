@@ -26,6 +26,8 @@ import { ComptesComponent } from './Admin/comptes/comptes.component';
 import {CompteEditComponent} from './Admin/comptes/compte-edit/compte-edit.component';
 import { OffreEditComponent } from './offres/offre-edit/offre-edit.component';
 import { LoginComponent } from './login/login.component';
+import {DatePipe} from '@angular/common';
+
 
 const routes: Routes = [
     {   path: '',
@@ -144,7 +146,7 @@ const routes: Routes = [
       RouterModule.forRoot(routes)
 
   ],
-  providers: [ApiCompteService, CookieService, AuthentificationService , AuthGaurdService],
+  providers: [ApiCompteService, CookieService, AuthentificationService , AuthGaurdService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

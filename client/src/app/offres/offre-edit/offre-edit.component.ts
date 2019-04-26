@@ -3,6 +3,7 @@ import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {ApiOffreService} from '../../services/offre/api-offre.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-offre-edit',
@@ -15,9 +16,22 @@ export class OffreEditComponent implements OnInit {
 
   sub: Subscription;
 
-  constructor(private route: ActivatedRoute,
+  constructor(private datePipe: DatePipe,
+              private route: ActivatedRoute,
               private router: Router,
               private apiService: ApiOffreService) {
+  }
+  transformDate(date) {
+    console(date);
+    var d= new Date (date);
+    let yyyy = d.getFullYear();
+    let mm= d.getMonth();
+    let dd = d.getDay();
+    let dateFormat = yyyy+"-"+mm+"-"+dd;
+    console.log(dateFormat)
+    return dateFormat;
+
+    // return this.datePipe.transform(d, 'YYYY-MM-dd'); //whatever format you need. 
   }
 
   ngOnInit() {

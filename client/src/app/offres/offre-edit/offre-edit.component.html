@@ -17,9 +17,12 @@
 
 
     <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
+      <!-- href -->
+      <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
       <!-- creation date  -->
       <div class="wrap-input100 validate-input">
-        <input [(ngModel)]="offre.creationDate" class="input100" name="durée" placeholder="Durée">
+        <p class="focus-input100">{{transformDate(offre.creationDate)}}</p>
+        <input type="date" value="offre.creationDate" [(ngModel)]="offre.creationDate" class="input100" name="creationDate" placeholder="creationDate">
         <span class="focus-input100"></span>
         <label class="label-input100" >
           <span class="lnr lnr-smartphone m-b-2"></span>
@@ -38,14 +41,20 @@
         </div>
       <!-- name -->
       <div class="wrap-input100 validate-input">
-        <input [(ngModel)]="offre.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
+        <input [(ngModel)]="offre.name" class="input100" type="text" name="name" placeholder="Name" #name>
         <span class="focus-input100"></span>
         <label class="label-input100">
           <span class="lnr lnr-user m-b-2"></span>
         </label>
       </div>
-
-      
+      <!-- salary -->
+      <div class="wrap-input100 validate-input">
+          <input [(ngModel)]="offre.salary" class="input100" type="text" name="salary" placeholder="salary" #salary>
+          <span class="focus-input100"></span>
+          <label class="label-input100">
+            <span class="lnr lnr-user m-b-2"></span>
+          </label>
+        </div>
 
 
       <div class="wrap-input100 validate-input">
