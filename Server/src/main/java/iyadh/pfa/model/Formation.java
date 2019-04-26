@@ -7,6 +7,8 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -19,6 +21,10 @@ public class Formation {
     private String name;
     private String description;
     private String duree;
+
+
+    @OneToMany
+    private Set<Compte> demande;
 
     public Long getId() {
         return id;
@@ -50,5 +56,13 @@ public class Formation {
 
     public void setDurée(String durée) {
         this.duree = durée;
+    }
+
+    public Set<Compte> getDemande() {
+        return demande;
+    }
+
+    public void setDemande(Set<Compte> demande) {
+        this.demande = demande;
     }
 }

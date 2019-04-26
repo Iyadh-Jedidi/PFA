@@ -75,7 +75,9 @@ const routes: Routes = [
     {
         path: 'offres',
         component: OffresComponent,
+/*
         canActivate: [AuthGaurdService]
+*/
     },
     {
         path: 'offres/:id',

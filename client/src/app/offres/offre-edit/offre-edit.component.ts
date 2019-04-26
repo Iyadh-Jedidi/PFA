@@ -22,7 +22,7 @@ export class OffreEditComponent implements OnInit {
               private apiService: ApiOffreService) {
   }
   transformDate(date) {
-    console(date);
+    console.log(date);
     var d= new Date (date);
     let yyyy = d.getFullYear();
     let mm= d.getMonth();
@@ -56,7 +56,7 @@ export class OffreEditComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/admin/offres']);
+    this.router.navigate(['/offres']);
   }
 
   save(form: NgForm) {

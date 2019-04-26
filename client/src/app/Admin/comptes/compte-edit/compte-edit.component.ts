@@ -47,6 +47,11 @@ export class CompteEditComponent implements OnInit {
     this.router.navigate(['/admin/comptes']);
   }
 
+/*  save(form: NgForm) {
+    this.apiService.save(form).subscribe(result => {
+      this.gotoList();
+    }, error => console.error(error));
+  }*/
   save(form: NgForm) {
     this.apiService.save(form).subscribe(result => {
       this.gotoList();

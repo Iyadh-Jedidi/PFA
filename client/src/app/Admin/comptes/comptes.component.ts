@@ -7,11 +7,16 @@ import {ApiCompteService} from '../../services/compte/api-compte.service';
   styleUrls: ['./comptes.component.scss']
 })
 export class ComptesComponent implements OnInit {
+  typeCompteId = ['responsable,employee,candidat'];
   comptes: Array <any>;
   constructor(private apiService: ApiCompteService) { }
   ngOnInit() {
     this.apiService.getAll().subscribe(data => {
       this.comptes = data;
     });
+    
+  }
+  test(){
+    console.log(this.comptes);
   }
 }
