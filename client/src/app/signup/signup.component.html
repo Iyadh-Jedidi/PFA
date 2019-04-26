@@ -34,8 +34,8 @@
               </div>
             </div>
             <div class="card-body px-lg-5 py-lg-5">
-                <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)">
-                    <input hidden value="candidat" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
+              <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)">
+                <input hidden value="candidat" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
                     <input hidden value="candidat" [(ngModel)]="compte.poste" required name="poste" #poste>
 
                     <div class="container mb-5">
@@ -64,7 +64,7 @@
                             <label for="">Numéro Téléphone</label>
                             <input type="text" class="form-control" [(ngModel)]="compte.tel" required name="tel" #tel>
                             <label for=""><b>Password</b></label>
-                            <input type="password" class="form-control" placeholder="Enter Password"required name="password" [(ngModel)]="password">
+                            <input type="password" class="form-control" placeholder="Enter Password"required name="password" [(ngModel)]="compte.password">
 
                           </div>
                         </div>
@@ -72,7 +72,6 @@
                       </div>
                     </div>
                   <button  [disabled]="!compteForm.form.valid" (click)="checkLogin()" type="submit" class="btn btn-danger btn-block btn-round">Enregistrer</button>
-
 
                 </form>
             </div>
