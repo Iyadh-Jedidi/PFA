@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
   }
-  gotoHome(){
+  gotoHome() {
     this.router.navigate((['/home']));
   }
   gotoLogin() {
