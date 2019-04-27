@@ -112,6 +112,7 @@
               <div class="col-lg-9">
                 <!-- Inputs -->
                 <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)" >
+                    <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="compte.href">
                   <div class="container mb-5">
                     <div class="row">
                       <div class="col-lg-4 col-sm-6">

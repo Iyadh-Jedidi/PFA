@@ -22,18 +22,13 @@ export class OffreEditComponent implements OnInit {
               private apiService: ApiOffreService) {
   }
   transformDate(date) {
-    console.log(date);
-    var d= new Date (date);
-    let yyyy = d.getFullYear();
-    let mm= d.getMonth();
-    let dd = d.getDay();
-    let dateFormat = yyyy+"-"+mm+"-"+dd;
-    console.log(dateFormat)
-    return dateFormat;
+    let dateFormat = String(date);
+    let test = dateFormat.substring(0,10);
+    return test;
 
     // return this.datePipe.transform(d, 'YYYY-MM-dd'); //whatever format you need. 
   }
-
+  private hh=''
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
@@ -42,14 +37,18 @@ export class OffreEditComponent implements OnInit {
           if (offre) {
             this.offre = offre;
             this.offre.href = offre._links.self.href;
+            this.hh= this.transformDate(this.offre.creationDate)
+            console.log(this.hh)    
           } else {
             console.log(`Offre with id '${id}' not found, returning to list`);
             this.gotoList();
           }
         });
       }
+      
     });
   }
+  
 
   ngOngnDestroy() {
     this.sub.unsubscribe();
@@ -70,5 +69,6 @@ export class OffreEditComponent implements OnInit {
       this.gotoList();
     }, error => console.error(error));
   }
+  
 
 }

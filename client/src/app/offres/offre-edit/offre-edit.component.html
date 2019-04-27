@@ -32,6 +32,7 @@
         <span>{{offre.name ? 'Modifier' : 'Ajouter'}} Offres</span>
       <input class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
     </div>
+    
 
 
     <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
@@ -39,8 +40,9 @@
       <!-- href -->
       <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
       <!-- creation date  -->
+      <label for="">Date de création : </label>
       <div class="wrap-input100 validate-input">
-        <p class="focus-input100">{{transformDate(offre.creationDate)}}</p>
+        <p class="input100">{{hh}}</p>
         <input type="date" value="offre.creationDate" [(ngModel)]="offre.creationDate" class="input100" name="creationDate" placeholder="creationDate">
 
         <span class="focus-input100"></span>
@@ -48,6 +50,7 @@
           <span class="lnr lnr-smartphone m-b-2"></span>
         </label>
       </div>
+      <label for="">Nom :</label>
       <div class="wrap-input100 validate-input">
 
         <input [(ngModel)]="offre.name" class="input100" type="text" name="name" placeholder="Name" #name>
@@ -59,6 +62,7 @@
       </div>
 
       <!-- salary -->
+      <label for="">Salaire : </label>
       <div class="wrap-input100 validate-input">
           <input [(ngModel)]="offre.salary" class="input100" type="text" name="salary" placeholder="salary" #salary>
           <span class="focus-input100"></span>
@@ -67,7 +71,7 @@
           </label>
         </div>
 
-
+      <label for="">Description : </label>
       <div class="wrap-input100 validate-input">
         <textarea [(ngModel)]="offre.description" class="input100" name="description" placeholder="Description Offre" #description></textarea>
         <span class="focus-input100"></span>
@@ -75,8 +79,12 @@
           <span class="lnr lnr-bubble"></span>
         </label>
       </div>
+      <label for="">Disponible? : </label>
       <div class="wrap-input100 validate-input">
-        <input [(ngModel)]="offre.disponible" class="input100" name="disponible" placeholder="Disponobilité de l'Offre" #disponible>
+        <select class="input100" name="disponible"  placeholder="Disponobilité de l'Offre" #disponible [(ngModel)]="offre.disponible">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
         <span class="focus-input100"></span>
         <label class="label-input100 rs1">
           <span class="lnr lnr-bubble"></span>
@@ -95,7 +103,7 @@
       </div>
       <div class="container-contact100-form-btn">
         <button class="contact100-form-btn" (click)="remove(offre.href)" *ngIf="offre.href" type="button">
-          Supprimer
+          Supprimer 
         </button>
 
 
