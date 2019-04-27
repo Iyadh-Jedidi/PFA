@@ -114,28 +114,24 @@
   <section class="section">
     <div class="container">
       <div class="card card-profile shadow mt--300">
-        <!--<div class="px-4">
-          <div class="row justify-content-center">
-            <div class="col-lg-3 order-lg-2">-->
-
+        <div class="px-4">
+          <!--<div class="row justify-content-center">
+            <div class="col-lg-3 order-lg-2">
+-->
 
   <div class="row" style="margin-left: 0px; margin-top: 28px; width: 70%">
-    <!-- TyoeCompte Menu -->
     <div class="col-md-3">
       <br>
       <div class="list-group list-group-flush">
-        <a class="list-group-item list-group-item-action">
-          <i class="fa fa-book"></i>&nbsp;
-          <button (click)="changerToResponsbale()"  type="text" class="input-label" style="width: 80%">{{typeComptes[0].name}}</button>
-        </a>
-        <a class="list-group-item list-group-item-action">
-          <i class="fa fa-book"></i>&nbsp;
-          <button (click)="changerToCandidat()" [(ngModel)]="typeComptes[1].name"  type="text" class="input-label" style="width: 80%">{{typeComptes[1].name  }}</button>
-        </a>
-        <a class="list-group-item list-group-item-action">
-          <i class="fa fa-book"></i>&nbsp;
-          <button (click)="changerToEmploye()"  type="text" class="input-label" style="width: 80%">{{typeComptes[2].name}}</button>
-        </a>
+
+          <button _ngcontent-c5="" class="btn btn-1 btn-outline-success" (click)="changerToResponsbale()"  type="button" >{{typeComptes[0].name }}</button>
+        <br/>
+        <button _ngcontent-c5="" class="btn btn-1 btn-outline-success" (click)="changerToCandidat()" type="button" [(ngModel)]="typeComptes[1].name" >{{typeComptes[1].name  }}</button>
+      <br/>
+          <button _ngcontent-c5="" class="btn btn-1 btn-outline-success" (click)="changerToEmploye()" type="button" [(ngModel)]="typeComptes[2].name"  >{{typeComptes[2].name }}</button>
+<br/>
+        <br/>
+
       </div>
     </div>
 
@@ -147,20 +143,21 @@
             <li>
               <a *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1" [routerLink]="['/admin/comptes', compte.id]" >
                 <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
-                <span _ngcontent-c4="">  {{compte.name}} {{compte.lastname}}</span>
+                <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
               </a>
             </li>
             <li>
               <a *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2" [routerLink]="['/admin/comptes', compte.id]" >
                 <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
-                <span _ngcontent-c4="">  {{compte.name}} {{compte.lastname}}</span>
+                <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
               </a>
             </li>
 
             <li>
+
               <a *ngIf="compte.typeCompteId=='employee' && idTypeCompte==3" [routerLink]="['/admin/comptes', compte.id]" >
                 <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
-                <span _ngcontent-c4="">  {{compte.name}} {{compte.lastname}}</span>
+                <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
               </a>
             </li>
           </ul>
@@ -168,10 +165,10 @@
       </div>
     </div>
   </div>
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-      </div>
-    </div>
+            </div>
+          </div>
+        </div>
+     <!-- </div>
+    </div>-->
   </section>
 </main>

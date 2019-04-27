@@ -113,7 +113,7 @@ const routes: Routes = [
 
 
     {
-        path: 'ajouter-formation',
+        path: 'responsable/formation/ajouter-formation',
         component: EditFormationComponent,
         canActivate: [AuthGaurdService]
     },
