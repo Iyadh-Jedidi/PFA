@@ -21,7 +21,7 @@
 
 
 
-  <div class="container">
+  <!--<div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-6">
         <ngb-tabset [justify]="'center'" class="custom-tab-content flex-column flex-md-row" type="pills">
@@ -31,7 +31,7 @@
               <a *ngIf="compte.typeCompteId=='responsable'" [routerLink]="['/admin/comptes', compte.id]" >
                 <div _ngcontent-c4="">
                   <i _ngcontent-c4="" class="ni ni-circle-08"></i>
-                <span _ngcontent-c4=""> {{compte.name}} {{compte.lastname}}</span>
+                    <span _ngcontent-c4=""> {{compte.name}} {{compte.lastname}}</span>
                 </div>
               </a>
             </ng-template>
@@ -64,40 +64,71 @@
     </div>
 
 
+  </div>-->
+  
+
+
+
+
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+  <div  class="custom-tab-content flex-column flex-md-row" type="pills">
+    <!-- TyoeCompte Menu -->
+    <div class="col-md-3">
+      <br>
+      <div class="list-group list-group-flush">
+
+        <!-- TyoeCompte List -->
+        <a class="list-group-item list-group-item-action">
+          <i class="fa fa-book"></i>&nbsp;
+          <button (click)="changerToResponsbale()"  type="text" class="input-label" style="width: 80%">{{typeComptes[0].name}}</button>
+        </a>
+        <a class="list-group-item list-group-item-action">
+          <i class="fa fa-book"></i>&nbsp;
+          <button (click)="changerToCandidat()" [(ngModel)]="typeComptes[1].name"  type="text" class="input-label" style="width: 80%">{{typeComptes[1].name  }}</button>
+        </a>
+        <a class="list-group-item list-group-item-action">
+          <i class="fa fa-book"></i>&nbsp;
+          <button (click)="changerToEmploye()"  type="text" class="input-label" style="width: 80%">{{typeComptes[2].name}}</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div >
+        <!-- Note list -->
+        <div *ngFor="let compte of comptes">
+
+
+
+
+          <ul>
+            <li>
+              <a *ngIf="compte.typeCompteId=='responsable' && idTypeCompte==1" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}}</a>
+            </li>
+            <li>
+              <a *ngIf="compte.typeCompteId=='candidat' && idTypeCompte==2" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}}</a>
+            </li>
+
+            <li>
+              <a *ngIf="compte.typeCompteId=='employe' && idTypeCompte==3" [routerLink]="['/admin/comptes', compte.id]" >{{compte.name}} {{compte.lastname}}</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
   </div>
 
- <!-- <div _ngcontent-c1="" class="navbar-collapse collapse show" id="navbar_global"><div _ngcontent-c1="" class="navbar-collapse-header">
-    <div _ngcontent-c1="" class="row"><div _ngcontent-c1="" class="col-6 collapse-brand"><a _ngcontent-c1="" href="/argon-design-system-angular/home">
-      <img _ngcontent-c1="" src="./assets/img/brand/blue.png"></a></div>
-      <div _ngcontent-c1="" class="col-6 collapse-close"><button _ngcontent-c1="" aria-controls="navbar_global" class="navbar-toggler" type="button" aria-expanded="true">
-        <span _ngcontent-c1=""></span><span _ngcontent-c1=""></span></button></div></div></div><ul _ngcontent-c1="" class="navbar-nav navbar-nav-hover align-items-lg-center">
-    <li _ngcontent-c1="" class="nav-item dropdown">
-      <a _ngcontent-c1="" class="nav-link no-caret" data-toggle="dropdown" role="button">
-        <i _ngcontent-c1="" class="ni ni-ui-04 d-lg-none"></i><span _ngcontent-c1="" class="nav-link-inner&#45;&#45;text">Comptes</span></a>
+      </div>
+    </div>
+  </div>
 
 
-      <div _ngcontent-c1="" class="dropdown-menu-xl dropdown-menu">
-        <div _ngcontent-c1="" class="dropdown-menu-inner" >
 
 
-        <a _ngcontent-c1="" class="media d-flex align-items-center" routerlinkactive="active" [routerLink]="['/admin/comptes', compte.id]">
-          <div _ngcontent-c1="" class="media-body ml-3">
-            <h6 _ngcontent-c1="" class="heading text-primary mb-md-1">Responsables</h6>
-            </div>
-        </a>
-
-        <a _ngcontent-c1="" class="media d-flex align-items-center" routerlinkactive="active" href="/argon-design-system-angular/documentation/colors">
-         <div _ngcontent-c1="" class="media-body ml-3">
-          <h6 _ngcontent-c1="" class="heading text-primary mb-md-1">Employes</h6>
-          </div></a>
-        <a a _ngcontent-c1="" class="media d-flex align-items-center" routerlinkactive="active" href="/argon-design-system-angular/documentation/alerts">
-
-          <div _ngcontent-c1="" class="media-body ml-3">
-            <h5 _ngcontent-c1="" class="heading text-warning mb-md-1">Candidats</h5>
-            </div></a>
-      </div></div></li>
-    </ul>
-   </div>-->
 
 
 </main>
