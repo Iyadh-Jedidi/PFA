@@ -15,7 +15,9 @@ export class OffresComponent implements OnInit {
     compte: any = {};
     id = localStorage.getItem('id');
     offres: Array <any>
-    constructor(private loginService: AuthentificationService,private compteApiService : ApiCompteService,private apiService: ApiOffreService) { }
+    constructor(private loginService: AuthentificationService,
+                private compteApiService: ApiCompteService,
+                private apiService: ApiOffreService) { }
 
     ngOnInit() {
         this.compteApiService.get(this.id).subscribe((compte: any) => {
