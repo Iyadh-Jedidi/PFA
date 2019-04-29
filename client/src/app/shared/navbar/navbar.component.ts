@@ -29,8 +29,9 @@ export class NavbarComponent implements OnInit {
         this.router.events.subscribe((event) => {
         this.isCollapsed = true;
         if (event instanceof NavigationStart) {
-           if (event.url !== this.lastPoppedUrl)
+           if (event.url !== this.lastPoppedUrl) {
                this.yScrollStack.push(window.scrollY);
+           }
        } else if (event instanceof NavigationEnd) {
            if (event.url === this.lastPoppedUrl) {
                this.lastPoppedUrl = undefined;
@@ -78,6 +79,15 @@ export class NavbarComponent implements OnInit {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
         if ( titlee === '/offres' ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    isFormation() {
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+
+        if ( titlee === '/responsable/formation' ) {
             return true;
         } else {
             return false;

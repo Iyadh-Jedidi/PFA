@@ -153,7 +153,7 @@
                             style="margin-left:12px;"><i class="fa fa-plus"></i>SAVE
                     </button>
                     <button [routerLink]="['/admin/comptes']" class="btn btn-warning pull-right" type="button">Cancel</button>
-                    <button mat-raised-button color="secondary" class="btn btn-warning " (click)="remove(compte.href)" *ngIf="compte.href" type="button">Delete</button>
+                    <button mat-raised-button color="secondary" class="btn btn-warning " (click)="remove(compte.href)" *ngIf="(compte.href) && (compte.typeCompteId != 'candidat') " type="button">Delete</button>
 
                   </div>
 

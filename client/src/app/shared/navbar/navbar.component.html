@@ -119,6 +119,14 @@
                   <span class="nav-link-inner--text">Ajouter Offre</span>
                 </button>
               </li>
+              <li class="nav-item d-none d-lg-block ml-lg-4">
+                <button [routerLink]="['responsable/formation/ajouter-formation']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='formation') && isFormation() " target="_blank" class="btn btn-neutral btn-icon">
+            <span class="btn-inner--icon">
+              <i _ngcontent-c4="" class="ni ni-fat-add"></i>
+            </span>
+                  <span class="nav-link-inner--text">Ajouter Formation</span>
+                </button>
+              </li>
             </ul>
         </div>
     </div>
