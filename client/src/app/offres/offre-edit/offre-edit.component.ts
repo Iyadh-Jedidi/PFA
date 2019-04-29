@@ -28,7 +28,7 @@ export class OffreEditComponent implements OnInit {
 
     // return this.datePipe.transform(d, 'YYYY-MM-dd'); //whatever format you need. 
   }
-  private hh=''
+  private DateCreation=''
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
@@ -37,8 +37,8 @@ export class OffreEditComponent implements OnInit {
           if (offre) {
             this.offre = offre;
             this.offre.href = offre._links.self.href;
-            this.hh= this.transformDate(this.offre.creationDate)
-            console.log(this.hh)    
+            this.DateCreation= this.transformDate(this.offre.creationDate)
+            console.log(this.DateCreation)    
           } else {
             console.log(`Offre with id '${id}' not found, returning to list`);
             this.gotoList();

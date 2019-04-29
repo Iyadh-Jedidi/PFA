@@ -20,6 +20,14 @@ export class CompteEditComponent implements OnInit {
               private router: Router,
               private apiService: ApiCompteService) {
   }
+  private dateNaissabce='';
+  transformDate(date) {
+    let dateFormat = String(date);
+    let test = dateFormat.substring(0,10);
+    return test;
+
+    // return this.datePipe.transform(d, 'YYYY-MM-dd'); //whatever format you need. 
+  }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -30,6 +38,7 @@ export class CompteEditComponent implements OnInit {
           if (compte) {
             this.compte = compte;
             this.compte.href = compte._links.self.href;
+            this.dateNaissabce = this.transformDate(compte.dateBirth)
           } else {
             console.log(`Compte with id '${id}' not found, returning to list`);
             this.gotoList();
