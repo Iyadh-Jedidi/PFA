@@ -3,6 +3,7 @@ import {Subscription} from 'rxjs';
 import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {ApiformationService} from '../../services/formation/apiformation.service';
+import { ApiCompteService } from 'src/app/services/compte/api-compte.service';
 
 @Component({
   selector: 'app-edit-formation',
@@ -14,15 +15,17 @@ export class EditFormationComponent implements OnInit {
   sub: Subscription;
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private apiService: ApiformationService) { }
+              private apiService: ApiformationService,
+              private apiCompte: ApiCompteService) { }
+
+  
+  compte: any = {};
+  private idCompte=localStorage.getItem('id');
 
 
-
-  private id;
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
-      this.id = id;
       if (id) {
         this.apiService.get(id).subscribe((formation: any) => {
           if (formation) {
@@ -34,6 +37,14 @@ export class EditFormationComponent implements OnInit {
             this.gotoList();
           }
         });
+      }
+    });
+    this.apiCompte.get(this.idCompte).subscribe((compte: any) => {
+      if (compte) {
+        this.compte = compte;
+      } else {
+        console.log(`Compte with id '${this.idCompte}' not found, returning to list`);
+        this.gotoList();
       }
     });
   }

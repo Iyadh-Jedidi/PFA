@@ -14,7 +14,7 @@
       <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
                   <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
         <div class="wrap-input100 validate-input">
-          <input [(ngModel)]="formation.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
+          <input [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
           <span class="focus-input100"></span>
           <label class="label-input100">
             <span class="lnr lnr-user m-b-2"></span>
@@ -24,7 +24,7 @@
 
 
         <div class="wrap-input100 validate-input">
-          <input [(ngModel)]="formation.duree" class="input100" name="duree" placeholder="Durée" #duree>
+          <input [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.duree" class="input100" name="duree" placeholder="Durée" #duree>
           <span class="focus-input100"></span>
           <label class="label-input100" >
             <span class="lnr lnr-smartphone m-b-2"></span>
@@ -33,7 +33,7 @@
 
 
         <div class="wrap-input100 validate-input">
-          <textarea [(ngModel)]="formation.description" class="input100" name="description" placeholder="Description Formation" #description></textarea>
+          <textarea [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.description" class="input100" name="description" placeholder="Description Formation" #description></textarea>
           <span class="focus-input100"></span>
           <label class="label-input100 rs1">
             <span class="lnr lnr-bubble"></span>
@@ -41,17 +41,22 @@
         </div>
 
         <div class="container-contact100-form-btn">
-          <button type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
+          <button [hidden]="compte.typeCompteId != 'responsable'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
               {{formation.name ? 'Modifier' : 'Ajouter'}}
           </button>
         </div>
         <div class="container-contact100-form-btn">
+            <button type="button" [routerLink]="['/responsable/formation']" class="contact100-form-btn">
+              Postuler
+            </button>
           <button type="button" [routerLink]="['/responsable/formation']" class="contact100-form-btn">
             Annuler
           </button>
+          
         </div>
+
         <div class="container-contact100-form-btn">
-          <button class="contact100-form-btn" (click)="remove(formation.href)" *ngIf="formation.href" type="button">
+          <button [hidden]="compte.typeCompteId != 'responsable'" class="contact100-form-btn" (click)="remove(formation.href)" *ngIf="formation.href" type="button">
             Supprimer
           </button>
 
