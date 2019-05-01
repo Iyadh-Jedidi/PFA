@@ -69,13 +69,13 @@
                         <div class="col-lg-4 col-sm-6">
                           <div class="form-group">
                             <label>Mot de passe</label>
-                            <input value="{{compte.password}}" type="password" placeholder="Tél.." class="form-control" [(ngModel)]="compte.password" required name="password" #password/>
+                            <input value="{{compte.password}}" type="password" placeholder="Mot de passe..." class="form-control" [(ngModel)]="compte.password" required name="password" #password/>
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-6">
                           <div class="form-group">
                             <label>Adresse</label>
-                            <input value="{{compte.address}}" type="text" placeholder="Tél.." class="form-control" [(ngModel)]="compte.address" required name="address" #address />
+                            <input value="{{compte.address}}" type="text" placeholder="Adresse..." class="form-control" [(ngModel)]="compte.address" required name="address" #address />
                           </div>
                         </div>
                       </div>
@@ -91,7 +91,7 @@
                     <button type="submit"
                   mat-raised-button color="primary"
                   class="btn btn-warning pull-left"
-                  [disabled]="!compteForm.form.valid"
+
                             style="margin-left:12px;" (click)="alert()"><i class="fa fa-plus"></i>SAVE</button>
 
 
