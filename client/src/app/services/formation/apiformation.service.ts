@@ -18,13 +18,14 @@ export class ApiformationService {
     return this.http.get(this.FORMATION_API + '/' + id);
   }
 
-  save(formation: any): Observable<any> {
-      return this.http.post(this.API + '/post-formation', formation);
-
-  }
-  update(formation: any, id): Observable<any> {
-      return this.http.put(this.API + '/formations/' + id, formation);
-
+  save(foramtion: any): Observable<any> {
+    let result: Observable<Object>;
+    if (foramtion.href) {
+      result = this.http.put(foramtion.href, foramtion);
+    } else {
+      result = this.http.post(this.FORMATION_API, foramtion);
+    }
+    return result;
   }
   remove(href: string) {
     return this.http.delete(href);

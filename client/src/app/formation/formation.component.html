@@ -44,17 +44,16 @@
           <div class="col-lg-12">
             <div class="row row-grid">
 
-              <div  class="col-lg-4" *ngFor="let offre of offres">
+              <div  class="col-lg-4" *ngFor="let formation of formations">
                 <div class="card card-lift--hover shadow border-0">
                   <div class="card-body py-5">
                     <div class="icon icon-shape   mb-4">
                       <button _ngcontent-c5="" class="btn btn-1 btn-success" type="button">Disponible</button>
                     </div>
-                    <h6 class="text-primary text-uppercase" >{{offre.name}} </h6>
-                    <p class="description mt-3">{{offre.description}}</p>
-
-                    <a  *ngIf="compte.typeCompteId !='admin'" [routerLink]="['/offres', offre.id]" href="javascript:void(0)" class="btn btn-primary mt-4">Consulter l'offre</a>
-                    <a *ngIf="compte.typeCompteId =='admin'" [routerLink]="['/offres',offre.id]" href="javascript:void(0)" class="btn btn-primary mt-4">Edit l'offre</a>
+                    <h6 class="text-primary text-uppercase" >{{formation.name}} </h6>
+                    <p class="description mt-3">{{formation.description}}</p>
+                    <a  *ngIf="compte.typeCompteId =='responsable' && compte.poste=='formation'" [routerLink]="['/responsable/formation', formation.id]" href="javascript:void(0)" class="btn btn-primary mt-4">Editer la formation</a>
+                    <a *ngIf="compte.poste != 'formation'" [routerLink]="['/responsable/formation', formation.id]"   href="javascript:void(0)" class="btn btn-primary mt-4">Consulter la formation</a>
 
                   </div>
                 </div>

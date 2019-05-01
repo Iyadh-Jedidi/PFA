@@ -12,8 +12,8 @@ import {ApiCompteService} from '../services/compte/api-compte.service';
 })
 export class FormationComponent implements OnInit {
   id = localStorage.getItem('id');
-  compte: Array<any>;
-  formation: Array <any> ;
+  compte: any = {};
+  formations: Array <any> ;
   constructor(private loginService: AuthentificationService,
               private compteApiService: ApiCompteService,
               private apiService: ApiformationService) { }
@@ -23,7 +23,7 @@ export class FormationComponent implements OnInit {
       this.compte = compte;
     });
     this.apiService.getAll().subscribe(data => {
-      this.formation = data;
+      this.formations = data;
     });
   }
 

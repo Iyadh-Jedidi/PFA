@@ -94,20 +94,20 @@ const routes: Routes = [
         component: OffreEditComponent,
         canActivate: [AuthGaurdService]
     },
-    {
-      path: 'responsable/formation',
-      component: FormationComponent,
-      canActivate: [AuthGaurdService]
-    },
-      {
-      path: 'responsable/formation/:id',
-      component: EditFormationComponent,
-      canActivate: [AuthGaurdService]
-    },
-
+    
     {
         path: 'admin/comptes/:id',
         component: CompteEditComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'responsable/formation',
+        component: FormationComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
+        path: 'responsable/formation/:id',
+        component: EditFormationComponent,
         canActivate: [AuthGaurdService]
     },
 

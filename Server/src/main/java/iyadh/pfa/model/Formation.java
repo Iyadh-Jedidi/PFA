@@ -50,12 +50,12 @@ public class Formation {
         this.description = description;
     }
 
-    public String getDurée() {
+    public String getDuree() {
         return duree;
     }
 
-    public void setDurée(String durée) {
-        this.duree = durée;
+    public void setDurée(String duree) {
+        this.duree = duree;
     }
 
     public Set<Compte> getDemande() {

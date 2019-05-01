@@ -28,66 +28,66 @@
       </div>
 
             <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-                <li [routerLink]="['/home']" class="nav-item dropdown">
-                    <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li  class="nav-item dropdown">
+                    <a [routerLink]="['/home']" class="nav-link no-caret" data-toggle="dropdown" role="button">
                         Home
                     </a>
                 </li>
-                <li *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/profile',id]"  class="nav-item dropdown">
-                    <a class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li  class="nav-item dropdown">
+                    <a *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/profile',id]"  class="nav-link no-caret" data-toggle="dropdown" role="button">
                         Profile
                     </a>
                 </li>
-                <li *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='admin')" [routerLink]="['/admin/comptes']" class="nav-item dropdown">
-                    <a   class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li   class="nav-item dropdown">
+                    <a [routerLink]="['/admin/comptes']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='admin')"  class="nav-link no-caret" data-toggle="dropdown" role="button">
                       Comptes
                     </a>
                 </li>
 
 
-                <li  [hidden]="compte.typeCompteId=='employee'" [routerLink]="['/offres']" class="nav-item dropdown">
-                    <a  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li  class="nav-item dropdown">
+                    <a   [hidden]="compte.typeCompteId=='employee'" class="nav-link no-caret" data-toggle="dropdown" role="button"  [routerLink]="['/offres']">
                       <span class="nav-link-inner--text">Consulter les offres</span>
                     </a>
                 </li>
-                <li *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='employee')" [routerLink]="['/employee/formation']" class="nav-item dropdown">
-                    <a   class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li  class="nav-item dropdown">
+                    <a  *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='employee')" [routerLink]="['/employee/formation']" class="nav-link no-caret" data-toggle="dropdown" role="button">
                       <span class="nav-link-inner--text">Demander Formation</span>
                     </a>
                 </li>
-                <li *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='formation')" [routerLink]="['/responsable/formation']" class="nav-item dropdown">
+                <li  class="nav-item dropdown">
                     <a  *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='formation')" [routerLink]="['/responsable/formation']" class="nav-link no-caret" data-toggle="dropdown" role="button">
                       <span class="nav-link-inner--text">Consulter Formations</span>
                     </a>
                 </li>
-                <li *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='formation')" [routerLink]="['/responsable/formation']" class="nav-item dropdown">
-                    <a  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li   class="nav-item dropdown">
+                    <a [routerLink]="['/responsable/formation']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='formation')" class="nav-link no-caret" data-toggle="dropdown" role="button">
                       <span class="nav-link-inner--text">Demandes Formations</span>
                     </a>
                 </li>
 
-                <li *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='entretient')" [routerLink]="['/responsable/entretient']" class="nav-item dropdown">
-                    <a  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li   class="nav-item dropdown">
+                    <a [routerLink]="['/responsable/entretient']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='entretient')" class="nav-link no-caret" data-toggle="dropdown" role="button">
                       <span class="nav-link-inner--text">Les postulations</span>
                     </a>
                 </li>
-                <li *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='recrutement')" [routerLink]="['/responsable/recrutement']" class="nav-item dropdown">
-                    <a   class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li  class="nav-item dropdown">
+                    <a [routerLink]="['/responsable/recrutement']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='recrutement')"  class="nav-link no-caret" data-toggle="dropdown" role="button">
                       <span class="nav-link-inner--text">Liste Employés</span>
                     </a>
                 </li>
-                <li *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='recrutement')" [routerLink]="['/responsable/candidats-acceptes']" class="nav-item dropdown">
-                    <a  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li   class="nav-item dropdown">
+                    <a [routerLink]="['/responsable/candidats-acceptes']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='recrutement')" class="nav-link no-caret" data-toggle="dropdown" role="button">
                       <span class="nav-link-inner--text">Liste candidats acceptés</span>
                     </a>
                 </li>
-                <li *ngIf="!loginService.isUserLoggedIn()" class="nav-item dropdown" [routerLink]="['/login']">
-                    <a   class="nav-link no-caret" data-toggle="dropdown" role="button" >
+                <li  class="nav-item dropdown" >
+                    <a [routerLink]="[ 'login']"  *ngIf="!loginService.isUserLoggedIn()"   class="nav-link no-caret" data-toggle="dropdown" role="button" >
                         <span class="nav-link-inner--text">Login</span>
                     </a>
                 </li>
-                <li *ngIf="loginService.isUserLoggedIn()" (click)="load(['/logout'])" class="nav-item dropdown">
-                    <a  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <li class="nav-item dropdown">
+                    <a  *ngIf="loginService.isUserLoggedIn()" (click)="load(['/logout'])"  class="nav-link no-caret" data-toggle="dropdown" role="button">
                         <span class="nav-link-inner--text">Déconnecter</span>
                     </a>
                 </li>

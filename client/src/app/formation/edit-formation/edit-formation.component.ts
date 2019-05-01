@@ -28,6 +28,7 @@ export class EditFormationComponent implements OnInit {
           if (formation) {
             this.formation = formation;
             this.formation.href = formation._links.self.href;
+            console.log(this.formation.id);
           } else {
             console.log(`Formation with id '${id}' not found, returning to list`);
             this.gotoList();
@@ -44,22 +45,11 @@ export class EditFormationComponent implements OnInit {
     this.router.navigate(['/responsable/formation']);
   }
   save(form: NgForm) {
-
-    if (this.id > 0){
-      console.log('t5alet lel if ' +   this.id)
-      this.apiService.update(form, this.id).subscribe(result => {
+    this.apiService.save(form).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
-    } else{
-      console.log('t5al lel else' + this.id)
-      this.apiService.save(form).subscribe(result => {
-      this.gotoList();
-    }, error => console.error(error));
-
-    }
-
   }
-
+  
 
 
   remove(href) {

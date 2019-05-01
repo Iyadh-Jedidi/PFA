@@ -26,7 +26,6 @@ export class CompteEditComponent implements OnInit {
     let test = dateFormat.substring(0,10);
     return test;
 
-    // return this.datePipe.transform(d, 'YYYY-MM-dd'); //whatever format you need. 
   }
 
   ngOnInit() {

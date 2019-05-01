@@ -25,26 +25,6 @@ public class FormationController {
                 .collect(Collectors.toList());
 
     }
-    @PostMapping("/post-formation")
-    public Formation save (@RequestBody Formation formation){
-        formation=this.repository.save(formation);
-
-        return formation;
-
-    }
-    @PutMapping("/formations/{id}")
-    public Formation put (@RequestBody Formation newformation,@PathVariable Long id ){
-        return repository.findById(id)
-			.map(formation -> {
-                    formation.setName(newformation.getName());
-				    formation.setDescription(newformation.getDescription());
-				    formation.setDurée(newformation.getDurée());
-				return repository.save(formation);
-			})
-			.orElseGet(() -> {
-				newformation.setId(id);
-				return repository.save(newformation);
-			});
-    }
+    
 }
 

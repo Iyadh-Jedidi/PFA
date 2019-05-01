@@ -28,6 +28,9 @@ public class Compte {
     private File CV;
     private File Contrat;
     private String poste;
+    public Compte (){
+        
+    }
     public Compte (Long id,String name, String lastname, String TypeCompteId, String email,String password, Long tel, Date dateBirth,String addres,
                   File cv, File contrat, String poste ){
         this.id=id;

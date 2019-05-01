@@ -11,7 +11,16 @@ import {NgForm} from '@angular/forms';
     styleUrls: ['./profile.component.scss']
 })
 
+
 export class ProfileComponent implements OnInit {
+  transformDate(date) {
+    let dateFormat = String(date);
+    let test = dateFormat.substring(0,10);
+    return test;
+
+  }
+
+  date ='';
     model = {
         left: true,
         middle: false,
@@ -42,6 +51,8 @@ export class ProfileComponent implements OnInit {
           if (compte) {
             this.compte = compte;
             this.compte.href = compte._links.self.href;
+            this.date=this.transformDate(compte.dateBirth)
+
           } else {
             console.log(`Compte with id '${id}' not found, returning to list`);
             this.gotoList();
