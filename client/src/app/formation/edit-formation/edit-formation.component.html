@@ -7,11 +7,12 @@
 
       <div class="contact100-form-title arriere-plan contact100-header flex-sb-m">
           <span>{{formation.name ? 'Modifier' : 'Ajouter'}} Formation</span>
-        <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
+        
       </div>
 
 
       <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
+                  <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
         <div class="wrap-input100 validate-input">
           <input [(ngModel)]="formation.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
           <span class="focus-input100"></span>
@@ -41,7 +42,7 @@
 
         <div class="container-contact100-form-btn">
           <button type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
-            Ajouter
+              {{formation.name ? 'Modifier' : 'Ajouter'}}
           </button>
         </div>
         <div class="container-contact100-form-btn">
