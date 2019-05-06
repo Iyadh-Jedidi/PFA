@@ -56,6 +56,7 @@ export class EditFormationComponent implements OnInit {
   
   demadeFormation(compte,formation){
     this.apiCompte.addFormation(compte,formation);
+    this.gotoList();
     
   }
 

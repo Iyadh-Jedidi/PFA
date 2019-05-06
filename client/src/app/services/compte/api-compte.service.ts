@@ -13,7 +13,7 @@ export class ApiCompteService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/all-comptes');
+    return this.http.get(this.API+'/'+'all-comptes');
   }
   get(id: string) {
     return this.http.get(this.COMTE_API + '/' + id);
@@ -28,9 +28,13 @@ export class ApiCompteService {
     }
     return result;
   }
-  addFormation(compte,formation){
-    this.http.post(this.COMTE_API+'/'+compte.id+'/formation',formation);
-    this.http.post('//localhost:8080/'+formation.id+'/comptes',compte)
+  addFormation(idcompte,idformation){
+    console.log('b3athet');
+    console.log(idformation)
+    return this.http.get('//localhost:8080/demande-formation/'+idcompte+'/'+idformation)
+
+    // this.http.post(this.COMTE_API+'/'+compte.id+'/formation',formation);
+    // this.http.post(this.COMTE_API+'/'+formation.id+'/comptes',compte)
 
   }
   remove(href: string) {

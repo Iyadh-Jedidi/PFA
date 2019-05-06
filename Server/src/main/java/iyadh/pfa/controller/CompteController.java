@@ -45,11 +45,18 @@ public class CompteController {
     }
     @GetMapping("/demande-formation/{idCompte}/{idFormation}")
     public void addFormation (@PathVariable Long idCompte, @PathVariable Long idFormation){
+        System.out.println(idCompte);
+        System.out.println(idFormation);
+        System.out.println("t5alet lele get");
+
         Compte compte = repository.findById(idCompte).get();
         Formation formation = formationRepository.findById(idFormation).get();
-            compte.getFormations().add(formation);
-            formation.getComptes().add(compte);
+        compte.getFormations().add(formation);
+        formation.getComptes().add(compte);
+        repository.save(compte);
+        formationRepository.save(formation);
             
     }
+    
 
 }
