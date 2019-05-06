@@ -9,7 +9,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.File;
 import java.util.Date;
-import javax.persistence.ManyToOne;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 
 @Entity
 @NoArgsConstructor
@@ -29,20 +33,21 @@ public class Compte {
     private File CV;
     private File Contrat;
     private String poste;
-    @ManyToOne
-    private Formation formation;
-
-    public Formation getFormation() {
-        return formation;
-    }
-
-    public void setFormation(Formation formation) {
-        this.formation = formation;
-    }
+    
+     @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                CascadeType.PERSIST,
+                CascadeType.MERGE
+            },
+            mappedBy = "comptes")
+    private Set<Formation> formations = new HashSet<>();
 
     /**
      *
      */
+    
+
+   
     
     public Compte (Long id,String name, String lastname, String TypeCompteId, String email,String password, Long tel, Date dateBirth,String addres,
                   File cv, File contrat, String poste ){
@@ -155,5 +160,19 @@ public class Compte {
 
     public void setPoste(String poste) {
         this.poste = poste;
+    }
+
+    /**
+     * @return the formations
+     */
+    public Set<Formation> getFormations() {
+        return formations;
+    }
+
+    /**
+     * @param formations the formations to set
+     */
+    public void setFormations(Set<Formation> formations) {
+        this.formations = formations;
     }
 }
