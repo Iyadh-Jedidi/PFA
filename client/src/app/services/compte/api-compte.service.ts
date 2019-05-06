@@ -28,13 +28,13 @@ export class ApiCompteService {
     }
     return result;
   }
-  addFormation(idcompte,idformation){
+  addFormation(idCompte,idFormation){
     console.log('b3athet');
-    console.log(idformation)
-    return this.http.get('//localhost:8080/demande-formation/'+idcompte+'/'+idformation)
+
+    return this.http.get('//localhost:8080/demande-formation/'+idCompte+'/'+idFormation)
 
     // this.http.post(this.COMTE_API+'/'+compte.id+'/formation',formation);
-    // this.http.post(this.COMTE_API+'/'+formation.id+'/comptes',compte)
+    // this.http.post(this.COMTE_API+'/'+formation.id+'/comptes',compte)  
 
   }
   remove(href: string) {

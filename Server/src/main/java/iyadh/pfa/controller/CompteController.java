@@ -4,6 +4,7 @@ import iyadh.pfa.model.Compte;
 import iyadh.pfa.model.Formation;
 import iyadh.pfa.repository.CompteRepository;
 import iyadh.pfa.repository.FormationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,17 +45,21 @@ public class CompteController {
 
     }
     @GetMapping("/demande-formation/{idCompte}/{idFormation}")
-    public void addFormation (@PathVariable Long idCompte, @PathVariable Long idFormation){
+    public void addFormation (@PathVariable String idCompte, @PathVariable String idFormation){
         System.out.println(idCompte);
         System.out.println(idFormation);
-        System.out.println("t5alet lele get");
+        Long idcompte1= Long.parseLong(idCompte);
+        Long idFormation1=Long.parseLong(idFormation);
 
-        Compte compte = repository.findById(idCompte).get();
-        Formation formation = formationRepository.findById(idFormation).get();
+        System.out.println("t5alet lel get");
+
+        Compte compte = repository.findById(idcompte1).get();
+        System.out.println(compte);
+        Formation formation = formationRepository.findById(idFormation1).get();
         compte.getFormations().add(formation);
-        formation.getComptes().add(compte);
+        //formation.getComptes().add(compte);
         repository.save(compte);
-        formationRepository.save(formation);
+        //formationRepository.save(formation);
             
     }
     

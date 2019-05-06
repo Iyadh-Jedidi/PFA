@@ -23,6 +23,7 @@ export class EditFormationComponent implements OnInit {
   
   compte: any = {};
   private idCompte=localStorage.getItem('id');
+  private idFormation;
 
 
   ngOnInit() {
@@ -33,6 +34,7 @@ export class EditFormationComponent implements OnInit {
           if (formation) {
             this.formation = formation;
             this.formation.href = formation._links.self.href;
+            this.idFormation=formation.id;
             console.log(this.formation.id);
           } else {
             console.log(`Formation with id '${id}' not found, returning to list`);
@@ -54,9 +56,11 @@ export class EditFormationComponent implements OnInit {
     this.sub.unsubscribe();
   }
   
-  demadeFormation(compte,formation){
-    this.apiCompte.addFormation(compte,formation);
-    this.gotoList();
+  demadeFormation(idCompte,idFormation){
+    this.apiCompte.addFormation(idCompte,idFormation).subscribe(()=>{
+      this.gotoList();
+    });
+    
     
   }
 
