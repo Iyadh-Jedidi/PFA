@@ -7,5 +7,5 @@ import iyadh.pfa.model.DemandesFormation;
 
 @RepositoryRestResource
 @CrossOrigin(origins = "http://localhost:4200")
-public interface DemandesFormationsRepository extends JpaRepository<DemandesFormation,Long> {
+public interface DemandeFormationRepository extends JpaRepository<DemandesFormation,Long> {
 }

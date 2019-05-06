@@ -1,5 +1,6 @@
 package iyadh.pfa.model;
 
+import java.util.Collection;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.Set;
+import javax.persistence.ManyToOne;
 
 @Entity
 @NoArgsConstructor
@@ -21,10 +23,12 @@ public class Formation {
     private String name;
     private String description;
     private String duree;
+    
+    
 
 
-    @OneToMany
-    private Set<Compte> demande;
+    @OneToMany(mappedBy = "formation")
+    private Collection<Compte> compte;
 
     public Long getId() {
         return id;
@@ -58,11 +62,15 @@ public class Formation {
         this.duree = duree;
     }
 
-    public Set<Compte> getDemande() {
-        return demande;
+    public Collection<Compte> getCompte() {
+        return compte;
     }
 
-    public void setDemande(Set<Compte> demande) {
-        this.demande = demande;
+    public void setCompte(Collection<Compte> compte) {
+        this.compte = compte;
     }
+
+    
+
+   
 }

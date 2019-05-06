@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.io.File;
 import java.util.Date;
+import javax.persistence.ManyToOne;
 
 @Entity
 @NoArgsConstructor
@@ -28,6 +29,16 @@ public class Compte {
     private File CV;
     private File Contrat;
     private String poste;
+    @ManyToOne
+    private Formation formation;
+
+    public Formation getFormation() {
+        return formation;
+    }
+
+    public void setFormation(Formation formation) {
+        this.formation = formation;
+    }
 
     /**
      *
