@@ -56,6 +56,9 @@ export class EditFormationComponent implements OnInit {
   postuler(idCompte,idFormation){
   this.apiDemande.postuler(this.compte.id,this.formation.id)
   }
+  demadeFormation(idCompte,idFormation){
+    this.apiCompte.addFormation(idCompte, this.formation.id);
+  }
 
   gotoList() {
     this.router.navigate(['/responsable/formation']);

@@ -1,20 +1,25 @@
 package iyadh.pfa.controller;
 
 import iyadh.pfa.model.Compte;
+import iyadh.pfa.model.Formation;
 import iyadh.pfa.repository.CompteRepository;
+import iyadh.pfa.repository.FormationRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
+import java.util.Optional;
 import java.util.stream.Collectors;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 
 public class CompteController {
     private CompteRepository repository;
+    private FormationRepository formationRepository;
     public CompteController(CompteRepository repository) {
         this.repository = repository;
     }
@@ -37,6 +42,14 @@ public class CompteController {
         }
         return null;
 
+    }
+    @GetMapping("/demande-formation/{idCompte}/{idFormation}")
+    public void addFormation (@PathVariable Long idCompte, @PathVariable Long idFormation){
+        Compte compte = repository.findById(idCompte).get();
+        Formation formation = formationRepository.findById(idFormation).get();
+            compte.getFormations().add(formation);
+            formation.getComptes().add(compte);
+            
     }
 
 }

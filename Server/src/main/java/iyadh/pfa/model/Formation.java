@@ -1,6 +1,6 @@
 package iyadh.pfa.model;
 
-import java.util.Collection;
+import java.util.HashSet;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -10,7 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.Set;
-import javax.persistence.ManyToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 @Entity
 @NoArgsConstructor
@@ -19,23 +23,35 @@ import javax.persistence.ManyToOne;
 public class Formation {
     @Id
     @GeneratedValue
-    private Long id;
+    private Long idFormation;
     private String name;
     private String description;
     private String duree;
+
+
+//    @OneToMany
+//    private Set<Compte> demande;
     
     
-
-
-    @OneToMany(mappedBy = "formation")
-    private Collection<Compte> compte;
-
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                CascadeType.PERSIST,
+                CascadeType.MERGE
+            })
+    @JoinTable(name = "DemandesFormation",
+            joinColumns = { @JoinColumn(name = "idFormation") },
+            inverseJoinColumns = { @JoinColumn(name = "idCompte") })
+    private Set<Compte> comptes = new HashSet<>();
+    
+    
+//    public Formation(){}
+    
     public Long getId() {
-        return id;
+        return idFormation;
     }
-
+    
     public void setId(Long id) {
-        this.id = id;
+        this.idFormation = id;
     }
 
     public String getName() {
@@ -62,15 +78,27 @@ public class Formation {
         this.duree = duree;
     }
 
-    public Collection<Compte> getCompte() {
-        return compte;
+    /**
+     * @return the comptes
+     */
+    public Set<Compte> getComptes() {
+        return comptes;
     }
 
-    public void setCompte(Collection<Compte> compte) {
-        this.compte = compte;
+    /**
+     * @param comptes the comptes to set
+     */
+    public void setComptes(Set<Compte> comptes) {
+        this.comptes = comptes;
     }
+     
 
-    
+    public Formation(Long id, String name, String description, String duree) {
+        this.idFormation = id;
+        this.name = name;
+        this.description = description;
+        this.duree = duree;
+    }
 
    
 }

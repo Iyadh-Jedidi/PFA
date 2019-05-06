@@ -28,6 +28,9 @@ export class ApiCompteService {
     }
     return result;
   }
+  addFormation(idCompte,idFormation){
+    return this.http.get('//localhost:8080/demande-formation/'+idCompte+'/'+idFormation)
+  }
   remove(href: string) {
     return this.http.delete(href);
   }
