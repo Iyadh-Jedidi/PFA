@@ -13,9 +13,7 @@ import 'rxjs-compat/add/operator/map';
 export class AuthentificationService {
   comptes: Array <any>;
   constructor(private http: HttpClient, private apiService: ApiCompteService , private router: Router, private cookieService: CookieService  ) {
-    /*this.apiService.getAll().subscribe(data => {
-      this.comptes = data;
-    });*/
+    
 
   }
    /*setLocalStorageAndLeave(name, value, newLocation){

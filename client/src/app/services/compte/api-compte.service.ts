@@ -28,8 +28,10 @@ export class ApiCompteService {
     }
     return result;
   }
-  addFormation(idCompte,idFormation){
-    return this.http.get('//localhost:8080/demande-formation/'+idCompte+'/'+idFormation)
+  addFormation(compte,formation){
+    this.http.post(this.COMTE_API+'/'+compte.id+'/formation',formation);
+    this.http.post('//localhost:8080/'+formation.id+'/comptes',compte)
+
   }
   remove(href: string) {
     return this.http.delete(href);

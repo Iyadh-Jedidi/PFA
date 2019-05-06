@@ -53,11 +53,10 @@ export class EditFormationComponent implements OnInit {
   ngOngnDestroy() {
     this.sub.unsubscribe();
   }
-  postuler(idCompte,idFormation){
-  this.apiDemande.postuler(this.compte.id,this.formation.id)
-  }
-  demadeFormation(idCompte,idFormation){
-    this.apiCompte.addFormation(idCompte, this.formation.id);
+  
+  demadeFormation(compte,formation){
+    this.apiCompte.addFormation(compte,formation);
+    
   }
 
   gotoList() {
