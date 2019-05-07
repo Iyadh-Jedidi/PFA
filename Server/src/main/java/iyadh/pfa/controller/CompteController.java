@@ -21,8 +21,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class CompteController {
     private CompteRepository repository;
     private FormationRepository formationRepository;
-    public CompteController(CompteRepository repository) {
+    public CompteController(CompteRepository repository ,FormationRepository formationRepository ) {
         this.repository = repository;
+        this.formationRepository=formationRepository;
     }
     @GetMapping("/all-comptes")
     public Collection<Compte> getComptes() {
@@ -47,20 +48,20 @@ public class CompteController {
     @GetMapping("/demande-formation/{idCompte}/{idFormation}")
     public void addFormation (@PathVariable String idCompte, @PathVariable String idFormation){
         System.out.println(idCompte);
-        System.out.println(idFormation);
+
         Long idcompte1= Long.parseLong(idCompte);
         Long idFormation1=Long.parseLong(idFormation);
-
+        System.out.println(idFormation1);
         System.out.println("t5alet lel get");
 
         Compte compte = repository.findById(idcompte1).get();
         System.out.println(compte);
         Formation formation = formationRepository.findById(idFormation1).get();
+         System.out.println(formation);
         compte.getFormations().add(formation);
-        //formation.getComptes().add(compte);
+        formation.getComptes().add(compte);
         repository.save(compte);
-        //formationRepository.save(formation);
-            
+        formationRepository.save(formation);
     }
     
 

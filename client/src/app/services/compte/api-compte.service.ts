@@ -30,7 +30,6 @@ export class ApiCompteService {
   }
   addFormation(idCompte,idFormation){
     console.log('b3athet');
-
     return this.http.get('//localhost:8080/demande-formation/'+idCompte+'/'+idFormation)
 
     // this.http.post(this.COMTE_API+'/'+compte.id+'/formation',formation);
