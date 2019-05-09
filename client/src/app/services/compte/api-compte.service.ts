@@ -38,6 +38,7 @@ export class ApiCompteService {
   }
   addOffre(idCompte,idOffre){
     console.log('b3athet');
+    console.log(idCompte +" "+idOffre)
     return this.http.get('//localhost:8080/demande-offre/'+idCompte+'/'+idOffre)
 
     // this.http.post(this.COMTE_API+'/'+compte.id+'/formation',formation);

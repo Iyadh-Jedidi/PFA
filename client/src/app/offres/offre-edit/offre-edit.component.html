@@ -92,7 +92,7 @@
       </div>
 
       <div class="container-contact100-form-btn">
-        <button type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
+        <button  [hidden]="compte.typeCompteId != 'admin'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
           Ajouter
         </button>
       </div>
@@ -100,12 +100,12 @@
      
 
       <div class="container-contact100-form-btn">
-        <button [hidden]="compte.typeCompteId != 'responsable'" class="contact100-form-btn" (click)="remove(offre.href)" *ngIf="offre.href" type="button">
+        <button [hidden]="compte.typeCompteId != 'admin'" class="contact100-form-btn" (click)="remove(offre.href)" *ngIf="offre.href" type="button">
           Supprimer 
         </button>
       </div>
       <div class="container-contact100-form-btn">
-        <button (click)="demandeOffre(idCompte,idOffre)" [hidden]="compte.typeCompteId == 'responsable'" type="button" class="contact100-form-btn">
+        <button (click)="demandeOffre(idCompte,idOffre)" [hidden]="compte.typeCompteId == 'admin'" type="button" class="contact100-form-btn">
           Postuler
         </button>
       </div>

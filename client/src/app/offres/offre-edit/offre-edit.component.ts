@@ -5,7 +5,6 @@ import {NgForm} from '@angular/forms';
 import {ApiOffreService} from '../../services/offre/api-offre.service';
 import { DatePipe } from '@angular/common';
 import { ApiCompteService } from 'src/app/services/compte/api-compte.service';
-import { DemandeOffreService } from '../../services/offre/demande-offre.service';
 
 @Component({
   selector: 'app-offre-edit',
@@ -17,25 +16,36 @@ export class OffreEditComponent implements OnInit {
   offre: any = {};
 
   sub: Subscription;
+  private idCompte=localStorage.getItem('id');
+  private idOffre;
+  compte: any = {};
+
 
   constructor(private datePipe: DatePipe,
               private route: ActivatedRoute,
               private router: Router,
               private apiService: ApiOffreService,
-              private apiCompte: ApiCompteService,
-              private apiDemande: DemandeOffreService) {
+              private apiCompte: ApiCompteService) {
   }
   transformDate(date) {
     let dateFormat = String(date);
     let test = dateFormat.substring(0,10);
     return test;
 
-    // return this.datePipe.transform(d, 'YYYY-MM-dd'); //whatever format you need. 
   }
   private DateCreation=''
   ngOnInit() {
+    this.apiCompte.get(this.idCompte).subscribe((compte: any) => {
+      if (compte) {
+        this.compte = compte;
+      } else {
+        console.log(`Compte with id '${this.idCompte}' not found, returning to list`);
+        this.gotoList();
+      }
+    });
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
+      this.idOffre=id;
       if (id) {
         this.apiService.get(id).subscribe((offre: any) => {
           if (offre) {

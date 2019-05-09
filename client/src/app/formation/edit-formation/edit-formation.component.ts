@@ -4,7 +4,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {ApiformationService} from '../../services/formation/apiformation.service';
 import { ApiCompteService } from 'src/app/services/compte/api-compte.service';
-import { DemandeFormationService } from '../../services/formation/demande-formation.service';
 
 @Component({
   selector: 'app-edit-formation',
@@ -19,7 +18,7 @@ export class EditFormationComponent implements OnInit {
               private router: Router,
               private apiService: ApiformationService,
               private apiCompte: ApiCompteService,
-              private apiDemande: DemandeFormationService) { }
+              ) { }
 
   
   compte: any = {};

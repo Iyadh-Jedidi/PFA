@@ -77,20 +77,17 @@ public class CompteController {
      @GetMapping("/demande-offre/{idCompte}/{idOffre}")
     public Offre addOffre (@PathVariable String idCompte, @PathVariable String idOffre){
         try {
-            System.out.println(idCompte);
-
-            Long idcompte1 = Long.parseLong(idCompte);
-            Long idOffre1 = Long.parseLong(idOffre);
-            System.out.println(idOffre1);
-            System.out.println("t5alet lel get");
-
-            Compte compte = repository.findById(idcompte1).get();
-            System.out.println(compte);
-            Offre offre = offreRepository.findById(idOffre1).get();
-            System.out.println(offre);
-            offre.getComptes().add(compte);
-            offreRepository.save(offre);
-            return offre;
+                System.out.println(idCompte);
+                System.out.println(idOffre);
+                Long idcompte1 = Long.parseLong(idCompte);
+                Long idOffre1 = Long.parseLong(idOffre);
+                Compte compte = repository.findById(idcompte1).get();
+                System.out.println(compte);
+                Offre offre = offreRepository.findById(idOffre1).get();
+                System.out.println(offre);
+                offre.getComptes().add(compte);
+                offreRepository.save(offre);
+                return offre;
         } catch(Exception e){
             return null;
         }

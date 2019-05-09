@@ -27,12 +27,6 @@ public class Formation {
     private String name;
     private String description;
     private String duree;
-
-
-//    @OneToMany
-//    private Set<Compte> demande;
-
-
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
@@ -42,8 +36,6 @@ public class Formation {
             joinColumns = {@JoinColumn(name = "idFormation")},
             inverseJoinColumns = {@JoinColumn(name = "idCompte")})
     private List<Compte> comptes;
-    
-    
 //    public Formation(){}
     
     public Long getId() {

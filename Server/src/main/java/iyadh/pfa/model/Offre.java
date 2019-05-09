@@ -17,8 +17,9 @@ import javax.persistence.ManyToMany;
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
 public class Offre {
-    @Id @GeneratedValue
-    private Long id;
+    @Id
+    @GeneratedValue
+    private Long idOffre;
     private String name;
     private String description;
     private Date CreationDate;
@@ -38,11 +39,11 @@ public class Offre {
     
 
     public Long getId() {
-        return id;
+        return idOffre;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.idOffre = id;
     }
 
     public String getName() {
