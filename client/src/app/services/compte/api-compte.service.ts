@@ -36,6 +36,14 @@ export class ApiCompteService {
     // this.http.post(this.COMTE_API+'/'+formation.id+'/comptes',compte)  
 
   }
+  addOffre(idCompte,idOffre){
+    console.log('b3athet');
+    return this.http.get('//localhost:8080/demande-offre/'+idCompte+'/'+idOffre)
+
+    // this.http.post(this.COMTE_API+'/'+compte.id+'/formation',formation);
+    // this.http.post(this.COMTE_API+'/'+formation.id+'/comptes',compte)  
+
+  }
   remove(href: string) {
     return this.http.delete(href);
   }

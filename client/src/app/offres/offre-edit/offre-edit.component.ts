@@ -4,6 +4,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {NgForm} from '@angular/forms';
 import {ApiOffreService} from '../../services/offre/api-offre.service';
 import { DatePipe } from '@angular/common';
+import { ApiCompteService } from 'src/app/services/compte/api-compte.service';
+import { DemandeOffreService } from '../../services/offre/demande-offre.service';
 
 @Component({
   selector: 'app-offre-edit',
@@ -19,7 +21,9 @@ export class OffreEditComponent implements OnInit {
   constructor(private datePipe: DatePipe,
               private route: ActivatedRoute,
               private router: Router,
-              private apiService: ApiOffreService) {
+              private apiService: ApiOffreService,
+              private apiCompte: ApiCompteService,
+              private apiDemande: DemandeOffreService) {
   }
   transformDate(date) {
     let dateFormat = String(date);
@@ -68,6 +72,21 @@ export class OffreEditComponent implements OnInit {
     this.apiService.remove(href).subscribe(result => {
       this.gotoList();
     }, error => console.error(error));
+  }
+
+  demandeOffre(idCompte,idOffre){
+    this.apiCompte.addOffre(idCompte,idOffre).subscribe(data=>{
+      if (data !=null){
+        this.offre=data;
+      alert("Merci pour demander cet offre ");
+      
+      }else{
+        alert("vous êtes déja inscrit a cet offre")
+      }
+      this.gotoList();
+    });
+    
+    
   }
   
 

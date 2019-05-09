@@ -74,7 +74,7 @@ public class CompteController {
 
     }
     
-     @GetMapping("/demande-formation/{idCompte}/{idFormation}")
+     @GetMapping("/demande-offre/{idCompte}/{idOffre}")
     public Offre addOffre (@PathVariable String idCompte, @PathVariable String idOffre){
         try {
             System.out.println(idCompte);
@@ -88,9 +88,7 @@ public class CompteController {
             System.out.println(compte);
             Offre offre = offreRepository.findById(idOffre1).get();
             System.out.println(offre);
-            //compte.getFormations().add(formation);
             offre.getComptes().add(compte);
-            //repository.save(compte);
             offreRepository.save(offre);
             return offre;
         } catch(Exception e){

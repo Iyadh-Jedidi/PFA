@@ -96,18 +96,25 @@
           Ajouter
         </button>
       </div>
-      <div class="container-contact100-form-btn">
-        <button type="button" [routerLink]="['/offres']" class="contact100-form-btn">
-          Annuler
-        </button>
-      </div>
+      
       <div class="container-contact100-form-btn">
         <button class="contact100-form-btn" (click)="remove(offre.href)" *ngIf="offre.href" type="button">
           Supprimer 
         </button>
-
-
       </div>
+      <div class="container-contact100-form-btn">
+        <button (click)="demandeOffre(idCompte,idOffre)" type="button" class="contact100-form-btn">
+          Postuler
+        </button>
+      </div>
+        <div class="container-contact100-form-btn">
+          <button type="button" [routerLink]="['/offres']" class="contact100-form-btn">
+            Annuler
+          </button>
+        </div>
+
+
+     
      
     </form>
   </div>
