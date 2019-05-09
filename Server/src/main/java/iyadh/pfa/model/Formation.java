@@ -32,16 +32,16 @@ public class Formation {
 //    @OneToMany
 //    private Set<Compte> demande;
 
-    
+
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
-                CascadeType.PERSIST,
-                CascadeType.MERGE
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
             })
     @JoinTable(name = "DemandesFormation",
-            joinColumns = { @JoinColumn(name = "idFormation") },
-            inverseJoinColumns = { @JoinColumn(name = "idCompte") })
-    private List<Compte> comptes ;
+            joinColumns = {@JoinColumn(name = "idFormation")},
+            inverseJoinColumns = {@JoinColumn(name = "idCompte")})
+    private List<Compte> comptes;
     
     
 //    public Formation(){}

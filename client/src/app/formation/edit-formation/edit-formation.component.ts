@@ -58,8 +58,13 @@ export class EditFormationComponent implements OnInit {
   
   demadeFormation(idCompte,idFormation){
     this.apiCompte.addFormation(idCompte,idFormation).subscribe(data=>{
-      this.formation=data;
+      if (data !=null){
+        this.formation=data;
       alert("Merci pour demander cette formation ");
+      
+      }else{
+        alert("vous êtes déja inscrit a cette formation")
+      }
       this.gotoList();
     });
     

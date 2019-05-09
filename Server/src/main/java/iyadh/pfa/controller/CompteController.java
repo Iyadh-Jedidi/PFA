@@ -45,22 +45,28 @@ public class CompteController {
 
     }
     @GetMapping("/demande-formation/{idCompte}/{idFormation}")
-    public void addFormation (@PathVariable String idCompte, @PathVariable String idFormation){
-        System.out.println(idCompte);
+    public Formation addFormation (@PathVariable String idCompte, @PathVariable String idFormation){
+        try {
+            System.out.println(idCompte);
 
-        Long idcompte1= Long.parseLong(idCompte);
-        Long idFormation1=Long.parseLong(idFormation);
-        System.out.println(idFormation1);
-        System.out.println("t5alet lel get");
+            Long idcompte1 = Long.parseLong(idCompte);
+            Long idFormation1 = Long.parseLong(idFormation);
+            System.out.println(idFormation1);
+            System.out.println("t5alet lel get");
 
-        Compte compte = repository.findById(idcompte1).get();
-        System.out.println(compte);
-        Formation formation = formationRepository.findById(idFormation1).get();
-         System.out.println(formation);
-        //compte.getFormations().add(formation);
-        formation.getComptes().add(compte);
-        //repository.save(compte);
-        formationRepository.save(formation);
+            Compte compte = repository.findById(idcompte1).get();
+            System.out.println(compte);
+            Formation formation = formationRepository.findById(idFormation1).get();
+            System.out.println(formation);
+            //compte.getFormations().add(formation);
+            formation.getComptes().add(compte);
+            //repository.save(compte);
+            formationRepository.save(formation);
+            return formation;
+        } catch(Exception e){
+            return null;
+        }
+
     }
     
 
