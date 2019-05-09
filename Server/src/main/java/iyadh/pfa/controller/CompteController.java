@@ -2,8 +2,10 @@ package iyadh.pfa.controller;
 
 import iyadh.pfa.model.Compte;
 import iyadh.pfa.model.Formation;
+import iyadh.pfa.model.Offre;
 import iyadh.pfa.repository.CompteRepository;
 import iyadh.pfa.repository.FormationRepository;
+import iyadh.pfa.repository.OffreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,9 +23,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class CompteController {
     private CompteRepository repository;
     private FormationRepository formationRepository;
-    public CompteController(CompteRepository repository ,FormationRepository formationRepository ) {
+   private OffreRepository offreRepository;
+
+    public CompteController(CompteRepository repository , FormationRepository formationRepository ,OffreRepository offreRepository ) {
         this.repository = repository;
         this.formationRepository=formationRepository;
+        this.offreRepository=offreRepository;
     }
     @GetMapping("/all-comptes")
     public Collection<Compte> getComptes() {
@@ -63,6 +68,31 @@ public class CompteController {
             //repository.save(compte);
             formationRepository.save(formation);
             return formation;
+        } catch(Exception e){
+            return null;
+        }
+
+    }
+    
+     @GetMapping("/demande-formation/{idCompte}/{idFormation}")
+    public Offre addOffre (@PathVariable String idCompte, @PathVariable String idOffre){
+        try {
+            System.out.println(idCompte);
+
+            Long idcompte1 = Long.parseLong(idCompte);
+            Long idOffre1 = Long.parseLong(idOffre);
+            System.out.println(idOffre1);
+            System.out.println("t5alet lel get");
+
+            Compte compte = repository.findById(idcompte1).get();
+            System.out.println(compte);
+            Offre offre = offreRepository.findById(idOffre1).get();
+            System.out.println(offre);
+            //compte.getFormations().add(formation);
+            offre.getComptes().add(compte);
+            //repository.save(compte);
+            offreRepository.save(offre);
+            return offre;
         } catch(Exception e){
             return null;
         }

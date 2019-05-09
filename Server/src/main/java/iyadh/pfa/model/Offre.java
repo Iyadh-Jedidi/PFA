@@ -7,6 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 @Entity
 @NoArgsConstructor
 @ToString @EqualsAndHashCode
@@ -18,6 +24,15 @@ public class Offre {
     private Date CreationDate;
     private String Disponible;
     private int Salary;
+     @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(name = "demandesOffres",
+            joinColumns = {@JoinColumn(name = "idOffre")},
+            inverseJoinColumns = {@JoinColumn(name = "idCompte")})
+    private List<Compte> comptes;
 
     public Long getId() {
         return id;
@@ -65,5 +80,19 @@ public class Offre {
 
     public void setSalary(int salary) {
         Salary = salary;
+    }
+
+    /**
+     * @return the comptes
+     */
+    public List<Compte> getComptes() {
+        return comptes;
+    }
+
+    /**
+     * @param comptes the comptes to set
+     */
+    public void setComptes(List<Compte> comptes) {
+        this.comptes = comptes;
     }
 }
