@@ -39,13 +39,15 @@
             <span class="lnr lnr-bubble"></span>
           </label>
         </div>
-        <div class="wrap-input100 validate-input" *ngFor="let forma of formations">
-          <div *ngFor="let compte of forma.comptes">
-            {{compte.name}} {{compte.lastname}}
-            <span class="focus-input100"></span>
-            <label class="label-input100 rs1">
-              <span class="lnr lnr-bubble"></span>
-            </label>
+        <div class="wrap-input100 validate-input"  *ngFor="let forma of formations">
+          <div *ngIf="forma.id == formation.id">
+            <div *ngFor="let compte of forma.comptes">
+              {{compte.name}} {{compte.lastname}}
+              <span class="focus-input100"></span>
+              <label class="label-input100 rs1">
+                <span class="lnr lnr-bubble"></span>
+              </label>
+            </div>
           </div>
         </div>
 
