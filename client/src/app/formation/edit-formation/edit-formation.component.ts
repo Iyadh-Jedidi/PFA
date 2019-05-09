@@ -13,6 +13,7 @@ import { DemandeFormationService } from '../../services/formation/demande-format
 })
 export class EditFormationComponent implements OnInit {
   formation: any = {};
+  formations: Array <any> ;
   sub: Subscription;
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -27,6 +28,9 @@ export class EditFormationComponent implements OnInit {
 
 
   ngOnInit() {
+    this.apiService.getAll().subscribe(data => {
+      this.formations = data;
+    });
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
       if (id) {

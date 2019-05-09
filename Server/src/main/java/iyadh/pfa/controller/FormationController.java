@@ -22,8 +22,8 @@ public class FormationController {
     @GetMapping("/all-formations")
     public Collection<Formation> getFormations() {
         return repository.findAll();
-
     }
+
     
 }
 

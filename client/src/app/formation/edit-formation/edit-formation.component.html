@@ -7,7 +7,7 @@
 
       <div class="contact100-form-title arriere-plan contact100-header flex-sb-m">
           <span>{{formation.name ? 'Modifier' : 'Ajouter'}} Formation</span>
-        
+          
       </div>
 
 
@@ -39,6 +39,15 @@
             <span class="lnr lnr-bubble"></span>
           </label>
         </div>
+        <div class="wrap-input100 validate-input" *ngFor="let forma of formations">
+          <div *ngFor="let compte of forma.comptes">
+            {{compte.name}} {{compte.lastname}}
+            <span class="focus-input100"></span>
+            <label class="label-input100 rs1">
+              <span class="lnr lnr-bubble"></span>
+            </label>
+          </div>
+        </div>
 
         <div class="container-contact100-form-btn">
           <button [hidden]="compte.typeCompteId != 'responsable'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
@@ -57,8 +66,9 @@
 
         <div class="container-contact100-form-btn">
           <button [hidden]="compte.typeCompteId != 'responsable'" class="contact100-form-btn" (click)="remove(formation.href)" *ngIf="formation.href" type="button">
-            Supprimer
+            Supprimer 
           </button>
+          
 
 
         </div>
