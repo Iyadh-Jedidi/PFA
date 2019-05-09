@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import java.io.File;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
@@ -17,7 +18,7 @@ import javax.persistence.ManyToMany;
 
 @Entity
 @NoArgsConstructor
-@ToString @EqualsAndHashCode
+@ToString
 public class Compte {
 
     @Id @GeneratedValue
@@ -34,14 +35,14 @@ public class Compte {
     private File Contrat;
     private String poste;
     
-     @ManyToMany(fetch = FetchType.LAZY,
+     /*@ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                 CascadeType.PERSIST,
                 CascadeType.MERGE
             },
             mappedBy = "comptes")
-    private Set<Formation> formations = new HashSet<>();
-
+    private List<Formation> formations ;
+*/
     /**
      *
      */
@@ -162,17 +163,16 @@ public class Compte {
         this.poste = poste;
     }
 
-    /**
-     * @return the formations
-     */
-    public Set<Formation> getFormations() {
+    /*public List<Formation> getFormations() {
         return formations;
     }
 
-    /**
-     * @param formations the formations to set
-     */
-    public void setFormations(Set<Formation> formations) {
+    public void setFormations(List<Formation> formations) {
         this.formations = formations;
-    }
+    }*/
+
+    /**
+     * @return the formations
+     */
+
 }

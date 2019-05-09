@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
@@ -19,7 +20,6 @@ import javax.persistence.ManyToMany;
 @Entity
 @NoArgsConstructor
 @ToString
-@EqualsAndHashCode
 public class Formation {
     @Id
     @GeneratedValue
@@ -31,7 +31,7 @@ public class Formation {
 
 //    @OneToMany
 //    private Set<Compte> demande;
-    
+
     
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
@@ -41,7 +41,7 @@ public class Formation {
     @JoinTable(name = "DemandesFormation",
             joinColumns = { @JoinColumn(name = "idFormation") },
             inverseJoinColumns = { @JoinColumn(name = "idCompte") })
-    private Set<Compte> comptes = new HashSet<>();
+    private List<Compte> comptes ;
     
     
 //    public Formation(){}
@@ -81,16 +81,7 @@ public class Formation {
     /**
      * @return the comptes
      */
-    public Set<Compte> getComptes() {
-        return comptes;
-    }
 
-    /**
-     * @param comptes the comptes to set
-     */
-    public void setComptes(Set<Compte> comptes) {
-        this.comptes = comptes;
-    }
      
 
     public Formation(Long id, String name, String description, String duree) {
@@ -100,5 +91,12 @@ public class Formation {
         this.duree = duree;
     }
 
-   
+
+    public List<Compte> getComptes() {
+        return comptes;
+    }
+
+    public void setComptes(List<Compte> comptes) {
+        this.comptes = comptes;
+    }
 }

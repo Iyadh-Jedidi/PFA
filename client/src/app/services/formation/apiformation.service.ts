@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { TestBed } from '@angular/core/testing';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,11 @@ export class ApiformationService {
   constructor(private http: HttpClient) {
   }
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/all-formations');
+    return this.http.get(this.API+'/all-formations');
   }
   get(id: string) {
     return this.http.get(this.FORMATION_API + '/' + id);
+    
   }
 
   save(foramtion: any): Observable<any> {

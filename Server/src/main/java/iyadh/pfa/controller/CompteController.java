@@ -27,8 +27,7 @@ public class CompteController {
     }
     @GetMapping("/all-comptes")
     public Collection<Compte> getComptes() {
-    return repository.findAll().stream()
-            .collect(Collectors.toList());
+    return repository.findAll();
     }
     @GetMapping("/email/{email}/password/{password}")
     public Compte login (@PathVariable String email, @PathVariable String password){
@@ -58,9 +57,9 @@ public class CompteController {
         System.out.println(compte);
         Formation formation = formationRepository.findById(idFormation1).get();
          System.out.println(formation);
-        compte.getFormations().add(formation);
+        //compte.getFormations().add(formation);
         formation.getComptes().add(compte);
-        repository.save(compte);
+        //repository.save(compte);
         formationRepository.save(formation);
     }
     
