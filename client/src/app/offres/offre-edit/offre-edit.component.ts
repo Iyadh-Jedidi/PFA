@@ -57,6 +57,20 @@ export class OffreEditComponent implements OnInit {
   ngOngnDestroy() {
     this.sub.unsubscribe();
   }
+  demandeOffre(idCompte,idOffre){
+    this.apiCompte.addOffre(idCompte,idOffre).subscribe(data=>{
+      if (data !=null){
+        this.offre=data;
+      alert("Merci pour postuler à cet offre ");
+      
+      }else{
+        alert("vous êtes déja inscrit a cet offre")
+      }
+      this.gotoList();
+    });
+    
+    
+  }
 
   gotoList() {
     this.router.navigate(['/offres']);
@@ -74,20 +88,7 @@ export class OffreEditComponent implements OnInit {
     }, error => console.error(error));
   }
 
-  demandeOffre(idCompte,idOffre){
-    this.apiCompte.addOffre(idCompte,idOffre).subscribe(data=>{
-      if (data !=null){
-        this.offre=data;
-      alert("Merci pour demander cet offre ");
-      
-      }else{
-        alert("vous êtes déja inscrit a cet offre")
-      }
-      this.gotoList();
-    });
-    
-    
-  }
+  
   
 
 }

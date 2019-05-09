@@ -97,13 +97,15 @@
         </button>
       </div>
       
+     
+
       <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn" (click)="remove(offre.href)" *ngIf="offre.href" type="button">
+        <button [hidden]="compte.typeCompteId != 'responsable'" class="contact100-form-btn" (click)="remove(offre.href)" *ngIf="offre.href" type="button">
           Supprimer 
         </button>
       </div>
       <div class="container-contact100-form-btn">
-        <button (click)="demandeOffre(idCompte,idOffre)" type="button" class="contact100-form-btn">
+        <button (click)="demandeOffre(idCompte,idOffre)" [hidden]="compte.typeCompteId == 'responsable'" type="button" class="contact100-form-btn">
           Postuler
         </button>
       </div>

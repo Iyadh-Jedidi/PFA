@@ -24,15 +24,18 @@ public class Offre {
     private Date CreationDate;
     private String Disponible;
     private int Salary;
+    
+    
      @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
                     CascadeType.MERGE
             })
-    @JoinTable(name = "demandesOffres",
+    @JoinTable(name = "DemandesOffre",
             joinColumns = {@JoinColumn(name = "idOffre")},
             inverseJoinColumns = {@JoinColumn(name = "idCompte")})
     private List<Compte> comptes;
+    
 
     public Long getId() {
         return id;
