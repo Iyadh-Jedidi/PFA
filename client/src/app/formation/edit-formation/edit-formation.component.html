@@ -42,11 +42,11 @@
 
         <div class="container-contact100-form-btn">
           <button [hidden]="compte.typeCompteId != 'responsable'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
-              {{formation.name ? 'Modifier' : 'Ajouter'}}
+            {{formation.name ? 'Modifier' : 'Ajouter'}}
           </button>
         </div>
         <div class="container-contact100-form-btn">
-            <button [hidden]="compte.typeCompteId == 'responsable'" (click)="demadeFormation(idCompte,idFormation)" type="button" class="contact100-form-btn">
+            <button (click)="demadeFormation(idCompte,idFormation)" [hidden]="compte.typeCompteId == 'responsable'" type="button" class="contact100-form-btn">
               Postuler
             </button>
           <button type="button" [routerLink]="['/responsable/formation']" class="contact100-form-btn">
