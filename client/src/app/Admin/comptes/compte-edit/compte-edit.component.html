@@ -76,6 +76,12 @@
                         </div>
                       </div>
                       <div class="col-lg-4 col-sm-6">
+                        <div class="form-group">
+                          <label>Mot de passe</label>
+                          <input  type="password" placeholder="mot de passe..." class="form-control" [(ngModel)]="compte.password" required name="password" #password/>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-sm-6">
                           <div class="form-group">
                               <label>Contrat</label>
                               <input  type="file" class="form-control" [(ngModel)]="compte.contrat" required name="contrat" #contrat />                          </div>

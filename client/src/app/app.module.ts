@@ -27,6 +27,7 @@ import {CompteEditComponent} from './Admin/comptes/compte-edit/compte-edit.compo
 import { OffreEditComponent } from './offres/offre-edit/offre-edit.component';
 import { LoginComponent } from './login/login.component';
 import {DatePipe} from '@angular/common';
+import { EntretientComponent } from './entretient/entretient.component';
 
 
 const routes: Routes = [
@@ -106,6 +107,11 @@ const routes: Routes = [
         canActivate: [AuthGaurdService]
     },
     {
+        path: 'responsable/entretient',
+        component: EditFormationComponent,
+        canActivate: [AuthGaurdService]
+    },
+    {
         path: 'responsable/formation/:id',
         component: EditFormationComponent,
         canActivate: [AuthGaurdService]
@@ -137,6 +143,7 @@ const routes: Routes = [
       ComptesComponent,
       OffreEditComponent,
       CompteEditComponent,
+      EntretientComponent,
   ],
   imports: [
       BrowserModule,
