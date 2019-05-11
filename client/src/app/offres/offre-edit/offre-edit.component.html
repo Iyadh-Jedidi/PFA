@@ -37,89 +37,106 @@
 
     <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
 
-      <!-- href -->
-      <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
-      <!-- creation date  -->
-      <label for="">Date de création : </label>
-      <div class="wrap-input100 validate-input">
-        <p class="input100">{{DateCreation}}</p>
-        <input type="date" value="offre.creationDate" [(ngModel)]="offre.creationDate" class="input100" name="creationDate" placeholder="creationDate">
+        <!-- href -->
+        <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
+        <!-- creation date  -->
+        <label for="">Date de création : </label>
+        <div class="wrap-input100 validate-input">
+          <p class="input100">{{DateCreation}}</p>
+          <input type="date" value="offre.creationDate" [(ngModel)]="offre.creationDate" class="input100" name="creationDate" placeholder="creationDate">
 
-        <span class="focus-input100"></span>
-        <label class="label-input100" >
-          <span class="lnr lnr-smartphone m-b-2"></span>
-        </label>
-      </div>
-      <label for="">Nom :</label>
-      <div class="wrap-input100 validate-input">
-
-        <input [(ngModel)]="offre.name" class="input100" type="text" name="name" placeholder="Name" #name>
-
-        <span class="focus-input100"></span>
-        <label class="label-input100" >
-          <span class="lnr lnr-smartphone m-b-2"></span>
-        </label>
-      </div>
-
-      <!-- salary -->
-      <label for="">Salaire : </label>
-      <div class="wrap-input100 validate-input">
-          <input [(ngModel)]="offre.salary" class="input100" type="text" name="salary" placeholder="salary" #salary>
           <span class="focus-input100"></span>
-          <label class="label-input100">
-            <span class="lnr lnr-user m-b-2"></span>
+          <label class="label-input100" >
+            <span class="lnr lnr-smartphone m-b-2"></span>
+          </label>
+        </div>
+        <label for="">Offre :</label>
+        <div class="wrap-input100 validate-input">
+
+          <input [(ngModel)]="offre.name" class="input100" type="text" name="name" placeholder="Name" #name>
+
+          <span class="focus-input100"></span>
+          <label class="label-input100" >
+            <span class="lnr lnr-smartphone m-b-2"></span>
           </label>
         </div>
 
-      <label for="">Description : </label>
-      <div class="wrap-input100 validate-input">
-        <textarea [(ngModel)]="offre.description" class="input100" name="description" placeholder="Description Offre" #description></textarea>
-        <span class="focus-input100"></span>
-        <label class="label-input100 rs1">
-          <span class="lnr lnr-bubble"></span>
-        </label>
-      </div>
-      <label for="">Disponible? : </label>
-      <div class="wrap-input100 validate-input">
-        <select class="input100" name="disponible"  placeholder="Disponobilité de l'Offre" #disponible [(ngModel)]="offre.disponible">
-          <option value="yes">Yes</option>
-          <option value="no">No</option>
-        </select>
-        <span class="focus-input100"></span>
-        <label class="label-input100 rs1">
-          <span class="lnr lnr-bubble"></span>
-        </label>
-      </div>
+        <!-- salary -->
+        <label for="">Salaire : </label>
+        <div class="wrap-input100 validate-input">
+            <input [(ngModel)]="offre.salary" class="input100" type="text" name="salary" placeholder="salary" #salary>
+            <span class="focus-input100"></span>
+            <label class="label-input100">
+              <span class="lnr lnr-user m-b-2"></span>
+            </label>
+          </div>
 
-      <div class="container-contact100-form-btn">
-        <button  [hidden]="compte.typeCompteId != 'admin'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
-          Ajouter
-        </button>
-      </div>
-      
-     
-
-      <div class="container-contact100-form-btn">
-        <button [hidden]="compte.typeCompteId != 'admin'" class="contact100-form-btn" (click)="remove(offre.href)" *ngIf="offre.href" type="button">
-          Supprimer 
-        </button>
-      </div>
-      <div class="container-contact100-form-btn">
-        <button (click)="demandeOffre(idCompte,idOffre)" [hidden]="compte.typeCompteId == 'admin'" type="button" class="contact100-form-btn">
-          Postuler
-        </button>
-      </div>
-        <div class="container-contact100-form-btn">
-          <button type="button" [routerLink]="['/offres']" class="contact100-form-btn">
-            Annuler
-          </button>
+        <label for="">Description : </label>
+        <div class="wrap-input100 validate-input">
+          <textarea [(ngModel)]="offre.description"  class="input100" name="description" placeholder="Description Offre" #description></textarea>
+          <span class="focus-input100"></span>
+          <label class="label-input100 rs1">
+            <span class="lnr lnr-bubble"></span>
+          </label>
         </div>
+        <label for="">Disponible? : </label>
+          <div class="wrap-input100 validate-input">
+            <select class="input100" name="disponible"  placeholder="Disponobilité de l'Offre" #disponible [(ngModel)]="offre.disponible">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+            <span class="focus-input100"></span>
+            <label class="label-input100 rs1">
+              <span class="lnr lnr-bubble"></span>
+            </label>
+          </div>
+          
+          <div class="container-contact100-form-btn">
+            <button  [hidden]="compte.typeCompteId != 'admin'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
+              Ajouter
+            </button>
+          </div>
+          <div class="container-contact100-form-btn">
+          <button [hidden]="compte.typeCompteId != 'admin'" class="contact100-form-btn" (click)="remove(offre.href)" *ngIf="offre.href" type="button">
+            Supprimer 
+          </button>
+          </div>
+          <div class="container-contact100-form-btn">
+          <button (click)="demandeOffre(idCompte,idOffre)" [hidden]="compte.typeCompteId !='candidat'" type="button" class="contact100-form-btn">
+            Postuler
+          </button>
+          </div>
+          <div class="container-contact100-form-btn">
+            <button type="button" [routerLink]="['/offres']" class="contact100-form-btn">
+              Annuler
+            </button>
+          </div>
+        </form>
+        
+        <div [hidden]="compte.poste != 'entretient'" class="col-md-9" style="margin-left: 30px">
+            <label class="display-4  text-black" >
+                Liste des Candidats 
+              </label>
+            <div >
 
-
-     
-     
-    </form>
-  </div>
-</div>
+               
+        <div  class="wrap-input100 validate-input"  *ngFor="let off of offres">
+            <div *ngIf="off.id == offre.id">
+              <div *ngFor="let compte of off.comptes">
+                <ul>
+                  <li>
+                    <a [routerLink]="['/profile', compte.id]" >
+                      <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
+                      <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+      </div>
+    </div>
   </section>
 </main>

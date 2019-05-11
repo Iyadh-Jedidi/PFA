@@ -21,7 +21,7 @@ import {AuthGaurdService} from './services/auth-gaurd.service';
 import {AuthentificationService} from './services/authentification.service';
 import { FormationComponent } from './formation/formation.component';
 import { EditFormationComponent } from './formation/edit-formation/edit-formation.component';
-import { DemandeFormationComponent } from './formation/demande-formation/demande-formation.component';
+// import { DemandeFormationComponent } from './formation/demande-formation/demande-formation.component';
 import { ComptesComponent } from './Admin/comptes/comptes.component';
 import {CompteEditComponent} from './Admin/comptes/compte-edit/compte-edit.component';
 import { OffreEditComponent } from './offres/offre-edit/offre-edit.component';
@@ -108,7 +108,7 @@ const routes: Routes = [
     },
     {
         path: 'responsable/entretient',
-        component: EditFormationComponent,
+        component: EntretientComponent,
         canActivate: [AuthGaurdService]
     },
     {
@@ -139,11 +139,11 @@ const routes: Routes = [
     LogoutComponent,
     FormationComponent,
     EditFormationComponent,
-    DemandeFormationComponent,
+    // DemandeFormationComponent,
       ComptesComponent,
       OffreEditComponent,
       CompteEditComponent,
-      EntretientComponent,
+      EntretientComponent
   ],
   imports: [
       BrowserModule,

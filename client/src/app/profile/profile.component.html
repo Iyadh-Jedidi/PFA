@@ -88,11 +88,14 @@
                     <input hidden type="hidden" matInput type="text" placeholder="Entrer le poste de votre employé" [(ngModel)]="compte.poste" required name="poste" #poste>
                     <input hidden type="hidden" placeholder="typeCompteId" class="select-css option" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
                     <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="compte.href">
-                    <button type="submit"
-                  mat-raised-button color="primary"
-                  class="btn btn-warning pull-left"
+                    <button type="submit" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;" (click)="alert()">
+                      <i class="fa fa-plus"></i>
+                      SAVE</button>
 
-                            style="margin-left:12px;" (click)="alert()"><i class="fa fa-plus"></i>SAVE</button>
+
+                          <button [hidden]="compte.typeCompteId =='employee' "  type="button" [routerLink]="['/responsable/entretient']" class="btn btn-warning pull-right">
+                            Annuler
+                          </button>
 
 
 

@@ -14,12 +14,12 @@ import { ApiCompteService } from 'src/app/services/compte/api-compte.service';
 export class OffreEditComponent implements OnInit {
 
   offre: any = {};
-
+  offres: Array <any> ;
   sub: Subscription;
   private idCompte=localStorage.getItem('id');
   private idOffre;
   compte: any = {};
-
+  private DateCreation='';
 
   constructor(private datePipe: DatePipe,
               private route: ActivatedRoute,
@@ -33,25 +33,22 @@ export class OffreEditComponent implements OnInit {
     return test;
 
   }
-  private DateCreation=''
+  
   ngOnInit() {
-    this.apiCompte.get(this.idCompte).subscribe((compte: any) => {
-      if (compte) {
-        this.compte = compte;
-      } else {
-        console.log(`Compte with id '${this.idCompte}' not found, returning to list`);
-        this.gotoList();
-      }
+    this.apiService.getAll().subscribe(data => {
+      this.offres = data;
     });
+
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
-      this.idOffre=id;
+      // this.idOffre=id;
       if (id) {
         this.apiService.get(id).subscribe((offre: any) => {
           if (offre) {
             this.offre = offre;
             this.offre.href = offre._links.self.href;
             this.DateCreation= this.transformDate(this.offre.creationDate)
+            this.idOffre=offre.id;
             console.log(this.DateCreation)    
           } else {
             console.log(`Offre with id '${id}' not found, returning to list`);
@@ -61,12 +58,23 @@ export class OffreEditComponent implements OnInit {
       }
       
     });
+
+    this.apiCompte.get(this.idCompte).subscribe((compte: any) => {
+      if (compte) {
+        this.compte = compte;
+      } else {
+        console.log(`Compte with id '${this.idCompte}' not found, returning to list`);
+        this.gotoList();
+      }
+    });
+    
   }
   
 
   ngOngnDestroy() {
     this.sub.unsubscribe();
   }
+  
   demandeOffre(idCompte,idOffre){
     this.apiCompte.addOffre(idCompte,idOffre).subscribe(data=>{
       if (data !=null){

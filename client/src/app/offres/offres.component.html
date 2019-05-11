@@ -55,6 +55,7 @@
 
                   <a  *ngIf="compte.typeCompteId !='admin'" [routerLink]="['/offres', offre.id]" href="javascript:void(0)" class="btn btn-primary mt-4">Consulter l'offre</a>
                   <a *ngIf="compte.typeCompteId =='admin'" [routerLink]="['/offres',offre.id]" href="javascript:void(0)" class="btn btn-primary mt-4">Edit l'offre</a>
+                  <a  *ngIf="(compte.typeCompteId !='admin') && (compte.typeCompteId =='responsable') && (compte.poste =='entretient') " [routerLink]="['/offres', offre.id]" href="javascript:void(0)" class="btn btn-primary mt-4">Consulter les postulation</a>
 
                 </div>
               </div>
