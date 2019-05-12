@@ -41,6 +41,7 @@ export class ProfileComponent implements OnInit {
       this.comptes = data;
     });
   }
+  cv="/assets/Iyadh-Jedidi.pdf";
 
   compte: any = {id:0};
   sub: Subscription;
