@@ -42,20 +42,24 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  compte: any = {};
+  compte: any = {id:0};
   sub: Subscription;
   testid = ''
+  idParam;
+  compteId=localStorage.getItem('id');
 
   ngOnInit() {
     
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
       this.testid = id;
+      this.idParam = id;
       if (id) {
         this.apiService.get(id).subscribe((compte: any) => {
           if (compte) {
             this.compte = compte;
             this.compte.href = compte._links.self.href;
+
             // this.cv = './Iyadh-Jedidi.pdf';
             this.date = this.transformDate(compte.dateBirth)
 
