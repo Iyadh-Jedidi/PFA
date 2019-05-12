@@ -56,21 +56,21 @@
                       <span class="nav-link-inner--text">Consulter les offres</span>
                     </a>
                 </li>
-                <li  class="nav-item dropdown">
-                    <a  *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='employee')" [routerLink]="['/employee/formation']" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                <!-- <li  class="nav-item dropdown">
+                    <a  *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='employee')" [routerLink]="['/formation']" class="nav-link no-caret" data-toggle="dropdown" role="button">
                       <span class="nav-link-inner--text">Demander Formation</span>
                     </a>
-                </li>
+                </li> -->
                 <li  class="nav-item dropdown">
-                    <a  *ngIf="(loginService.isUserLoggedIn()) && (((compte.typeCompteId=='responsable') && (compte.poste=='formation')) || (compte.typeCompteId=='employee')) " [routerLink]="['/responsable/formation']" class="nav-link no-caret" data-toggle="dropdown" role="button">
-                      <span class="nav-link-inner--text">Consulter Formations</span>
+                    <a  *ngIf="(loginService.isUserLoggedIn()) && (((compte.typeCompteId=='responsable') && (compte.poste=='formation')) || (compte.typeCompteId=='employee')) " [routerLink]="['/formation']" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                      <span class="nav-link-inner--text">Formations</span>
                     </a>
                 </li>
-                <li   class="nav-item dropdown">
+                <!-- <li   class="nav-item dropdown">
                     <a [routerLink]="['/responsable/formation']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='formation')" class="nav-link no-caret" data-toggle="dropdown" role="button">
                       <span class="nav-link-inner--text">Demandes Formations</span>
                     </a>
-                </li>
+                </li> -->
 
                 <!-- <li   class="nav-item dropdown">
                     <a [routerLink]="['/responsable/entretient']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='entretient')" class="nav-link no-caret" data-toggle="dropdown" role="button">
