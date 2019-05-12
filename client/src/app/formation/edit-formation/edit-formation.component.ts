@@ -75,7 +75,7 @@ export class EditFormationComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/responsable/formation']);
+    this.router.navigate(['/formation']);
   }
   save(form: NgForm) {
     this.apiService.save(form).subscribe(result => {

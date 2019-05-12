@@ -27,6 +27,7 @@ import {CompteEditComponent} from './Admin/comptes/compte-edit/compte-edit.compo
 import { OffreEditComponent } from './offres/offre-edit/offre-edit.component';
 import { LoginComponent } from './login/login.component';
 import {DatePipe} from '@angular/common';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 
 const routes: Routes = [
@@ -101,13 +102,13 @@ const routes: Routes = [
         canActivate: [AuthGaurdService]
     },
     {
-        path: 'responsable/formation',
+        path: 'formation',
         component: FormationComponent,
         canActivate: [AuthGaurdService]
     },
    
     {
-        path: 'responsable/formation/:id',
+        path: 'formation/:id',
         component: EditFormationComponent,
         canActivate: [AuthGaurdService]
     },
@@ -139,16 +140,19 @@ const routes: Routes = [
       OffreEditComponent,
       CompteEditComponent  ],
   imports: [
+      
       BrowserModule,
       NgbModule.forRoot(),
       FormsModule,
       RouterModule,
       HttpClientModule,
       SectionsModule,
-      RouterModule.forRoot(routes)
+      RouterModule.forRoot(routes),
+      PdfViewerModule,
 
   ],
   providers: [ApiCompteService, CookieService, AuthentificationService , AuthGaurdService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
