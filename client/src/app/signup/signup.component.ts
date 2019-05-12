@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ApiCompteService} from '../services/compte/api-compte.service';
+import { saveAs } from 'file-saver';
+
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +12,14 @@ import { ApiCompteService} from '../services/compte/api-compte.service';
 })
 export class SignupComponent implements OnInit {
 
+
   compte: any = {typeCompteId: 'candidat', poste: 'candidat'};
+
+    saveFile = (blobContent: Blob, fileName: string) => {
+      const blob = new Blob([blobContent], { type: 'application/octet-stream' });
+      saveAs(blob, fileName);
+    }
+
 
   constructor(private router: Router,
               private apiService: ApiCompteService) { }

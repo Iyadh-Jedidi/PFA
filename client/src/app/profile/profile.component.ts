@@ -4,6 +4,7 @@ import {ApiCompteService} from '../services/compte/api-compte.service';
 import {CookieService} from 'ngx-cookie-service';
 import {Subscription} from 'rxjs';
 import {NgForm} from '@angular/forms';
+import {PDFProgressData, PDFSource} from 'pdfjs-dist';
 
 @Component({
     selector: 'app-profile',
@@ -13,6 +14,9 @@ import {NgForm} from '@angular/forms';
 
 
 export class ProfileComponent implements OnInit {
+  cv: string | PDFSource | ArrayBuffer = '../assets/Iyadh-Jedidi.pdf';
+
+
   transformDate(date) {
     let dateFormat = String(date);
     let test = dateFormat.substring(0,10);
@@ -41,8 +45,9 @@ export class ProfileComponent implements OnInit {
   compte: any = {};
   sub: Subscription;
   testid = ''
-  ngOnInit() {
 
+  ngOnInit() {
+    
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
       this.testid = id;
@@ -51,7 +56,8 @@ export class ProfileComponent implements OnInit {
           if (compte) {
             this.compte = compte;
             this.compte.href = compte._links.self.href;
-            this.date=this.transformDate(compte.dateBirth)
+            // this.cv = './Iyadh-Jedidi.pdf';
+            this.date = this.transformDate(compte.dateBirth)
 
           } else {
             console.log(`Compte with id '${id}' not found, returning to list`);
