@@ -5,6 +5,7 @@ import {CookieService} from 'ngx-cookie-service';
 import {Subscription} from 'rxjs';
 import {NgForm} from '@angular/forms';
 
+
 @Component({
     selector: 'app-profile',
     templateUrl: './profile.component.html',
@@ -13,6 +14,12 @@ import {NgForm} from '@angular/forms';
 
 
 export class ProfileComponent implements OnInit {
+  private idCompte=localStorage.getItem('id');
+
+  compte: any = {};
+  sub: Subscription;
+  testid = ''
+
   transformDate(date) {
     let dateFormat = String(date);
     let test = dateFormat.substring(0,10);
@@ -38,11 +45,7 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  compte: any = {};
-  sub: Subscription;
-  testid = ''
   ngOnInit() {
-
     this.sub = this.route.params.subscribe(params => {
       const id = params.id;
       this.testid = id;
@@ -52,7 +55,6 @@ export class ProfileComponent implements OnInit {
             this.compte = compte;
             this.compte.href = compte._links.self.href;
             this.date=this.transformDate(compte.dateBirth)
-
           } else {
             console.log(`Compte with id '${id}' not found, returning to list`);
             this.gotoList();
@@ -61,23 +63,24 @@ export class ProfileComponent implements OnInit {
       }
     });
   }
+
   gotoList() {
     this.router.navigate(['/home']);
   }
+
   load(newLocation) {
-
         window.location = newLocation;
-
     }
+
   save(form: NgForm) {
     this.apiService.save(form).subscribe(result => {
 
     }, error => console.error(error));
     this.load(['profile/' + this.testid]);
   }
-  alert() {
-  window.alert('mise à jour avec succès');
-}
 
+  alert() {
+    window.alert('mise à jour avec succès');
+  }
 
 }
