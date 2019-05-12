@@ -156,9 +156,9 @@
                             mat-raised-button color="primary"
                             class="btn btn-warning pull-left"
                             
-                            style="margin-left:12px;"><i class="fa fa-plus"></i>SAVE
+                            style="margin-left:12px;"><i class="fa fa-plus"></i>Enregistrer
                     </button>
-                    <button [routerLink]="['/admin/comptes']" class="btn btn-warning pull-right" type="button">Cancel</button>
+                    <button [routerLink]="['/admin/comptes']" class="btn btn-warning pull-right" type="button">Annuler</button>
                     <button mat-raised-button color="secondary" class="btn btn-warning " (click)="remove(compte.href)" *ngIf="(compte.href) && (compte.typeCompteId != 'candidat') " type="button">Delete</button>
 
                   </div>

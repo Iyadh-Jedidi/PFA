@@ -18,10 +18,10 @@
         <div class="col px-0">
           <div class="row">
             <div class="col-lg-6">
-              <h1 *ngIf="!loginService.isUserLoggedIn()" class="display-3  text-white">Vous devez s'identifier pour postuler aux offres</h1>
-               <h1 *ngIf="loginService.isUserLoggedIn()" class="display-3  text-white">Pous pouvez choisir l'offre </h1>
+              <h1 *ngIf="!loginService.isUserLoggedIn()" [hidden]="compte.typeCompteId == 'admin'" class="display-3  text-white">Vous devez s'identifier pour postuler aux offres</h1>
+               <h1 *ngIf="loginService.isUserLoggedIn()" [hidden]="compte.typeCompteId == 'admin'" class="display-3  text-white">Pous pouvez choisir l'offre </h1>
 
-              <div *ngIf="!loginService.isUserLoggedIn()"  class="btn-wrapper">
+              <div [hidden]="compte.typeCompteId == 'admin'" *ngIf="!loginService.isUserLoggedIn()"  class="btn-wrapper">
                 <a href="/login" class="btn btn-info btn-icon mb-3 mb-sm-0">
                   <span  class="btn-inner--text">Connecter</span>
                 </a>
