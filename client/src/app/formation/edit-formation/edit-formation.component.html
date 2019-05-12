@@ -1,78 +1,100 @@
-<div class="bg-container-contact100 all">
-  <div class="container-contact100">
-    <div class="wrap-contact100">
-      <button class="btn-hide-contact100">
-        <i class="zmdi zmdi-close"></i>
-      </button>
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-primary alpha-4">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section section-lg pt-lg-0 mt--200">
+    <div class="bg-container-contact100">
+      <div class="contact100-header flex-sb-m"></div>
+    </div>
+    <div class="container-contact100">
+      <div class="wrap-contact100 ">
+        <button class="btn-hide-contact100">
+          <i class="zmdi zmdi-close"></i>
+        </button>
+        <div class="contact100-form-title  contact100-header flex-sb-m">
+            <span>{{formation.name ? 'Modifier' : 'Ajouter'}} Formation</span>
+            <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
+          </div>
+        <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
+            <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
+            <div class="wrap-input100 validate-input">
+              <input [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
+              <span class="focus-input100"></span>
+              <label class="label-input100">
+                <span class="lnr lnr-user m-b-2"></span>
+              </label>
+            </div>
+            <div class="wrap-input100 validate-input">
+              <input [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.duree" class="input100" name="duree" placeholder="Durée" #duree>
+              <span class="focus-input100"></span>
+              <label class="label-input100" >
+                <span class="lnr lnr-smartphone m-b-2"></span>
+              </label>
+            </div>
+            <div class="wrap-input100 validate-input">
+              <textarea [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.description" class="input100" name="description" placeholder="Description Formation" #description></textarea>
+              <span class="focus-input100"></span>
+              <label class="label-input100 rs1">
+                <span class="lnr lnr-bubble"></span>
+              </label>
+            </div>
+            <div  class="container-contact100-form-btn">
+              <button [hidden]="compte.poste != 'formation'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
+                {{formation.name ? 'Modifier' : 'Ajouter'}}
+              </button>
+           
+              <button [hidden]="compte.poste != 'formation'" class="contact100-form-btn" (click)="remove(formation.href)" *ngIf="formation.href" type="button">
+                Supprimer 
+              </button>
+            </div>
+            <div class="container-contact100-form-btn">
+              <button (click)="demadeFormation(idCompte,idFormation)" [hidden]="compte.poste == 'candidat'" type="button" class="contact100-form-btn">
+                Demander
+              </button>
 
-      <div class="contact100-form-title arriere-plan contact100-header flex-sb-m">
-          <span>{{formation.name ? 'Modifier' : 'Ajouter'}} Formation</span>
-          
-      </div>
-
-
-      <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
-                  <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
-        <div class="wrap-input100 validate-input">
-          <input [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
-          <span class="focus-input100"></span>
-          <label class="label-input100">
-            <span class="lnr lnr-user m-b-2"></span>
-          </label>
-        </div>
-
-
-
-        <div class="wrap-input100 validate-input">
-          <input [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.duree" class="input100" name="duree" placeholder="Durée" #duree>
-          <span class="focus-input100"></span>
-          <label class="label-input100" >
-            <span class="lnr lnr-smartphone m-b-2"></span>
-          </label>
-        </div>
-
-
-        <div class="wrap-input100 validate-input">
-          <textarea [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.description" class="input100" name="description" placeholder="Description Formation" #description></textarea>
-          <span class="focus-input100"></span>
-          <label class="label-input100 rs1">
-            <span class="lnr lnr-bubble"></span>
-          </label>
-        </div>
-        <div [hidden]="compte.typeCompteId != 'responsable'" class="wrap-input100 validate-input"  *ngFor="let forma of formations">
-          <div *ngIf="forma.id == formation.id">
-            <div *ngFor="let compte of forma.comptes">
-              {{compte.name}} {{compte.lastname}}
+              <button type="button" [routerLink]="['/formation']" class="contact100-form-btn">
+                Annuler
+              </button>
+            </div>
+            
+          </form>
+          <div [hidden]="compte.poste != 'formation'" class="col-md-9" style="margin-left: 30px">
+            <label class="display-4  text-black" >
+              Liste des Demandes 
+            </label>
+            <div >
+              <div  class="wrap-input100 validate-input"  *ngFor="let forma of formations">
+                  <div *ngIf="forma.id == formation.id">
+                    <div *ngFor="let compte of forma.comptes">
+                      <ul>
+                        <li>
+                          <a [routerLink]="['/profile', compte.id]" >
+                            <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
+                            <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
+                          </a>
+                        </li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div  class="container-contact100-form-btn">
-          <button [hidden]="compte.typeCompteId != 'responsable'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
-            {{formation.name ? 'Modifier' : 'Ajouter'}}
-          </button>
-        </div>
-        <div class="container-contact100-form-btn">
-            <button (click)="demadeFormation(idCompte,idFormation)" [hidden]="compte.typeCompteId == 'responsable'" type="button" class="contact100-form-btn">
-              Postuler
-            </button>
-          <button type="button" [routerLink]="['/responsable/formation']" class="contact100-form-btn">
-            Annuler
-          </button>
-          
-        </div>
-
-        <div class="container-contact100-form-btn">
-          <button [hidden]="compte.typeCompteId != 'responsable'" class="contact100-form-btn" (click)="remove(formation.href)" *ngIf="formation.href" type="button">
-            Supprimer 
-          </button>
-          
-
-
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
-
-
+  </section>
+</main>
