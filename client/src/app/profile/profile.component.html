@@ -74,17 +74,16 @@
                         </div>
                         <div class="col-lg-4 col-sm-6">
                           <div class="form-group">
-                            <label>Adresse</label>
+                            <label>Adresse {{nomCv}}</label>
                             <input value="{{compte.address}}" type="text" placeholder="Adresse..." class="form-control" [(ngModel)]="compte.address" required name="address" #address />
                           </div>
                         </div>
-<!--                        <pdf-viewer src="https://vadimdez.github.io/ng2-pdf-viewer/pdf-test.pdf" ></pdf-viewer>-->
-
-                        <object data="/assets/Iyadh-Jedidi.pdf" width="100%" height="1100px" type='application/pdf'>
+                       <pdf-viewer src="{{nomCv}}" ></pdf-viewer>
+                        <!-- <object data="../assets/Iyadh-Jedidi.pdf" width="100%" height="1100px" type='application/pdf'>
                           <p>Your browser does not support PDFs.
                           <a href="https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf">Download the PDF</a>.</p>
 
-                        </object>
+                        </object> -->
                       </div>
                     </div>
                     
@@ -102,7 +101,7 @@
 
                     <button [hidden]="compteId != idParam " type="submit" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;" (click)="alert()">
                       <i class="fa fa-plus"></i>
-                      SAVE  </button>
+                      SAVE</button>
                       
 
                           <button   type="button" [routerLink]="['/home']" class="btn btn-warning pull-right">

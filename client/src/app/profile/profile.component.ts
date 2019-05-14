@@ -23,6 +23,13 @@ export class ProfileComponent implements OnInit {
     return test;
 
   }
+  transformCv(nom) {
+    let test = nom.substring(12,);
+    
+    test="../assets/cv/"+test;
+    return test
+
+  }
 
   date ='';
     model = {
@@ -47,7 +54,8 @@ export class ProfileComponent implements OnInit {
   testid = ''
   idParam;
   compteId=localStorage.getItem('id');
-
+  nomCv:String;
+  
   ngOnInit() {
     
     this.sub = this.route.params.subscribe(params => {
@@ -62,6 +70,7 @@ export class ProfileComponent implements OnInit {
 
             // this.cv = './Iyadh-Jedidi.pdf';
             this.date = this.transformDate(compte.dateBirth)
+            this.nomCv = this.transformCv(compte.cv)
 
           } else {
             console.log(`Compte with id '${id}' not found, returning to list`);
