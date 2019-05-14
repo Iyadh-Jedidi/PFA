@@ -11,68 +11,93 @@
       <span></span>
     </div>
     <div class="container pt-lg-md">
-      <div class="row justify-content-center">
-        <div class="col-lg-5">
-          <div class="card bg-secondary shadow border-0">
-            <div class="card-header bg-white pb-5">
-              <div class="text-muted text-center mb-3">
-                <small>Sign up with</small>
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-header bg-white pb-5">
+                <div class="text-muted text-center mb-3">
+                  <small>S'inscrire</small>
+                </div>
+                <div class="btn-wrapper text-center">
+                  <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
+                    <span class="btn-inner--icon">
+                      <img src="./assets/img/icons/common/github.svg">
+                    </span>
+                    <span class="btn-inner--text">Github</span>
+                  </a>
+                  <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
+                    <span class="btn-inner--icon">
+                      <img src="./assets/img/icons/common/google.svg">
+                    </span>
+                    <span class="btn-inner--text">Google</span>
+                  </a>
+                </div>
               </div>
-              <div class="text-center">
-                <a href="javascript:void(0)" class="btn btn-neutral btn-icon mr-4">
-                  <span class="btn-inner--icon">
-                    <img src="./assets/img/icons/common/github.svg">
-                  </span>
-                  <span class="btn-inner--text">Github</span>
-                </a>
-                <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
-                  <span class="btn-inner--icon">
-                    <img src="./assets/img/icons/common/google.svg">
-                  </span>
-                  <span class="btn-inner--text">Google</span>
-                </a>
-              </div>
-            </div>
             <div class="card-body px-lg-5 py-lg-5">
-              <form #compteForm="ngForm" (ngSubmit)="save(compteForm.value)">
-                <input hidden value="candidat" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
-                    <input hidden value="candidat" [(ngModel)]="compte.poste" required name="poste" #poste>
-
-                    <div class="container mb-5">
-                      <div class="row">
-                        <div class="col-lg-4 col-sm-6">
-                          <div class="form-group">
-                            <label>Nom</label>
-                            <input type="text" class="form-control" placeholder="name" [(ngModel)]="compte.name" required name="name" #name>
-                            <label>Date de naissance</label>
-                            <input type="date" class="form-control" placeholder="lastname" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
-                            <label for="">CV</label>
-                            <input type="file" class="form-control" [(ngModel)]="compte.cv" required name="cv" #cv>
-                            <label for="">Email</label>
-                            <input type="email" class="form-control" [(ngModel)]="compte.email" required name="email" #email>
-
-
-                          </div>
-
-                        </div>
-                        <div class="col-lg-4 col-sm-6">
-                          <div class="form-group">
-                            <label>Prénom</label>
-                            <input type="text" class="form-control" placeholder="lastname" [(ngModel)]="compte.lastname" required name="lastname" #lasname>
-                            <label for="">Adresse</label>
-                            <input type="text" class="form-control" [(ngModel)]="compte.address" required name="address" #address>
-                            <label for="">Numéro Téléphone</label>
-                            <input type="text" class="form-control" [(ngModel)]="compte.tel" required name="tel" #tel>
-                            <label for=""><b>Password</b></label>
-                            <input type="password" class="form-control" placeholder="Enter Password"required name="password" [(ngModel)]="compte.password">
-
+             
+                  <form #compteForm="ngForm" class="contact100-form validate-form" (ngSubmit)="save(compteForm.value)">
+                      
+                      <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                          <div class="input-group input-group-alternative">
+                              <div class="input-group-prepend">
+                                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                </div>
+                            <input type="email" class="form-control" placeholder="Email" [(ngModel)]="compte.email" required name="email" #email>
                           </div>
                         </div>
+                    <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                          <div class="input-group input-group-alternative">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Mot de passe" [(ngModel)]="compte.password" required name="password" #password>
+                          </div>
+                        </div>
+                              <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                  <div class="input-group input-group-alternative">
+                                   
+                                    <input type="text" class="form-control" placeholder="Nom" [(ngModel)]="compte.name" required name="name" #name>
+                                  </div>
+                                </div>
+                                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                    <div class="input-group input-group-alternative">
+                                      
+                                      <input type="text" class="form-control" placeholder="Prénom" [(ngModel)]="compte.lastname" required name="lastname" #lastname>
+                                    </div>
+                                  </div>
+                                  
+                                    <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                        <div class="input-group input-group-alternative">
+                                         
+                                          <input type="date" class="form-control" placeholder="Date de naissance" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
+                                        </div>
+                                      </div>
+                                      <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                          <div class="input-group input-group-alternative">
+                                          
+                                            <input type="file" class="form-control" placeholder="CV" [(ngModel)]="compte.cv" required name="cv" #cv>
+                                          </div>
+                                        </div>
+                                        
+                                          
+                                            <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                                <div class="input-group input-group-alternative">
+                                                 
+                                                  <input type="text" class="form-control" placeholder="Adresse" [(ngModel)]="compte.address" required name="address" #address>
+                                                </div>
+                                              </div>
+                                              <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                                                  <div class="input-group input-group-alternative">
+                                                   
+                                                    <input type="text" class="form-control" placeholder="Num tel" [(ngModel)]="compte.tel" required name="tel" #tel>
+                                                  </div>
+                                                </div>
+                          
 
-                      </div>
-                    </div>
-                  <button  [disabled]="!compteForm.form.valid" type="submit" class="btn btn-danger btn-block btn-round">Enregistrer</button>
 
+                                                <div class="text-center">
+                                                    <button type="submit" class="btn btn-primary my-4" (click)="checkLogin(formationForm.value)">S'identifier</button>
+                                                  </div>
                 </form>
             </div>
           </div>

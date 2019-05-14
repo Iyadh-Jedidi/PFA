@@ -18,8 +18,9 @@
         <div class="col px-0">
           <div class="row">
             <div class="col-lg-6">
-              <h1 *ngIf="!loginService.isUserLoggedIn()" class="display-3  text-white">Vous devez s'identifier pour postuler aux offres</h1>
-              <h1 *ngIf="loginService.isUserLoggedIn()" class="display-3  text-white">Pous pouvez choisir l'offre </h1>
+              <h1 *ngIf="!loginService.isUserLoggedIn()" [hidden]="compte.poste == 'formation'" class="display-3  text-white">Vous devez s'identifier pour postuler aux offres</h1>
+              <h1 *ngIf="loginService.isUserLoggedIn()" [hidden]="compte.poste == 'formation'"  class="display-3  text-white">Pous pouvez choisir l'offre </h1>
+              <h1 *ngIf="loginService.isUserLoggedIn()" [hidden]="compte.poste != 'formation'"  class="display-3  text-white">Liste des formations </h1>
 
               <div *ngIf="!loginService.isUserLoggedIn()"  class="btn-wrapper">
                 <a href="/login" class="btn btn-info btn-icon mb-3 mb-sm-0">
@@ -52,8 +53,8 @@
                     </div>
                     <h6 class="text-primary text-uppercase" >{{formation.name}} </h6>
                     <p class="description mt-3">{{formation.description}}</p>
-                    <a  *ngIf="compte.typeCompteId =='responsable' && compte.poste=='formation'" [routerLink]="['/responsable/formation', formation.id]" href="javascript:void(0)" class="btn btn-primary mt-4">Editer la formation</a>
-                    <a *ngIf="compte.poste != 'formation'" [routerLink]="['/responsable/formation', formation.id]"   href="javascript:void(0)" class="btn btn-primary mt-4">Consulter la formation</a>
+                    <a  *ngIf="compte.typeCompteId =='responsable' && compte.poste=='formation'" [routerLink]="['/formation', formation.id]" href="javascript:void(0)" class="btn btn-primary mt-4">Editer la formation</a>
+                    <a *ngIf="compte.poste != 'formation'" [routerLink]="['/formation', formation.id]"   href="javascript:void(0)" class="btn btn-primary mt-4">Consulter la formation</a>
 
                   </div>
                 </div>
