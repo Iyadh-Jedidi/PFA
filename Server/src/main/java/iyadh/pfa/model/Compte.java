@@ -31,7 +31,7 @@ public class Compte {
     private Long Tel;
     private Date DateBirth;
     private String Address;
-    private File CV;
+    private String CV;
     private File Contrat;
     private String poste;
     
@@ -51,7 +51,7 @@ public class Compte {
    
     
     public Compte (Long id,String name, String lastname, String TypeCompteId, String email,String password, Long tel, Date dateBirth,String addres,
-                  File cv, File contrat, String poste ){
+                  String cv, File contrat, String poste ){
         this.id=id;
         this.name=name;
         this.lastname=lastname;
@@ -131,11 +131,11 @@ public class Compte {
         Address = address;
     }
 
-    public File getCV() {
+    public String getCV() {
         return CV;
     }
 
-    public void setCV(File CV) {
+    public void setCV(String CV) {
         this.CV = CV;
     }
 
@@ -167,7 +167,7 @@ public class Compte {
         return formations;
     }
 
-    public void setFormations(List<Formation> formations) {
+    public void setFormations(List<Formation> formations) le{
         this.formations = formations;
     }*/
 
