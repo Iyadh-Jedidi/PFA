@@ -28,57 +28,21 @@
       <i class="zmdi zmdi-close"></i>
     </button>
 
-    <div class="contact100-form-title  contact100-header flex-sb-m">
-        <span>{{offre.name ? 'Modifier' : 'Ajouter'}} Offres</span>
-      <input class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
-    </div>
+    <!-- 
     
 
 
-    <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
+    
 
-        <!-- href -->
+        
         <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
-        <!-- creation date  -->
-        <label for="">Date de création : </label>
-        <div class="wrap-input100 validate-input">
-          <p class="input100">{{DateCreation}}</p>
-          <input type="date" value="offre.creationDate" [(ngModel)]="offre.creationDate" class="input100" name="creationDate" placeholder="creationDate">
+        
+       
 
-          <span class="focus-input100"></span>
-          <label class="label-input100" >
-            <span class="lnr lnr-smartphone m-b-2"></span>
-          </label>
-        </div>
-        <label for="">Offre :</label>
-        <div class="wrap-input100 validate-input">
+       
+      
 
-          <input [(ngModel)]="offre.name" class="input100" type="text" name="name" placeholder="Name" #name>
-
-          <span class="focus-input100"></span>
-          <label class="label-input100" >
-            <span class="lnr lnr-smartphone m-b-2"></span>
-          </label>
-        </div>
-
-        <!-- salary -->
-        <label for="">Salaire : </label>
-        <div class="wrap-input100 validate-input">
-            <input [(ngModel)]="offre.salary" class="input100" type="text" name="salary" placeholder="salary" #salary>
-            <span class="focus-input100"></span>
-            <label class="label-input100">
-              <span class="lnr lnr-user m-b-2"></span>
-            </label>
-          </div>
-
-        <label for="">Description : </label>
-        <div class="wrap-input100 validate-input">
-          <textarea [(ngModel)]="offre.description"  class="input100" name="description" placeholder="Description Offre" #description></textarea>
-          <span class="focus-input100"></span>
-          <label class="label-input100 rs1">
-            <span class="lnr lnr-bubble"></span>
-          </label>
-        </div>
+        
         <label for="">Disponible? : </label>
           <div class="wrap-input100 validate-input">
             <select class="input100" name="disponible"  placeholder="Disponobilité de l'Offre" #disponible [(ngModel)]="offre.disponible">
@@ -111,31 +75,146 @@
               Annuler
             </button>
           </div>
-        </form>
-        
-        <div [hidden]="compte.poste != 'entretient'" class="col-md-9" style="margin-left: 30px">
-            <label class="display-4  text-black" >
-                Liste des Candidats 
-              </label>
-            <div >
+        </form> -->
 
-               
-        <div  class="wrap-input100 validate-input"  *ngFor="let off of offres">
-            <div *ngIf="off.id == offre.id">
-              <div *ngFor="let compte of off.comptes">
-                <ul>
-                  <li>
-                    <a [routerLink]="['/profile', compte.id]" >
-                      <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
-                      <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
-                    </a>
-                  </li>
-                </ul>
+        <section class="section">
+            <div class="container">
+              <div class="card card-profile shadow mt--300">
+                <div class="px-4">
+                  <div class="row justify-content-center">
+                    
+                    <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+                     
+                    </div>
+                    <div class="col-lg-4 order-lg-1">
+                      
+                    </div>
+                  </div>
+
+                  <div class="text-center mt-5">
+                    <h3>Offre</h3>
+                      <!-- <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>{{date}}</div>
+                    <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i>{{compte.typeCompteId}} - {{compte.poste}}</div>
+                    <div><i class="ni education_hat mr-2"></i>{{compte.email}}</div> -->
+                  </div>
+                  <div class="mt-5 py-5 border-top text-center">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-9">
+                          <div class="contact100-form-title  contact100-header flex-sb-m">
+                              
+                            <input class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
+                          </div>
+                         
+                        <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
+                            
+                           
+                              
+                            <div class="contact100-form-title  contact100-header flex-sb-m">
+        
+                                <input class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
+                            </div>
+                    
+                              <!-- <span class="focus-input100"></span>
+                              <label class="label-input100" >
+                                <span class="lnr lnr-smartphone m-b-2"></span>
+                              </label> -->
+                           
+                          <div class="container mb-5">
+                            <div class="row">
+
+                              <div class="col-lg-5 col-sm-4" style="margin-left: 28%">
+                                <div class="form-group">
+                                  <label>Date de création</label>
+                                  <p class="input100">{{DateCreation}}</p>
+                                  <input value="offre.creationDate" [(ngModel)]="offre.creationDate"type="date" placeholder="Date Création.." class="form-control" required name="creationDate" #creationDate>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Offre</label>
+                                  <input value="offre.name" [(ngModel)]="offre.name"type="text" placeholder="Nom.." class="form-control" required name="Name" #Name>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Salaire</label>
+                                  <input value="offre.salary" [(ngModel)]="offre.salary"type="text" placeholder="Salaire.." class="form-control" required name="salary" #salary>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-8 col-sm-8">
+                                <div class="form-group">
+                                  <label>description</label>
+                                  <textarea value="offre.description" [(ngModel)]="offre.description"placeholder="Description de l'offre.." class="form-control" required name="description" #description></textarea>
+                                </div>
+                              </div>
+                             
+                            </div>
+                          </div>
+                         
+                         
+                        
+                            
+                            <button [hidden]="compte.typeCompteId != 'admin'" type="submit" [disabled]="!formationForm.form.valid" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                                Ajouter
+                              </button>
+      
+                              <button [hidden]="compte.typeCompteId != 'admin'"  type="button" (click)="remove(offre.href)" *ngIf="offre.href"  mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                                  Supprimer
+                                </button>
+      
+                              <button (click)="demandeOffre(idCompte,idOffre)" [hidden]="compte.typeCompteId !='candidat'" type="button" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                                  Postuler
+                                </button>
+                            
+      
+                                <button type="button" [routerLink]="['/offres']" class="btn btn-warning pull-right">
+                                  Annuler
+                                </button>
+      
+      
+      
+      
+      
+      
+                        </form>
+      
+                      </div>
+                    </div>
+                  </div>
+                  <div [hidden]="compte.poste != 'entretien'" class="col-md-9" style="margin-left: 30px">
+                      <label class="display-4  text-black" >
+                          Liste des Candidats 
+                        </label>
+                      <div >
+          
+                         
+                  <div  class="wrap-input100 validate-input"  *ngFor="let off of offres">
+                      <div *ngIf="off.id == offre.id">
+                        <div *ngFor="let compte of off.comptes">
+                          <ul>
+                            
+                              <a [routerLink]="['/profile', compte.id]" >
+                                <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
+                                <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
+                              </a>
+                            
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
               </div>
             </div>
-          </div>
-          </div>
-          </div>
+            
+          </section>
+        
+       
       </div>
     </div>
   </section>

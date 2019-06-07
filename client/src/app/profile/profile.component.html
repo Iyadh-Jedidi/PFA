@@ -71,7 +71,7 @@
                         </div>
                         <div class="col-lg-4 col-sm-6">
                           <div class="form-group">
-                            <label>Adresse {{nomCv}}</label>
+                            <label>Adresse</label>
                             <input value="{{compte.address}}" type="text" placeholder="Adresse..." class="form-control" [(ngModel)]="compte.address" required name="address" #address />
                           </div>
                         </div>
@@ -98,7 +98,7 @@
 
                     <button [hidden]="compteId != idParam " type="submit" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;" (click)="alert()">
                       <i class="fa fa-plus"></i>
-                      SAVE</button>
+                      Enregistrer</button>
                       
 
                           <button   type="button" [routerLink]="['/home']" class="btn btn-warning pull-right">
