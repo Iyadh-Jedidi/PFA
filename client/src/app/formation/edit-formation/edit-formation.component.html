@@ -17,84 +17,129 @@
       </svg>
     </div>
   </section>
-  <section class="section section-lg pt-lg-0 mt--200">
-    <div class="bg-container-contact100">
-      <div class="contact100-header flex-sb-m"></div>
-    </div>
-    <div class="container-contact100">
-      <div class="wrap-contact100 ">
-        <button class="btn-hide-contact100">
-          <i class="zmdi zmdi-close"></i>
-        </button>
-        <div class="contact100-form-title  contact100-header flex-sb-m">
-            <span>{{formation.name ? 'Modifier' : 'Ajouter'}} Formation</span>
-            <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
-          </div>
-        <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
-            <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
-            <div class="wrap-input100 validate-input">
-              <input [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.name" class="input100" type="text" name="name" placeholder="Sujet Formation" #name>
-              <span class="focus-input100"></span>
-              <label class="label-input100">
-                <span class="lnr lnr-user m-b-2"></span>
-              </label>
-            </div>
-            <div class="wrap-input100 validate-input">
-              <input [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.duree" class="input100" name="duree" placeholder="Durée" #duree>
-              <span class="focus-input100"></span>
-              <label class="label-input100" >
-                <span class="lnr lnr-smartphone m-b-2"></span>
-              </label>
-            </div>
-            <div class="wrap-input100 validate-input">
-              <textarea [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.description" class="input100" name="description" placeholder="Description Formation" #description></textarea>
-              <span class="focus-input100"></span>
-              <label class="label-input100 rs1">
-                <span class="lnr lnr-bubble"></span>
-              </label>
-            </div>
-            <div  class="container-contact100-form-btn">
-              <button [hidden]="compte.poste != 'formation'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
-                {{formation.name ? 'Modifier' : 'Ajouter'}}
-              </button>
-           
-              <button [hidden]="compte.poste != 'formation'" class="contact100-form-btn" (click)="remove(formation.href)" *ngIf="formation.href" type="button">
-                Supprimer 
-              </button>
-            </div>
-            <div class="container-contact100-form-btn">
-              <button (click)="demadeFormation(idCompte,idFormation)" [hidden]="compte.poste == 'candidat'" type="button" class="contact100-form-btn">
-                Demander
-              </button>
 
-              <button type="button" [routerLink]="['/formation']" class="contact100-form-btn">
-                Annuler
-              </button>
+  <section class="section">
+      <div class="container">
+        <div class="card card-profile shadow mt--300">
+          <div class="px-4">
+            <div class="row justify-content-center">
+              
+              <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+               
+              </div>
+              <div class="col-lg-4 order-lg-1">
+                
+              </div>
             </div>
-            
-          </form>
-          <div [hidden]="compte.poste != 'formation'"  class="col-md-9" style="margin-left: 30px">
-            <label class="display-4  text-black" >
-              Liste des Demandes 
-            </label>
-            <div >
-              <div  class="wrap-input100 validate-input"  *ngFor="let forma of formations">
-                  <div *ngIf="forma.id == formation.id">
-                    <div *ngFor="let compte of forma.comptes">
-                      <ul>
-                        <li>
-                          <a [routerLink]="['/profile', compte.id]" >
-                            <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
-                            <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
-                          </a>
-                        </li>
-                      </ul>
-                  </div>
+
+            <div class="text-center mt-5">
+              <h3>Formation</h3>
+              
+            </div>
+            <div class="mt-5 py-5 border-top text-center">
+              <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="contact100-form-title  contact100-header flex-sb-m">
+                        
+                      <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
+                    </div>
+                   
+                  <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
+                      
+                     
+                        
+                      <div class="contact100-form-title  contact100-header flex-sb-m">
+  
+                          <input class="form-control" type="hidden" name="href" [(ngModel)]="formation.href">
+                      </div>
+              
+                      
+                     
+                    <div class="container mb-5">
+                      <div class="row">
+
+                        <div class="col-lg-5 col-sm-4" >
+                          <div class="form-group">
+                            <label>Titre formation</label>
+                            <input [disabled]="compte.typeCompteId != 'responsable'" value="formation.name" [(ngModel)]="formation.name"type="text" placeholder="Formation..." class="form-control" required name="name" #name>
+                          </div>
+                        </div>
+                      </div>
+
+                    
+                      <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                          <div class="form-group">
+                            <label>Durée</label>
+                            <input value="formation.duree" [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.duree" type="text" placeholder="Durée..." class="form-control" required name="duree" #duree>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-8 col-sm-8">
+                          <div class="form-group">
+                            <label>description</label>
+                            <textarea [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.description" class="form-control"  required name="description" placeholder="Description Formation" #description></textarea>
+                          </div>
+                        </div>
+                       
+                      </div>
+                    </div>
+                   
+                  
+                      
+                      <button [hidden]="compte.poste != 'formation'" type="submit" [disabled]="!formationForm.form.valid" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                          {{formation.name ? 'Modifier' : 'Ajouter'}}
+                        </button>
+
+                        <button [hidden]="compte.poste != 'formation'"  type="button" (click)="remove(formation.href)" *ngIf="formation.href"  mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                            Supprimer
+                          </button>
+
+                        <button (click)="demadeFormation(idCompte,idFormation)" [hidden]="compte.poste != 'employe'" type="button" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                           Demander
+                          </button>
+                      
+
+                          <button type="button" [routerLink]="['/formation']" class="btn btn-warning pull-right">
+                            Annuler
+                          </button>
+                 </form>
+
                 </div>
               </div>
             </div>
+
+
+
+          
+               
+            <div [hidden]="compte.poste != 'foramtion'" class="col-md-9" style="margin-left: 30px">
+                <label class="display-4  text-black" >
+                    Liste des demandes
+                  </label>
+                <div >
+    
+                   
+            <div  class="wrap-input100 validate-input"*ngFor="let forma of formations">
+                <div *ngIf="forma.id == formation.id">
+                  <div *ngFor="let compte of forma.comptes">
+                    <ul>
+                      
+                        <a [routerLink]="['/profile', compte.id]" >
+                          <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
+                          <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
+                        </a>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              </div>
+              </div>
           </div>
+        </div>
       </div>
-    </div>
-  </section>
+      
+    </section>
+  
 </main>

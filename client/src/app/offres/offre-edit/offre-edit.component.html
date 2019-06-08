@@ -27,57 +27,7 @@
     <button class="btn-hide-contact100">
       <i class="zmdi zmdi-close"></i>
     </button>
-
-    <!-- 
-    
-
-
-    
-
-        
-        <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
-        
-       
-
-       
-      
-
-        
-        <label for="">Disponible? : </label>
-          <div class="wrap-input100 validate-input">
-            <select class="input100" name="disponible"  placeholder="Disponobilité de l'Offre" #disponible [(ngModel)]="offre.disponible">
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <span class="focus-input100"></span>
-            <label class="label-input100 rs1">
-              <span class="lnr lnr-bubble"></span>
-            </label>
-          </div>
-          
-          <div class="container-contact100-form-btn">
-            <button  [hidden]="compte.typeCompteId != 'admin'" type="submit" [disabled]="!formationForm.form.valid" class="contact100-form-btn">
-              Ajouter
-            </button>
-          </div>
-          <div class="container-contact100-form-btn">
-          <button [hidden]="compte.typeCompteId != 'admin'" class="contact100-form-btn" (click)="remove(offre.href)" *ngIf="offre.href" type="button">
-            Supprimer 
-          </button>
-          </div>
-          <div class="container-contact100-form-btn">
-          <button (click)="demandeOffre(idCompte,idOffre)" [hidden]="compte.typeCompteId !='candidat'" type="button" class="contact100-form-btn">
-            Postuler
-          </button>
-          </div>
-          <div class="container-contact100-form-btn">
-            <button type="button" [routerLink]="['/offres']" class="contact100-form-btn">
-              Annuler
-            </button>
-          </div>
-        </form> -->
-
-        <section class="section">
+    <section class="section">
             <div class="container">
               <div class="card card-profile shadow mt--300">
                 <div class="px-4">
@@ -159,7 +109,7 @@
                         
                             
                             <button [hidden]="compte.typeCompteId != 'admin'" type="submit" [disabled]="!formationForm.form.valid" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
-                                Ajouter
+                                {{offre.name ? 'Modifier' : 'Ajouter'}}
                               </button>
       
                               <button [hidden]="compte.typeCompteId != 'admin'"  type="button" (click)="remove(offre.href)" *ngIf="offre.href"  mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
