@@ -167,7 +167,7 @@ public class Compte {
         return formations;
     }
 
-    public void setFormations(List<Formation> formations) {
+    public void setFormations(List<Formation> formations) le{
         this.formations = formations;
     }*/
 
