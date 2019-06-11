@@ -87,7 +87,7 @@ export class NavbarComponent implements OnInit {
     isFormation() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if ( titlee === '/responsable/formation' ) {
+        if ( titlee === '/formation' ) {
             return true;
         } else {
             return false;

@@ -36,6 +36,8 @@
             <div class="card-body px-lg-5 py-lg-5">
              
                   <form #compteForm="ngForm" class="contact100-form validate-form" (ngSubmit)="save(compteForm.value)">
+                      <input type="hidden" class="form-control" placeholder="Email" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
+                      <input type="hidden" class="form-control" placeholder="Email" [(ngModel)]="compte.poste" required name="poste" #poste>
                       
                       <div class="form-group" [ngClass]="{'focused':focus1===true}">
                           <div class="input-group input-group-alternative">
@@ -96,10 +98,12 @@
 
 
                                                 <div class="text-center">
-                                                    <button type="submit" class="btn btn-primary my-4" (click)="checkLogin(formationForm.value)">S'identifier</button>
+                                                    <button type="submit" class="btn btn-primary my-4" (click)="checkLogin(formationForm.value)">S'inscrire</button>
                                                   </div>
                 </form>
+          
             </div>
+            
           </div>
         </div>
       </div>
