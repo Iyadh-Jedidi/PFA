@@ -1,6 +1,5 @@
 package iyadh.pfa.controller;
 
-import iyadh.pfa.model.Compte;
 import iyadh.pfa.model.Offre;
 import iyadh.pfa.repository.OffreRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,7 +21,5 @@ public class OffreController {
         return repository.findAll().stream()
                 .collect(Collectors.toList());
     }
-
-
 
 }

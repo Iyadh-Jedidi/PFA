@@ -1,0 +1,171 @@
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-primary alpha-4">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section section-lg pt-lg-0 mt--200">
+<div class="bg-container-contact100">
+  <div class="contact100-header flex-sb-m">
+      </div>
+</div>
+<div class="container-contact100">
+  <div class="wrap-contact100 ">
+    <button class="btn-hide-contact100">
+      <i class="zmdi zmdi-close"></i>
+    </button>
+    <section class="section">
+            <div class="container">
+              <div class="card card-profile shadow mt--300">
+                <div class="px-4">
+                  <div class="row justify-content-center">
+                    
+                    <div class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+                     
+                    </div>
+                    <div class="col-lg-4 order-lg-1">
+                      
+                    </div>
+                  </div>
+
+                  <div class="text-center mt-5">
+                    <h3>Offre</h3>
+                      <!-- <div class="h6 font-weight-300"><i class="ni location_pin mr-2"></i>{{date}}</div>
+                    <div class="h6 mt-4"><i class="ni business_briefcase-24 mr-2"></i>{{compte.typeCompteId}} - {{compte.poste}}</div>
+                    <div><i class="ni education_hat mr-2"></i>{{compte.email}}</div> -->
+                  </div>
+                  <div class="mt-5 py-5 border-top text-center">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-9">
+                          <div class="contact100-form-title  contact100-header flex-sb-m">
+                              
+                            <input class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
+                          </div>
+                         
+                        <form #formationForm="ngForm" (ngSubmit)="save(formationForm.value)" class="contact100-form validate-form">
+                            
+                           
+                              
+                            <div class="contact100-form-title  contact100-header flex-sb-m">
+        
+                                <input class="form-control" type="hidden" name="href" [(ngModel)]="offre.href">
+                            </div>
+                    
+                              <!-- <span class="focus-input100"></span>
+                              <label class="label-input100" >
+                                <span class="lnr lnr-smartphone m-b-2"></span>
+                              </label> -->
+                           
+                          <div class="container mb-5">
+                            <div class="row">
+
+                              <div class="col-lg-5 col-sm-4" style="margin-left: 28%">
+                                <div class="form-group">
+                                  <label>Date de création</label>
+                                  <p class="input100">{{DateCreation}}</p>
+                                  <input value="offre.creationDate" [(ngModel)]="offre.creationDate"type="date" placeholder="Date Création.." class="form-control" required name="creationDate" #creationDate>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Offre</label>
+                                  <input value="offre.name" [(ngModel)]="offre.name"type="text" placeholder="Nom.." class="form-control" required name="Name" #Name>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-6 col-sm-6">
+                                <div class="form-group">
+                                  <label>Salaire</label>
+                                  <input value="offre.salary" [(ngModel)]="offre.salary"type="text" placeholder="Salaire.." class="form-control" required name="salary" #salary>
+                                </div>
+                              </div>
+
+                              <div class="col-lg-8 col-sm-8">
+                                <div class="form-group">
+                                  <label>description</label>
+                                  <textarea value="offre.description" [(ngModel)]="offre.description"placeholder="Description de l'offre.." class="form-control" required name="description" #description></textarea>
+                                </div>
+                              </div>
+                             
+                            </div>
+                          </div>
+                         
+                         
+                        
+                            
+                            <button [hidden]="compte.typeCompteId != 'admin'" type="submit" [disabled]="!formationForm.form.valid" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                                {{offre.name ? 'Modifier' : 'Ajouter'}}
+                              </button>
+      
+                              <button [hidden]="compte.typeCompteId != 'admin'"  type="button" (click)="remove(offre.href)" *ngIf="offre.href"  mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                                  Supprimer
+                                </button>
+      
+                              <button (click)="demandeOffre(idCompte,idOffre)" [hidden]="compte.typeCompteId !='candidat'" type="button" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                                  Postuler
+                                </button>
+                            
+      
+                                <button type="button" [routerLink]="['/offres']" class="btn btn-warning pull-right">
+                                  Annuler
+                                </button>
+      
+      
+      
+      
+      
+      
+                        </form>
+      
+                      </div>
+                    </div>
+                  </div>
+                  <div [hidden]="compte.poste != 'entretien'" class="col-md-9" style="margin-left: 30px">
+                      <label class="display-4  text-black" >
+                          Liste des Candidats 
+                        </label>
+                      <div >
+          
+                         
+                  <div  class="wrap-input100 validate-input"  *ngFor="let off of offres">
+                      <div *ngIf="off.id == offre.id">
+                        <div *ngFor="let compte of off.comptes">
+                          <ul>
+                            
+                              <a [routerLink]="['/profile', compte.id]" >
+                                <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
+                                <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
+                              </a>
+                            
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+          </section>
+        
+       
+      </div>
+    </div>
+  </section>
+</main>

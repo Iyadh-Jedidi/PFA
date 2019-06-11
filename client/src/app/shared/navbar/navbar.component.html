@@ -1,0 +1,139 @@
+<nav id="navbar-main"
+     class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom headroom--top headroom--pinned"
+     xmlns:pseudo="http://java.sun.com/xml/ns/javaee">
+    <div class="container">
+        <a class="navbar-brand"  [routerLink]="['/home']">
+            <img src="./assets/img/brand/ioo.png">
+        </a>
+        <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbar_global" [ngbCollapse]="isCollapsed">
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a [routerLink]="['/home']">
+              <img src="./assets/img/brand/blue.png">
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button type="button" class="navbar-toggler" (click)="isCollapsed = !isCollapsed"
+                  [attr.aria-expanded]="!isCollapsed" aria-controls="navbar_global">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+            <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+                <li  class="nav-item dropdown">
+                    <a [routerLink]="['/home']" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                        Acceuil
+                    </a>
+                </li>
+                <li  class="nav-item dropdown">
+                    <a *ngIf="loginService.isUserLoggedIn()" [routerLink]="['/profile',id]"  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                        Profile
+                    </a>
+                </li>
+                <li   class="nav-item dropdown">
+                    <a [routerLink]="['/admin/comptes']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='admin')"  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                      Comptes
+                    </a>
+                </li>
+                <li   class="nav-item dropdown">
+                    <a [routerLink]="['/admin/offres']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='admin')"  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                      Offres
+                    </a>
+                </li>
+
+
+
+                <li  class="nav-item dropdown">
+                    <a   *ngIf="(compte.typeCompteId !='employee') &&(compte.typeCompteId !='admin') " class="nav-link no-caret" data-toggle="dropdown" role="button"  [routerLink]="['/offres']">
+                      <span class="nav-link-inner--text">Consulter les offres</span>
+                    </a>
+                </li>
+                <!-- <li  class="nav-item dropdown">
+                    <a  *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='employee')" [routerLink]="['/formation']" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                      <span class="nav-link-inner--text">Demander Formation</span>
+                    </a>
+                </li> -->
+                <li  class="nav-item dropdown">
+                    <a  *ngIf="(loginService.isUserLoggedIn()) && (((compte.typeCompteId=='responsable') && (compte.poste=='formation')) || (compte.typeCompteId=='employee')) " [routerLink]="['/formation']" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                      <span class="nav-link-inner--text">Formations</span>
+                    </a>
+                </li>
+                <!-- <li   class="nav-item dropdown">
+                    <a [routerLink]="['/responsable/formation']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='formation')" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                      <span class="nav-link-inner--text">Demandes Formations</span>
+                    </a>
+                </li> -->
+
+                <!-- <li   class="nav-item dropdown">
+                    <a [routerLink]="['/responsable/entretient']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='entretient')" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                      <span class="nav-link-inner--text">Les postulations</span>
+                    </a>
+                </li> -->
+                <li  class="nav-item dropdown">
+                    <a [routerLink]="['/responsable/recrutement']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='recrutement')"  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                      <span class="nav-link-inner--text">Liste Employés</span>
+                    </a>
+                </li>
+                <li   class="nav-item dropdown">
+                    <a [routerLink]="['/responsable/candidats-acceptes']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='recrutement')" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                      <span class="nav-link-inner--text">Liste candidats acceptés</span>
+                    </a>
+                </li>
+                <li  class="nav-item dropdown" >
+                    <a [routerLink]="[ 'login']"  *ngIf="!loginService.isUserLoggedIn()"   class="nav-link no-caret" data-toggle="dropdown" role="button" >
+                        <span class="nav-link-inner--text">S'identifier</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a  *ngIf="loginService.isUserLoggedIn()" (click)="load(['/logout'])"  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                        <span class="nav-link-inner--text">Déconnecter</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
+                        <span class="nav-link-inner--text d-lg-none">Facebook</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+                        <span class="nav-link-inner--text d-lg-none">Instagram</span>
+                    </a>
+                </li>
+                <li class="nav-item d-none d-lg-block ml-lg-4">
+                    <button [routerLink]="['/compte-add']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='admin') && isCompte() " target="_blank" class="btn btn-neutral btn-icon">
+            <span class="btn-inner--icon">
+              <i _ngcontent-c4="" class="ni ni-fat-add"></i>
+            </span>
+                        <span class="nav-link-inner--text">Ajouter Compte</span>
+                    </button>
+                </li>
+              <li class="nav-item d-none d-lg-block ml-lg-4">
+                <button [routerLink]="['/offre-add']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='admin') && isOffre() " target="_blank" class="btn btn-neutral btn-icon">
+            <span class="btn-inner--icon">
+              <i _ngcontent-c4="" class="ni ni-fat-add"></i>
+            </span>
+                  <span class="nav-link-inner--text">Ajouter Offre</span>
+                </button>
+              </li>
+              <li class="nav-item d-none d-lg-block ml-lg-4">
+                <button [routerLink]="['responsable/formation/ajouter-formation']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='formation') && isFormation() " target="_blank" class="btn btn-neutral btn-icon">
+            <span class="btn-inner--icon">
+              <i _ngcontent-c4="" class="ni ni-fat-add"></i>
+            </span>
+                  <span class="nav-link-inner--text">Ajouter Formation</span>
+                </button>
+              </li>
+            </ul>
+        </div>
+    </div>
+</nav>

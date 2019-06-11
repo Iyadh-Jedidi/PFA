@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-PfaApplication<pfa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "iyadh.pfa.PfaApplication",
+            "projectName": "pfa",
+            "args": ""
+        }
+    ]
+}
