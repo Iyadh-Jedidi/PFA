@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
           this.compte = data ;
           if (this.compte == null){
               alert('Email ou Password sont incorrectes')
-              this.load('/login') ;
+              //this.load('/login') ;
           } else {
             localStorage.setItem('id', this.compte.id) ;
             this.load(['/profile/' + this.compte.id]);

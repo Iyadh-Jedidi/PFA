@@ -61,7 +61,7 @@
                         <div class="col-lg-5 col-sm-4" >
                           <div class="form-group">
                             <label>Titre formation</label>
-                            <input [disabled]="compte.typeCompteId != 'responsable'" value="formation.name" [(ngModel)]="formation.name"type="text" placeholder="Formation..." class="form-control" required name="name" #name>
+                            <input [disabled]="compte.poste != 'formation'" value="formation.name" [(ngModel)]="formation.name"type="text" placeholder="Formation..." class="form-control" required name="name" #name>
                           </div>
                         </div>
                       </div>
@@ -71,14 +71,14 @@
                         <div class="col-lg-6 col-sm-6">
                           <div class="form-group">
                             <label>Durée</label>
-                            <input value="formation.duree" [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.duree" type="text" placeholder="Durée..." class="form-control" required name="duree" #duree>
+                            <input value="formation.duree" [disabled]="compte.poste != 'formation'" [(ngModel)]="formation.duree" type="text" placeholder="Durée..." class="form-control" required name="duree" #duree>
                           </div>
                         </div>
 
                         <div class="col-lg-8 col-sm-8">
                           <div class="form-group">
                             <label>description</label>
-                            <textarea [disabled]="compte.typeCompteId != 'responsable'" [(ngModel)]="formation.description" class="form-control"  required name="description" placeholder="Description Formation" #description></textarea>
+                            <textarea [disabled]="compte.poste != 'formation'" [(ngModel)]="formation.description" class="form-control"  required name="description" placeholder="Description Formation" #description></textarea>
                           </div>
                         </div>
                        
@@ -95,7 +95,7 @@
                             Supprimer
                           </button>
 
-                        <button (click)="demadeFormation(idCompte,idFormation)" [hidden]="compte.poste != 'employe'" type="button" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
+                        <button (click)="demadeFormation(idCompte,idFormation)" [hidden]="compte.typeCompteId != 'employee'" type="button" mat-raised-button color="primary"class="btn btn-warning pull-left" style="margin-left:12px;">
                            Demander
                           </button>
                       
@@ -113,7 +113,7 @@
 
           
                
-            <div [hidden]="compte.poste != 'foramtion'" class="col-md-9" style="margin-left: 30px">
+            <div [hidden]="compte.poste != 'formation'" class="col-md-9" style="margin-left: 30px">
                 <label class="display-4  text-black" >
                     Liste des demandes
                   </label>

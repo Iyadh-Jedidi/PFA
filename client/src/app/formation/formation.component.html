@@ -52,7 +52,6 @@
                       <button _ngcontent-c5="" class="btn btn-1 btn-success" type="button">Disponible</button>
                     </div>
                     <h6 class="text-primary text-uppercase" >{{formation.name}} </h6>
-                    <p class="description mt-3">{{formation.description}}</p>
                     <a  *ngIf="compte.typeCompteId =='responsable' && compte.poste=='formation'" [routerLink]="['/formation', formation.id]" href="javascript:void(0)" class="btn btn-primary mt-4">Editer la formation</a>
                     <a *ngIf="compte.poste != 'formation'" [routerLink]="['/formation', formation.id]"   href="javascript:void(0)" class="btn btn-primary mt-4">Consulter la formation</a>
 

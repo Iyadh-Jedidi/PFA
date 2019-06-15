@@ -84,7 +84,7 @@
                               <div class="col-lg-6 col-sm-6">
                                 <div class="form-group">
                                   <label>Offre</label>
-                                  <input value="offre.name" [(ngModel)]="offre.name"type="text" placeholder="Nom.." class="form-control" required name="Name" #Name>
+                                  <input value="offre.name" [(ngModel)]="offre.name" type="text" placeholder="Nom.." class="form-control" required name="name" #name>
                                 </div>
                               </div>
 
@@ -135,7 +135,7 @@
                       </div>
                     </div>
                   </div>
-                  <div [hidden]="compte.poste != 'entretien'" class="col-md-9" style="margin-left: 30px">
+                  <div [hidden]="compte.poste != 'entretient'" class="col-md-9" style="margin-left: 30px">
                       <label class="display-4  text-black" >
                           Liste des Candidats 
                         </label>

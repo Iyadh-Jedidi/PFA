@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li   class="nav-item dropdown">
-                    <a [routerLink]="['/admin/offres']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='admin')"  class="nav-link no-caret" data-toggle="dropdown" role="button">
+                    <a [routerLink]="['/offres']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='admin')"  class="nav-link no-caret" data-toggle="dropdown" role="button">
                       Offres
                     </a>
                 </li>

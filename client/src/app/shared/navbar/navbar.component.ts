@@ -78,7 +78,7 @@ export class NavbarComponent implements OnInit {
     isOffre() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if ( titlee === '/admin/offres' ) {
+        if ( titlee === '/offres' ) {
             return true;
         } else {
             return false;

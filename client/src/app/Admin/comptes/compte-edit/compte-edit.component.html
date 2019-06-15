@@ -107,9 +107,11 @@
                       <div class="col-lg-4 col-sm-6">
                         <div class="form-group">
 
-                          <label>Date de naissance</label>
+                          <label>Date de naissance: {{dateNaissabce}}</label>
+                          
                           <input  type="hidden" matInput class="input-label-lg select-css" type="date" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
-                          <input  value="{{dateNaissabce}}" _ngcontent-c12="" autocomplete="off"  class="form-control datepicker ng-pristine ng-valid ng-touched"  ngbdatepicker="" placeholder="Select date" type="text">
+                          
+                          <!-- <input  value="{{dateNaissabce}}" _ngcontent-c12="" autocomplete="off"  class="form-control datepicker ng-pristine ng-valid ng-touched"  ngbdatepicker="" placeholder="Select date" type="text"> -->
                           
                           
                         </div>
