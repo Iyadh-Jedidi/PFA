@@ -74,6 +74,8 @@ export class OffreEditComponent implements OnInit {
   ngOngnDestroy() {
     this.sub.unsubscribe();
   }
+
+  
   
   demandeOffre(idCompte,idOffre){
     this.apiCompte.addOffre(idCompte,idOffre).subscribe(data=>{
@@ -105,8 +107,12 @@ export class OffreEditComponent implements OnInit {
       this.gotoList();
     }, error => console.error(error));
   }
-
+  accepte(compte){
+    compte.accepte=1;
+    this.apiCompte.save(compte).subscribe(result => {
+      this.router.navigate(['/offres/'+this.offre.id]);
   
-  
+    }, error => console.error(error));
+  }
+  }
 
-}

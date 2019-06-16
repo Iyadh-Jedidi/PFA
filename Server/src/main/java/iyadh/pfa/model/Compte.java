@@ -34,6 +34,7 @@ public class Compte {
     private String CV;
     private File Contrat;
     private String poste;
+    private int accepte ;
     
      /*@ManyToMany(fetch = FetchType.LAZY,
             cascade = {
@@ -51,7 +52,7 @@ public class Compte {
    
     
     public Compte (Long id,String name, String lastname, String TypeCompteId, String email,String password, Long tel, Date dateBirth,String addres,
-                  String cv, File contrat, String poste ){
+                  String cv, File contrat, String poste,int accepte ){
         this.id=id;
         this.name=name;
         this.lastname=lastname;
@@ -64,6 +65,7 @@ public class Compte {
         this.CV=cv;
         this.Contrat=contrat;
         this.poste=poste;
+        this.accepte=accepte;
     }
 
 
@@ -161,6 +163,14 @@ public class Compte {
 
     public void setPoste(String poste) {
         this.poste = poste;
+    }
+
+    public int getAccepte() {
+        return accepte;
+    }
+
+    public void setAccepte(int accepte) {
+        this.accepte = accepte;
     }
 
     /*public List<Formation> getFormations() {

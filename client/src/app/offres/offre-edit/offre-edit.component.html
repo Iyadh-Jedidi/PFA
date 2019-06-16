@@ -150,6 +150,10 @@
                               <a [routerLink]="['/profile', compte.id]" >
                                 <i _ngcontent-c4="" class="ni ni-circle-08"> </i>
                                 <span _ngcontent-c11="" class="lead text-muted">  {{compte.name}} {{compte.lastname}}</span>
+                                
+                                <button [hidden]="compte.accepte==1" *ngIf="offre.href" (click)="accepte(compte)" _ngcontent-c5="" class="pull-right btn btn-1 btn-outline-primary" type="button">Accepter</button>
+                                <span [hidden]="compte.accepte==0"_ngcontent-c9="" class="pull-right badge badge-pill badge-primary text-uppercase">Accepté</span>
+
                               </a>
                             
                           </ul>

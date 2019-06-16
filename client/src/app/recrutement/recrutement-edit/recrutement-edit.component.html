@@ -74,12 +74,7 @@
                           <input  type="email" placeholder="Email..." class="form-control" [(ngModel)]="compte.email" required name="email" #email/>
                         </div>
                       </div>
-                      <div class="col-lg-4 col-sm-6">
-                        <div class="form-group">
-                          <label>Mot de passe</label>
-                          <input  type="password" placeholder="mot de passe..." class="form-control" [(ngModel)]="compte.password" required name="password" #password/>
-                        </div>
-                      </div>
+                      
                       <div class="col-lg-4 col-sm-6">
                           <div class="form-group">
                               <label>Contrat</label>
@@ -89,67 +84,26 @@
                     </div>
                   </div>
 
-                  <div class="container mb-5">
-                    <div class="row">
-                      <div class="col-lg-4 col-sm-6">
-                        <div class="form-group">
-                          <label>Nom</label>
-                          <input  type="text" placeholder="Nom..." class="form-control" [(ngModel)]="compte.name" required name="name" #name>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                        <div class="form-group">
-                          <label>Prénom</label>
-                          <input   type="text" placeholder="Prénom..." class="form-control" [(ngModel)]="compte.lastname" required name="lastname" #lastname/>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                        <div class="form-group">
+                  
 
-                          <label>Date de naissance: {{dateNaissabce}}</label>
-                          
-                          <input  type="hidden" matInput class="input-label-lg select-css" type="date" [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
-                          
-                          <!-- <input  value="{{dateNaissabce}}" _ngcontent-c12="" autocomplete="off"  class="form-control datepicker ng-pristine ng-valid ng-touched"  ngbdatepicker="" placeholder="Select date" type="text"> -->
-                          
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-                  <div class="container mb-5">
-                    <div class="row">
-                      <div class="col-lg-4 col-sm-6">
-                        <div class="form-group">
-                          <label>Téléphone</label>
-                          <input   type="text" placeholder="Tél..." class="form-control" [(ngModel)]="compte.tel" required name="tel" #tel>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-4 col-sm-6">
-                        <div class="form-group">
-                          <label>Adresse</label>
-                          <input  type="text" placeholder="Adresse..." class="form-control" [(ngModel)]="compte.address" required name="address" #address />
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-6">
-                        <div class="form-group">
-                          <label>Cv</label>
-                          <input type="file" class="form-control" [(ngModel)]="compte.cv" required name="cv" #cv />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  
                     
 
-                  <input hidden type="hidden" matInput placeholder="Entrer votre Email..." type="email" [(ngModel)]="compte.email" required name="email" #email>
                   <input hidden type="hidden" matInput type="text" placeholder="Entrer votre prénom..."  [(ngModel)]="compte.lastname" required name="lastname" #lasname>
                   <input hidden type="hidden" matInput type="text" placeholder="Entrer votre nom..." [(ngModel)]="compte.name" required name="name" #name>
-                  <input hidden type="hidden" matInput type="text" placeholder="Entrer le poste de votre employé" [(ngModel)]="compte.poste" required name="poste" #poste>
-                  <input hidden type="hidden" placeholder="typeCompteId" class="select-css option" [(ngModel)]="compte.typeCompteId" required name="typeCompteId" #typeCompteId>
                   <input hidden type="hidden" value="1"  class="select-css option" [(ngModel)]="compte.accepte" required name="accepte" #accepte>
+                  <input hidden type="hidden" matInput type="text"  [(ngModel)]="compte.tel" required name="tel" #tel>
+                  <input hidden type="hidden" matInput type="text"  [(ngModel)]="compte.cv" required name="cv" #cv>
+                  <input hidden type="hidden" matInput type="date"  [(ngModel)]="compte.dateBirth" required name="dateBirth" #dateBirth>
+                  <input hidden type="hidden" matInput type="text"  [(ngModel)]="compte.password" required name="password" #password>
+                  <input hidden type="hidden" matInput type="text"  [(ngModel)]="compte.address" required name="address" #address>
+
+
+
+
+
+
+                  
                   <input hidden class="form-control" type="hidden" name="href" [(ngModel)]="compte.href">
                   <div>
 
@@ -160,8 +114,7 @@
                             
                             style="margin-left:12px;"><i class="fa fa-plus"></i>Enregistrer
                     </button>
-                    <button [routerLink]="['/admin/comptes']" class="btn btn-warning pull-right" type="button">Annuler</button>
-                    <button mat-raised-button color="secondary" class="btn btn-warning " (click)="remove(compte.href)" *ngIf="(compte.href) && (compte.typeCompteId != 'candidat') " type="button">Supprimer</button>
+                    <button [routerLink]="['/responsable/recrutement']" class="btn btn-warning pull-right" type="button">Annuler</button>
 
                   </div>
 

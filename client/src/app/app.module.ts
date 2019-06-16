@@ -28,6 +28,8 @@ import { OffreEditComponent } from './offres/offre-edit/offre-edit.component';
 import { LoginComponent } from './login/login.component';
 import {DatePipe} from '@angular/common';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { RecrutementComponent } from './recrutement/recrutement.component';
+import { RecrutementEditComponent } from './recrutement/recrutement-edit/recrutement-edit.component';
 
 
 const routes: Routes = [
@@ -35,6 +37,7 @@ const routes: Routes = [
         redirectTo: '/home',
         pathMatch: 'full'
     },
+    
     {
         path: 'home',
         component: HomeComponent
@@ -42,6 +45,12 @@ const routes: Routes = [
     {
         path: 'signup',
         component: SignupComponent,
+
+    },
+    {
+        path: 'responsable/recrutement',
+        canActivate: [AuthGaurdService],
+        component: RecrutementComponent
 
     },
     {
@@ -80,6 +89,7 @@ const routes: Routes = [
         canActivate: [AuthGaurdService]
 */
     },
+
     {
         path: 'offres/:id',
         component: OffreEditComponent,
@@ -119,6 +129,11 @@ const routes: Routes = [
         component: EditFormationComponent,
         canActivate: [AuthGaurdService]
     },
+    {
+        path: 'responsable/recrutement-edit/:id',
+        component: RecrutementEditComponent,
+        canActivate: [AuthGaurdService]
+    }
 
 ];
 
@@ -138,7 +153,9 @@ const routes: Routes = [
     // DemandeFormationComponent,
       ComptesComponent,
       OffreEditComponent,
-      CompteEditComponent  ],
+      CompteEditComponent,
+      RecrutementComponent,
+      RecrutementEditComponent  ],
   imports: [
       
       BrowserModule,

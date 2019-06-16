@@ -66,6 +66,13 @@
                       <span class="nav-link-inner--text">Formations</span>
                     </a>
                 </li>
+                <li  class="nav-item dropdown">
+                  <a  *ngIf="compte.poste=='recrutement'" [routerLink]="['/responsable/recrutement']" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                    <span class="nav-link-inner--text">Liste des candidats acceptés</span>
+                  </a>
+              </li>
+              
+
                 <!-- <li   class="nav-item dropdown">
                     <a [routerLink]="['/responsable/formation']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='formation')" class="nav-link no-caret" data-toggle="dropdown" role="button">
                       <span class="nav-link-inner--text">Demandes Formations</span>
@@ -77,16 +84,8 @@
                       <span class="nav-link-inner--text">Les postulations</span>
                     </a>
                 </li> -->
-                <li  class="nav-item dropdown">
-                    <a [routerLink]="['/responsable/recrutement']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='recrutement')"  class="nav-link no-caret" data-toggle="dropdown" role="button">
-                      <span class="nav-link-inner--text">Liste Employés</span>
-                    </a>
-                </li>
-                <li   class="nav-item dropdown">
-                    <a [routerLink]="['/responsable/candidats-acceptes']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='responsable') && (compte.poste=='recrutement')" class="nav-link no-caret" data-toggle="dropdown" role="button">
-                      <span class="nav-link-inner--text">Liste candidats acceptés</span>
-                    </a>
-                </li>
+               
+               
                 <li  class="nav-item dropdown" >
                     <a [routerLink]="[ 'login']"  *ngIf="!loginService.isUserLoggedIn()"   class="nav-link no-caret" data-toggle="dropdown" role="button" >
                         <span class="nav-link-inner--text">S'identifier</span>
