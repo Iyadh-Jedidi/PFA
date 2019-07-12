@@ -16,21 +16,14 @@ export class AuthentificationService {
     
 
   }
-   /*setLocalStorageAndLeave(name, value, newLocation){
-    value = value.toString(); // to prevent infinite loops
-    localStorage.setItem(name, value);
-    (function one(){
-         if (localStorage.getItem(name) === value) {
-            window.location = newLocation;
-         } else {
-            setTimeout(one, 50);
-         }return this.http.get('//localhost:8080/all-comptes');
-    })();
-}*/
 
-
+  ReverseStr(str) {
+    return str.split('').reverse().join('');
+  }  
   authenticate(compte: any): Observable<any> {
-    return this.http.get('//localhost:8080/email/' + compte.email + '/password/' + compte.password);
+     const ch =this.ReverseStr(compte.password);
+
+    return this.http.get('//localhost:8080/email/' + compte.email + '/password/' + ch);
   }
 
   isUserLoggedIn() {

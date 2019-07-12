@@ -20,10 +20,11 @@ export class OffresComponent implements OnInit {
                 private apiService: ApiOffreService) { }
 
     ngOnInit() {
-        this.compteApiService.get(this.id).subscribe((compte: any) => {
-            this.compte = compte;
-        });
-
+        if (this.id !=null){
+            this.compteApiService.get(this.id).subscribe((compte: any) => {
+                this.compte = compte;
+            });
+        }
         this.apiService.getAll().subscribe(data => {
             this.offres = data;
         });

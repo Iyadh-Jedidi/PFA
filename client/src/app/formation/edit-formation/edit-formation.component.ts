@@ -5,21 +5,6 @@ import {NgForm} from '@angular/forms';
 import {ApiformationService} from '../../services/formation/apiformation.service';
 import { ApiCompteService } from 'src/app/services/compte/api-compte.service';
 
-
-interface Alert {
-  type: string;
-  message: string;
-}
-
-const ALERTS: Alert[] = [{
-    type: 'success',
-    message: 'Merci pour demander cette formation',
-  },{
-    type: 'warning',
-    message: 'vous êtes déja inscrit a cette formation',
-  }];
-
-
 @Component({
   selector: 'app-edit-formation',
   templateUrl: './edit-formation.component.html',
@@ -39,7 +24,6 @@ export class EditFormationComponent implements OnInit {
   compte: any = {};
   private idCompte=localStorage.getItem('id');
   private idFormation;
-  alerts: Alert[];
 
 
   ngOnInit() {
@@ -74,21 +58,15 @@ export class EditFormationComponent implements OnInit {
   ngOngnDestroy() {
     this.sub.unsubscribe();
   }
-
-  close(alert: Alert) {
-    this.alerts.splice(this.alerts.indexOf(alert), 1);
-  }
-  
   
   demadeFormation(idCompte,idFormation){
     this.apiCompte.addFormation(idCompte,idFormation).subscribe(data=>{
       if (data !=null){
         this.formation=data;
-        this.close;
-        
+      alert("Merci pour demander cette formation ");
       
       }else{
-        this.close
+        alert("vous êtes déja inscrit a cette formation")
       }
       this.gotoList();
     });

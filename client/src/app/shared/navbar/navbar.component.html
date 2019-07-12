@@ -43,16 +43,16 @@
                       Comptes
                     </a>
                 </li>
-                <li   class="nav-item dropdown">
+                <!-- <li   class="nav-item dropdown">
                     <a [routerLink]="['/offres']" *ngIf="(loginService.isUserLoggedIn()) && (compte.typeCompteId=='admin')"  class="nav-link no-caret" data-toggle="dropdown" role="button">
                       Offres
                     </a>
-                </li>
+                </li> -->
 
 
 
-                <li  class="nav-item dropdown">
-                    <a   *ngIf="(compte.typeCompteId !='employee') &&(compte.typeCompteId !='admin') " class="nav-link no-caret" data-toggle="dropdown" role="button"  [routerLink]="['/offres']">
+                <li   class="nav-item dropdown">
+                    <a  class="nav-link no-caret" data-toggle="dropdown" role="button"  [routerLink]="['/offres']">
                       <span class="nav-link-inner--text">Consulter les offres</span>
                     </a>
                 </li>
@@ -67,7 +67,7 @@
                     </a>
                 </li>
                 <li  class="nav-item dropdown">
-                  <a  *ngIf="compte.poste=='recrutement'" [routerLink]="['/responsable/recrutement']" class="nav-link no-caret" data-toggle="dropdown" role="button">
+                  <a  *ngIf="(loginService.isUserLoggedIn())&&(compte.poste=='recrutement')" [routerLink]="['/responsable/recrutement']" class="nav-link no-caret" data-toggle="dropdown" role="button">
                     <span class="nav-link-inner--text">Liste des candidats acceptés</span>
                   </a>
               </li>

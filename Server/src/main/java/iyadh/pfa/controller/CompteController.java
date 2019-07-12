@@ -6,16 +6,13 @@ import iyadh.pfa.model.Offre;
 import iyadh.pfa.repository.CompteRepository;
 import iyadh.pfa.repository.FormationRepository;
 import iyadh.pfa.repository.OffreRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
-import java.util.Optional;
-import java.util.stream.Collectors;
-import org.springframework.web.bind.annotation.PostMapping;
+
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -30,20 +27,26 @@ public class CompteController {
         this.formationRepository=formationRepository;
         this.offreRepository=offreRepository;
     }
+    public static String reverseString(String str){
+
+      if(str.isEmpty()){
+         return str;
+      } else {
+         return reverseString(str.substring(1))+str.charAt(0);
+      }
+   }
     @GetMapping("/all-comptes")
     public Collection<Compte> getComptes() {
     return repository.findAll();
     }
     @GetMapping("/email/{email}/password/{password}")
     public Compte login (@PathVariable String email, @PathVariable String password){
-        System.out.println(password);
         Compte compte = repository.findUserByEmail(email);
         if (compte ==null){
             return null;
         }
-        System.out.println((compte.getPassword()));
-        if (compte.getPassword().equals(password)){
-            System.out.println(compte);
+        String pass = reverseString(password);
+        if (compte.getPassword().equals(pass)){
             return compte;
         }
         return null;
@@ -77,14 +80,11 @@ public class CompteController {
      @GetMapping("/demande-offre/{idCompte}/{idOffre}")
     public Offre addOffre (@PathVariable String idCompte, @PathVariable String idOffre){
         try {
-                System.out.println(idCompte);
-                System.out.println(idOffre);
                 Long idcompte1 = Long.parseLong(idCompte);
                 Long idOffre1 = Long.parseLong(idOffre);
                 Compte compte = repository.findById(idcompte1).get();
                 System.out.println(compte);
                 Offre offre = offreRepository.findById(idOffre1).get();
-                System.out.println(offre);
                 offre.getComptes().add(compte);
                 offreRepository.save(offre);
                 return offre;
